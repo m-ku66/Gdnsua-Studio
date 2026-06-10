@@ -1,9 +1,13 @@
 // Validation: run with `node scripts/validate-data.mjs`
-import { readFileSync } from 'node:fs'
+import { readFileSync, existsSync } from 'node:fs'
 
 const root = new URL('../src/renderer/src/data/', import.meta.url)
 const alphabet = JSON.parse(readFileSync(new URL('alphabet.json', root)))
-const base = JSON.parse(readFileSync(new URL('base.json', root)))
+const WORD_FILES = ['base.json', 'domains.json', 'misc.json', 'numbers.json']
+const base = WORD_FILES.flatMap((f) => {
+  const url = new URL(f, root)
+  return existsSync(url) ? JSON.parse(readFileSync(url)) : []
+})
 
 const DIGRAPHS = ['MN', 'KS', 'VK', 'ZK']
 const LETTERS = new Set(alphabet.map((l) => l.id))
