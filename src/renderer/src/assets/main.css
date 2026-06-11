@@ -1,10 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap');
 @import 'tailwindcss';
 
-/* Gdnsua Studio global styles */
+/* ── The Archive — design tokens ─────────────── */
+@theme {
+  --color-sand: #ccc7b2;
+  --color-vellum: #dad5c2;
+  --color-ink: #454136;
+  --color-dim: #8e897a;
+  --color-rule: #b3ae9a;
+  --color-seal: #a23b2a;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  @apply bg-neutral-950 text-neutral-100 antialiased;
+  @apply bg-sand font-mono text-ink antialiased;
+  font-size: 13px;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-sand);
+}
+
+/* Thin archive scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dim);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
