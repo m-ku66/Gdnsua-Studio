@@ -242,7 +242,7 @@
   { "id": "eldriikan", "romanization": "ELDRIIKAN", "glosses": ["conversion", "change"], "category": "math", "derivedFrom": ["eldril"] },
   { "id": "okhre", "romanization": "OKHRE", "glosses": ["equation"], "category": "math", "derivedFrom": ["khres"] },
   { "id": "xok", "romanization": "XOK", "glosses": ["expression"], "category": "math" },
-  { "id": "omah", "romanization": "OMAH", "glosses": ["equality", "balance"], "category": "math" },
+  { "id": "omah", "romanization": "OMAH", "glosses": ["equality", "balance"], "category": "math", "derivedFrom": ["oh", "mah"], "notes": "Literally OH (yin) + MAH (yang) — balance as the union of opposites." },
   { "id": "anomah", "romanization": "ANOMAH", "glosses": ["inequality"], "category": "math", "derivedFrom": ["omah"] },
   { "id": "khrefa", "romanization": "KHREFA", "glosses": ["place value"], "category": "math", "derivedFrom": ["khres", "famn"] },
   { "id": "fukhrok", "romanization": "FUKHROK", "glosses": ["count", "to count"], "category": "math", "derivedFrom": ["fukhre"] },
