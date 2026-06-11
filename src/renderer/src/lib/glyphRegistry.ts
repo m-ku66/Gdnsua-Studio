@@ -3,6 +3,7 @@
 // src/renderer/src/glyphs/{letters,modifiers,logographs}
 // Files are keyed by filename: "mn.svg" → letter id "mn"
 // ─────────────────────────────────────────────
+import { letters } from '../data'
 
 const letterFiles = import.meta.glob('../glyphs/letters/*.svg', {
   query: '?raw',
@@ -30,16 +31,22 @@ function normalize(svg: string): string {
     .replace(/fill:\s*(?!none|currentColor)[^;"']+/gi, 'fill:currentColor')
 }
 
-function buildMap(files: Record<string, string>): Map<string, string> {
+function buildMap(
+  files: Record<string, string>,
+  resolveKey: (name: string) => string = (n) => n
+): Map<string, string> {
   const map = new Map<string, string>()
   for (const [path, raw] of Object.entries(files)) {
     const name = path.split('/').pop()?.replace(/\.svg$/i, '').toLowerCase()
-    if (name) map.set(name, normalize(raw))
+    if (name) map.set(resolveKey(name), normalize(raw))
   }
   return map
 }
 
-export const letterGlyphs = buildMap(letterFiles)
+// Letters may be named by id ("a.svg") OR traditional letter name ("ars.svg")
+const letterNameToId = new Map(letters.map((l) => [l.letterName.toLowerCase(), l.id]))
+
+export const letterGlyphs = buildMap(letterFiles, (n) => letterNameToId.get(n) ?? n)
 export const modifierGlyphs = buildMap(modifierFiles)
 export const logographGlyphs = buildMap(logographFiles)
 

@@ -116,9 +116,16 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
                   dangerouslySetInnerHTML={{ __html: svg }}
                 />
               ) : (
-                <span className="font-display text-ink/80 text-xl font-medium">
-                  {letter?.romanization ?? id.toUpperCase()}
-                </span>
+                <div className="relative flex h-10 w-10 items-center justify-center">
+                  {/* Uncarved: empty slashed stone */}
+                  <svg viewBox="0 0 40 40" className="text-dim/50 absolute inset-0 h-full w-full">
+                    <rect x="1" y="1" width="38" height="38" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                    <line x1="3" y1="37" x2="37" y2="3" stroke="currentColor" strokeWidth="1.5" />
+                  </svg>
+                  <span className="text-dim bg-vellum relative px-0.5 text-[9px] font-medium">
+                    {letter?.romanization ?? id.toUpperCase()}
+                  </span>
+                </div>
               )}
             </div>
           )
