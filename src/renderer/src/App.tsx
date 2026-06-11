@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import { AppShell } from './components/AppShell'
+import { CalculatorView } from './components/CalculatorView'
 import { ForgeView } from './components/ForgeView'
 import { ResultsList } from './components/ResultsList'
 import { SearchBar } from './components/SearchBar'
@@ -53,7 +54,17 @@ function App(): React.JSX.Element {
   useEffect(() => {
     void initRelations() // apply persisted relationship overrides once
   }, [])
-  return <AppShell>{section === 'tools' ? <ForgeView /> : <DictionaryView />}</AppShell>
+  return (
+    <AppShell>
+      {section === 'tools' ? (
+        <ForgeView />
+      ) : section === 'numbers' ? (
+        <CalculatorView />
+      ) : (
+        <DictionaryView />
+      )}
+    </AppShell>
+  )
 }
 
 export default App

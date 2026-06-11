@@ -9,7 +9,7 @@ import { CornerOrnaments } from './CornerOrnaments'
 const SECTIONS: { id: Section; label: string; ready: boolean }[] = [
   { id: 'dictionary', label: 'Dictionary', ready: true },
   { id: 'names', label: 'Names', ready: false },
-  { id: 'numbers', label: 'Numbers', ready: false },
+  { id: 'numbers', label: 'Numbers', ready: true },
   { id: 'tools', label: 'Tools', ready: true }
 ]
 
