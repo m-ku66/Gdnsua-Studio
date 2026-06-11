@@ -4,6 +4,7 @@
 //   modifiers → a mark attached to a grey host glyph (cf. dakuten)
 import { letterById } from '../data'
 import { isModifier, type MarkPosition, type Word } from '../data/types'
+import { getLetterGlyph, getModifierGlyph } from '../lib/glyphRegistry'
 import { tokenizeRomanization } from '../lib/tokenize'
 import { Panel } from './ui/Panel'
 
@@ -11,14 +12,27 @@ const markCell =
   'border-seal/70 flex items-center justify-center border border-dashed'
 
 /** Grey host box + mark, arranged by the mark's position */
-function ModifierAnatomy({ position }: { position: MarkPosition }): React.JSX.Element {
+function ModifierAnatomy({
+  position,
+  modifierId
+}: {
+  position: MarkPosition
+  modifierId: string
+}): React.JSX.Element {
+  const svg = getModifierGlyph(modifierId)
   const host = (
     <div className="bg-dim/45 flex h-20 w-20 items-center justify-center">
       <span className="text-ink/45 text-[8px] tracking-[0.16em] uppercase">host</span>
     </div>
   )
   const vertical = position === 'top' || position === 'bottom'
-  const mark = (
+  const mark = svg ? (
+    <div
+      title="Modifier mark"
+      className={`text-ink [&_svg]:h-full [&_svg]:w-full ${vertical ? 'h-5 w-20' : 'h-20 w-5'}`}
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
+  ) : (
     <div
       title="Modifier mark — glyph pending"
       className={`${markCell} ${vertical ? 'h-4 w-20' : 'h-20 w-4'}`}
@@ -38,7 +52,7 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
   if (isModifier(word)) {
     return (
       <Panel corners className="px-6 py-7">
-        <ModifierAnatomy position={word.markPosition ?? 'unassigned'} />
+        <ModifierAnatomy position={word.markPosition ?? 'unassigned'} modifierId={word.id} />
         <div className="font-display mt-5 text-center text-3xl leading-none font-semibold tracking-wide">
           {word.romanization}
         </div>
@@ -60,16 +74,24 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
       <div className="flex flex-wrap items-center justify-center gap-2">
         {tokens.map((id, i) => {
           const letter = letterById.get(id)
+          const svg = getLetterGlyph(id)
           return (
             <div
               key={`${id}-${i}`}
               title={letter ? `${letter.letterName} (${letter.sound})` : id}
-              className="border-dim/60 text-ink/80 flex h-14 w-14 items-center
-                justify-center border border-dashed"
+              className={`flex h-14 w-14 items-center justify-center border
+                ${svg ? 'border-ink/40 border-solid' : 'border-dim/60 border-dashed'}`}
             >
-              <span className="font-display text-xl font-medium">
-                {letter?.romanization ?? id.toUpperCase()}
-              </span>
+              {svg ? (
+                <div
+                  className="text-ink h-10 w-10 [&_svg]:h-full [&_svg]:w-full"
+                  dangerouslySetInnerHTML={{ __html: svg }}
+                />
+              ) : (
+                <span className="font-display text-ink/80 text-xl font-medium">
+                  {letter?.romanization ?? id.toUpperCase()}
+                </span>
+              )}
             </div>
           )
         })}
@@ -78,7 +100,8 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
         {word.romanization}
       </div>
       <div className="text-dim mt-2 text-center text-[9px] tracking-[0.2em] uppercase">
-        {tokens.length} letters — glyphs uncarved
+        {tokens.length} letters
+        {tokens.some((id) => !getLetterGlyph(id)) && ' — some glyphs uncarved'}
       </div>
     </Panel>
   )
