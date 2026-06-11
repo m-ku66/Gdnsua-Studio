@@ -1,9 +1,12 @@
 // ─────────────────────────────────────────────
-// Logograph generator v3 — lane-based composition.
-// Strokes: fixed thickness (~263px), quantized lengths
-// (short 270 / mid 706 / full), one bar per lane.
-// Crossings are SEGMENTED: pieces kiss the perpendicular
-// bar's edges — looks like a crossing, never overlaps.
+// Logograph generator v4 — glyph_base catalog system.
+// The lattice and every legal stroke placement are decoded
+// from src/renderer/src/glyphs/glyph_base.svg:
+//   3 column lanes (x: 0/448/896, width 264)
+//   3 row lanes    (y: 0/456/911, height 253)
+//   span tiers: cell / cell+gap / two-cell / full
+// Multiple strokes may share a lane if their intervals
+// don't overlap. Crossings are segmented to kisses.
 // ─────────────────────────────────────────────
 export interface Bar {
   x: number
@@ -13,24 +16,41 @@ export interface Bar {
 }
 export type Side = 'none' | 'top' | 'bottom' | 'left' | 'right'
 export interface GenParams {
-  strokes: number // target bar count (max 8: 4 H + 4 V lanes)
+  strokes: number // target stroke count
   dominantSide: Side // lane/anchor bias
-  cornerDetail: number // 0–1: block accents at free crossings
-  touching: number // 0–1: probability a bar runs FULL length (more crossings)
+  cornerDetail: number // 0–1: extra single-cell blocks
+  touching: number // 0–1: weight toward full/long spans (more crossings)
 }
 
-const W = 1164
-const H = 1160
-const T = 262 // stroke thickness (spec: 262.87)
-const LEN_S = 270 // spec: 270.9
-const LEN_M = 706 // spec: 706.52
-const LANES = 4
-const CELL_Y = H / LANES // 290
-const CELL_X = W / LANES // 291
-const MIN_SEG = 116 // segments shorter than this are dropped
+// Canvas matches glyph_base (note: transposed vs letters)
+const W = 1160
+const H = 1164
+const SW = 264 // vertical stroke width
+const SH = 253 // horizontal stroke height
+const COLX = [0, 448, 896] // column lane lefts
+const ROWY = [0, 456, 911] // row lane tops
+const MIN_SEG = 100
 
-const hCenter = (lane: number): number => Math.round(lane * CELL_Y + CELL_Y / 2)
-const vCenter = (lane: number): number => Math.round(lane * CELL_X + CELL_X / 2)
+type Tier = 'cell' | 'half' | 'two' | 'full'
+interface Span {
+  a: number
+  b: number
+  tier: Tier
+}
+
+/** All legal spans along one axis, per the base glyph */
+function buildSpans(starts: number[], size: number): Span[] {
+  const ends = starts.map((s) => s + size)
+  const out: Span[] = []
+  for (let i = 0; i < 3; i++) out.push({ a: starts[i], b: ends[i], tier: 'cell' })
+  for (let i = 0; i < 2; i++) out.push({ a: starts[i], b: starts[i + 1], tier: 'half' })
+  for (let i = 1; i < 3; i++) out.push({ a: ends[i - 1], b: ends[i], tier: 'half' })
+  for (let i = 0; i < 2; i++) out.push({ a: starts[i], b: ends[i + 1], tier: 'two' })
+  out.push({ a: starts[0], b: ends[2], tier: 'full' })
+  return out
+}
+const H_SPANS = buildSpans(COLX, SW) // x-spans for horizontal strokes
+const V_SPANS = buildSpans(ROWY, SH) // y-spans for vertical strokes
 
 /** Deterministic RNG (mulberry32) — same seed, same drafts */
 function rng(seed: number): () => number {
@@ -91,7 +111,7 @@ function cutIntervals(a0: number, a1: number, cuts: [number, number][]): [number
   return iv.filter(([s0, s1]) => s1 - s0 >= MIN_SEG)
 }
 
-/** Split a bar where perpendicular bars cross it — pieces kiss their edges */
+/** Split a stroke where perpendicular strokes cross it — pieces kiss their edges */
 function segmentRect(rect: Bar, horiz: boolean, perp: Bar[]): Bar[] {
   const cuts: [number, number][] = []
   for (const p of perp) {
@@ -107,37 +127,20 @@ function segmentRect(rect: Bar, horiz: boolean, perp: Bar[]): Bar[] {
     horiz ? { x: a, y: rect.y, w: b - a, h: rect.h } : { x: rect.x, y: a, w: rect.w, h: b - a }
   )
 }
-/** Lane/anchor bias toward the dominant side */
+/** Lane choice (0–2) biased toward the dominant side */
 function biasLane(r: () => number, side: Side, horiz: boolean): number {
   let v = r()
   if (horiz && side === 'top') v = Math.pow(v, 1.8)
   if (horiz && side === 'bottom') v = 1 - Math.pow(v, 1.8)
   if (!horiz && side === 'left') v = Math.pow(v, 1.8)
   if (!horiz && side === 'right') v = 1 - Math.pow(v, 1.8)
-  return Math.min(LANES - 1, Math.floor(v * LANES))
+  return Math.min(2, Math.floor(v * 3))
 }
 
-/** Pick a start for a partial bar: ends or gridlines, side-biased */
-function startOf(r: () => number, horiz: boolean, len: number, side: Side): number {
-  const axis = horiz ? W : H
-  const cell = horiz ? CELL_X : CELL_Y
-  if (len >= axis) return 0
-  const lowSide = horiz ? 'left' : 'top'
-  const highSide = horiz ? 'right' : 'bottom'
-  if (side === lowSide && r() < 0.7) return 0
-  if (side === highSide && r() < 0.7) return axis - len
-  const opts: number[] = [0, axis - len]
-  for (let k = 1; k < LANES; k++) {
-    const s = Math.round(k * cell)
-    if (s + len <= axis && !opts.includes(s)) opts.push(s)
-  }
-  return opts[Math.floor(r() * opts.length)]
-}
-
-// ── Themes: lane-based seed compositions ──────
+// ── Themes: catalog-based seed compositions ──
 interface SeedCtx {
-  place: (horiz: boolean, lane: number, len: number, start: number) => boolean
-  addBlock: (vLane: number, hLane: number) => boolean
+  place: (horiz: boolean, lane: number, a: number, b: number) => boolean
+  cell: (col: number, row: number) => boolean
   r: () => number
 }
 interface Theme {
@@ -158,76 +161,76 @@ const THEMES: Record<string, Theme> = {
   ground: {
     orient: 'h',
     params: p({ dominantSide: 'bottom' }),
-    seed: ({ place }) => void place(true, 3, W, 0)
+    seed: ({ place }) => void place(true, 2, 0, 1160)
   },
   sky: {
     orient: 'h',
     params: p({ dominantSide: 'top' }),
-    seed: ({ place }) => void place(true, 0, W, 0)
+    seed: ({ place }) => void place(true, 0, 0, 1160)
   },
   water: {
     orient: 'h',
-    params: p({ strokes: 5, touching: 0.25, cornerDetail: 0 }),
+    params: p({ strokes: 5, touching: 0.3, cornerDetail: 0 }),
     seed: ({ place }) => {
-      place(true, 1, LEN_M, 0)
-      place(true, 2, LEN_M, W - LEN_M)
+      place(true, 0, 0, 712)
+      place(true, 1, 448, 1160)
     }
   },
   fire: {
     orient: 'v',
     params: p({ dominantSide: 'bottom', touching: 0.4 }),
     seed: ({ place }) => {
-      place(false, 2, H, 0)
-      place(false, 1, LEN_M, H - LEN_M)
+      place(false, 1, 0, 1164)
+      place(false, 0, 456, 1164)
+      place(false, 2, 911, 1164)
     }
   },
   wind: {
     orient: 'h',
-    params: p({ strokes: 5, touching: 0.2, cornerDetail: 0 }),
+    params: p({ strokes: 5, touching: 0.25, cornerDetail: 0 }),
     seed: ({ place }) => {
-      place(true, 0, LEN_M, W - LEN_M)
-      place(true, 2, LEN_M, 0)
+      place(true, 0, 264, 712)
+      place(true, 1, 448, 1160)
     }
   },
   ice: {
     orient: 'mixed',
     params: p({ cornerDetail: 0.5 }),
-    seed: ({ place }) => {
-      place(false, 2, H, 0)
-      place(true, 1, LEN_S, 0)
-      place(true, 3, LEN_S, W - LEN_S)
+    seed: ({ place, cell }) => {
+      place(false, 1, 0, 1164)
+      cell(0, 0)
+      cell(2, 2)
     }
   },
   lightning: {
     orient: 'v',
     params: p({ strokes: 5, touching: 0.4 }),
     seed: ({ place }) => {
-      place(false, 1, LEN_S, 0)
-      place(true, 1, LEN_M, Math.round(CELL_X))
-      place(false, 2, LEN_S, H - LEN_S)
+      place(false, 0, 0, 456)
+      place(true, 1, 0, 712)
+      place(false, 2, 709, 1164)
     }
   },
   dark: {
     orient: 'mixed',
-    params: p({ strokes: 8, touching: 0.9, cornerDetail: 0 }),
-    seed: ({ place, addBlock }) => {
-      place(true, 0, W, 0)
-      place(true, 3, W, 0)
-      place(false, 0, H, 0)
-      place(false, 3, H, 0)
-      addBlock(1, 1)
-      addBlock(2, 2)
+    params: p({ strokes: 7, touching: 0.9, cornerDetail: 0 }),
+    seed: ({ place, cell }) => {
+      place(true, 0, 0, 1160)
+      place(true, 2, 0, 1160)
+      place(false, 0, 0, 1164)
+      place(false, 2, 0, 1164)
+      cell(1, 1)
     }
   },
   light: {
     orient: 'mixed',
     params: p({ strokes: 5, touching: 0.1, cornerDetail: 0.5 }),
-    seed: ({ place, addBlock }) => {
-      place(false, 2, LEN_S, 0)
-      place(false, 1, LEN_S, H - LEN_S)
-      place(true, 2, LEN_S, 0)
-      place(true, 1, LEN_S, W - LEN_S)
-      addBlock(0, 0)
+    seed: ({ place, cell }) => {
+      cell(1, 1)
+      place(false, 1, 0, 253)
+      place(false, 1, 911, 1164)
+      place(true, 1, 0, 264)
+      place(true, 1, 896, 1160)
     }
   },
   abstract: {
@@ -252,75 +255,86 @@ export const ROOT_THEMES: Record<string, keyof typeof THEMES> = {
 export function defaultParams(rootId: string): GenParams {
   return { ...THEMES[ROOT_THEMES[rootId] ?? 'abstract'].params }
 }
-/** Generate one draft: lane-placed bars, crossings segmented to kisses */
+/** Generate one draft: catalog strokes on the base lattice */
 export function generateBars(rootId: string, seed: number, params: GenParams): Bar[] {
   const theme = THEMES[ROOT_THEMES[rootId] ?? 'abstract']
   const r = rng(hashId(rootId) ^ Math.imul(seed, 2654435761))
-  const usedH = new Set<number>()
-  const usedV = new Set<number>()
+  // per-lane occupied intervals (multiple strokes per lane allowed)
+  const ivH: [number, number][][] = [[], [], []]
+  const ivV: [number, number][][] = [[], [], []]
   const hLog: Bar[] = []
   const vLog: Bar[] = []
   const out: Bar[] = []
-  const blocks: Bar[] = []
   let placed = 0
 
-  const place = (horiz: boolean, lane: number, len: number, start: number): boolean => {
-    if (lane < 0 || lane >= LANES) return false
-    if ((horiz ? usedH : usedV).has(lane)) return false
-    let x: number, y: number, w: number, h: number
-    if (horiz) {
-      w = Math.min(len, W)
-      x = Math.max(0, Math.min(start, W - w))
-      y = hCenter(lane) - T / 2
-      h = T
-    } else {
-      h = Math.min(len, H)
-      y = Math.max(0, Math.min(start, H - h))
-      x = vCenter(lane) - T / 2
-      w = T
-    }
-    const rect: Bar = { x, y, w, h }
+  const free = (list: [number, number][], a: number, b: number): boolean =>
+    !list.some(([x, y]) => a < y && x < b)
+
+  const place = (horiz: boolean, lane: number, a: number, b: number): boolean => {
+    if (lane < 0 || lane > 2 || b <= a) return false
+    const ivs = horiz ? ivH[lane] : ivV[lane]
+    if (!free(ivs, a, b)) return false
+    const rect: Bar = horiz
+      ? { x: a, y: ROWY[lane], w: b - a, h: SH }
+      : { x: COLX[lane], y: a, w: SW, h: b - a }
     const segs = segmentRect(rect, horiz, horiz ? vLog : hLog)
     if (segs.length === 0) return false
-    ;(horiz ? usedH : usedV).add(lane)
+    ivs.push([a, b])
     ;(horiz ? hLog : vLog).push(rect)
     out.push(...segs)
     placed++
     return true
   }
 
-  /** Block accent at a free lane crossing; claims both lanes */
-  const addBlock = (vLane: number, hLane: number): boolean => {
-    if (usedV.has(vLane) || usedH.has(hLane)) return false
-    const b: Bar = { x: vCenter(vLane) - T / 2, y: hCenter(hLane) - T / 2, w: T, h: T }
-    for (const ex of blocks) if (overlaps(b, ex)) return false
-    blocks.push(b)
-    usedV.add(vLane)
-    usedH.add(hLane)
-    return true
+  /** Single-cell block at (col,row) — placed as a 1-cell horizontal stroke */
+  const cell = (col: number, row: number): boolean => {
+    if (col < 0 || col > 2 || row < 0 || row > 2) return false
+    const a = COLX[col]
+    const rect: Bar = { x: a, y: ROWY[row], w: SW, h: SH }
+    // a block must survive whole: skip if any vertical would cut it
+    for (const v of vLog) if (overlaps(rect, v)) return false
+    return place(true, row, a, a + SW)
   }
 
-  theme.seed({ place, addBlock, r })
+  theme.seed({ place, cell, r })
 
-  const target = Math.min(params.strokes, LANES * 2)
-  let guard = 80
+  const pickSpan = (spans: Span[], horiz: boolean): Span => {
+    const roll = r()
+    const tier: Tier =
+      roll < params.touching * 0.5
+        ? 'full'
+        : roll < params.touching
+          ? 'two'
+          : r() < 0.5
+            ? 'cell'
+            : 'half'
+    const pool = spans.filter((s) => s.tier === tier)
+    const lowSide = horiz ? 'left' : 'top'
+    const highSide = horiz ? 'right' : 'bottom'
+    if (params.dominantSide === lowSide && r() < 0.7)
+      return pool.reduce((m, s) => (s.a < m.a ? s : m))
+    if (params.dominantSide === highSide && r() < 0.7)
+      return pool.reduce((m, s) => (s.b > m.b ? s : m))
+    return pool[Math.floor(r() * pool.length)]
+  }
+
+  const target = Math.min(params.strokes, 12)
+  let guard = 90
   while (placed < target && guard-- > 0) {
     const horiz =
       theme.orient === 'h' ? r() < 0.8 : theme.orient === 'v' ? r() < 0.2 : r() < 0.5
     const lane = biasLane(r, params.dominantSide, horiz)
-    const full = r() < params.touching
-    const len = full ? (horiz ? W : H) : r() < 0.5 ? LEN_S : LEN_M
-    const start = full ? 0 : startOf(r, horiz, len, params.dominantSide)
-    place(horiz, lane, len, start)
+    const span = pickSpan(horiz ? H_SPANS : V_SPANS, horiz)
+    place(horiz, lane, span.a, span.b)
   }
 
-  // Block accents from cornerDetail
+  // Extra block accents from cornerDetail
   const tries = Math.round(params.cornerDetail * (1 + r() * 3))
   for (let i = 0; i < tries; i++) {
-    addBlock(Math.floor(r() * LANES), Math.floor(r() * LANES))
+    cell(Math.floor(r() * 3), Math.floor(r() * 3))
   }
 
-  return [...out, ...blocks]
+  return out
 }
 
 /** A row of editable candidates */

@@ -192,7 +192,7 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
           )}
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <Stepper label="Strokes" value={params.strokes} onChange={(v) => set({ strokes: v })} min={2} max={8} step={1} />
+          <Stepper label="Strokes" value={params.strokes} onChange={(v) => set({ strokes: v })} min={2} max={12} step={1} />
           <Stepper label="Cross" value={params.touching} display={`${Math.round(params.touching * 100)}%`} onChange={(v) => set({ touching: v })} min={0} max={1} step={0.25} />
           <Stepper label="Blocks" value={params.cornerDetail} display={`${Math.round(params.cornerDetail * 100)}%`} onChange={(v) => set({ cornerDetail: v })} min={0} max={1} step={0.25} />
           <button
