@@ -2441,6 +2441,13 @@
     "derivedFrom": ["feya"]
   },
   {
+    "id": "gdnsua",
+    "romanization": "GDNSUA",
+    "glosses": ["language", "tongue"],
+    "category": "base",
+    "derivedFrom": ["gdn", "sua"]
+  },
+  {
     "id": "vallah",
     "romanization": "VALLAH",
     "glosses": ["windy"],

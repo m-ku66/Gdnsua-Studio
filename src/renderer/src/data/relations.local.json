@@ -49,7 +49,24 @@
     "laad",
     "akht",
     "kan",
-    "lu"
+    "lu",
+    "zhefeld",
+    "kadenka",
+    "avah",
+    "muka",
+    "kuku",
+    "gdn",
+    "sua",
+    "mna",
+    "khres",
+    "rokhan",
+    "khez",
+    "rall",
+    "oh",
+    "mah",
+    "akies",
+    "knaza",
+    "taht"
   ],
   "words": {
     "amnava": {
@@ -80,6 +97,57 @@
     "vkskrel": {
       "syllabicOnly": false,
       "derivedFrom": []
+    },
+    "zi-man": {
+      "derivedFrom": [
+        "zizi",
+        "man"
+      ]
+    },
+    "nuti": {
+      "derivedFrom": [
+        "tiaus",
+        "zhefeld"
+      ]
+    },
+    "kuava": {
+      "derivedFrom": [
+        "kuku",
+        "avah"
+      ]
+    },
+    "nelav": {
+      "derivedFrom": [
+        "avni"
+      ]
+    },
+    "dendno": {
+      "derivedFrom": [
+        "den",
+        "uin"
+      ]
+    },
+    "khrdenlazganohkhre": {
+      "derivedFrom": [
+        "khrdenlazgan",
+        "khres"
+      ]
+    },
+    "penkhresrokhan": {
+      "derivedFrom": [
+        "khres",
+        "rokhan"
+      ]
+    },
+    "fukhre": {
+      "derivedFrom": [
+        "khres"
+      ]
+    },
+    "knash": {
+      "derivedFrom": [
+        "knaza"
+      ]
     }
   }
 }
