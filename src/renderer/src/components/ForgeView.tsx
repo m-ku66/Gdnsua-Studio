@@ -19,7 +19,7 @@ import {
 import { Diamond, SectionLabel } from './ui/primitives'
 import { Panel } from './ui/Panel'
 
-const U = 116
+const U = 58 // editor nudge step (half-grid for fine kiss alignment)
 const PILOT_ROOTS = ['taus', 'fuia', 'iia', 'val', 'uii', 'zkas', 'hez', 'eld', 'huld']
 const SIDES: Side[] = ['none', 'top', 'bottom', 'left', 'right']
 
@@ -192,9 +192,9 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
           )}
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <Stepper label="Strokes" value={params.strokes} onChange={(v) => set({ strokes: v })} min={3} max={16} step={1} />
-          <Stepper label="Touch" value={params.touching} display={`${Math.round(params.touching * 100)}%`} onChange={(v) => set({ touching: v })} min={0} max={1} step={0.25} />
-          <Stepper label="Corners" value={params.cornerDetail} display={`${Math.round(params.cornerDetail * 100)}%`} onChange={(v) => set({ cornerDetail: v })} min={0} max={1} step={0.25} />
+          <Stepper label="Strokes" value={params.strokes} onChange={(v) => set({ strokes: v })} min={2} max={8} step={1} />
+          <Stepper label="Cross" value={params.touching} display={`${Math.round(params.touching * 100)}%`} onChange={(v) => set({ touching: v })} min={0} max={1} step={0.25} />
+          <Stepper label="Blocks" value={params.cornerDetail} display={`${Math.round(params.cornerDetail * 100)}%`} onChange={(v) => set({ cornerDetail: v })} min={0} max={1} step={0.25} />
           <button
             className={btn}
             onClick={() => set({ dominantSide: SIDES[(SIDES.indexOf(params.dominantSide) + 1) % SIDES.length] })}
