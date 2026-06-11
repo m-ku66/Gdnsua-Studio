@@ -412,7 +412,7 @@
   { "id": "elzdet", "romanization": "ELZDET", "glosses": ["spice"], "category": "cooking" },
   { "id": "ermeldan", "romanization": "ERMELDAN", "glosses": ["seasoning"], "category": "cooking" },
   { "id": "lauten", "romanization": "LAUTEN", "glosses": ["living things"], "category": "cooking", "derivedFrom": ["laua"] },
-  { "id": "fuh-laden", "romanization": "FUH LADEN", "glosses": ["fish", "sea animals"], "category": "cooking", "notes": "Derives from FUHA (sea) — restore ref when misc category lands." },
+  { "id": "fuh-laden", "romanization": "FUH LADEN", "glosses": ["fish", "sea animals"], "category": "cooking", "derivedFrom": ["fuha"] },
   { "id": "kedran", "romanization": "KEDRAN", "glosses": ["beef"], "category": "cooking" },
   { "id": "khikir", "romanization": "KHIKIR", "glosses": ["chicken", "chicken meat"], "category": "cooking", "derivedFrom": ["khikar"], "notes": "Canon fix: source had CHIKIR; C replaced with KH per author ruling (June 2026)." },
   { "id": "taush-lauten", "romanization": "TAUSH LAUTEN", "glosses": ["misc livestock"], "category": "cooking", "derivedFrom": ["lauten"] },

@@ -330,7 +330,7 @@
   { "id": "zifa", "romanization": "ZIFA", "glosses": ["room", "small space"], "category": "base", "derivedFrom": ["zizi", "famn"] },
   { "id": "dan", "romanization": "DAN", "glosses": ["door"], "category": "base", "notes": "Alternate romanization: MON." },
   { "id": "moti", "romanization": "MOTI", "glosses": ["doorknob"], "category": "base" },
-  { "id": "vakuu", "romanization": "VAKUU", "glosses": ["maze", "dungeon", "labyrinth"], "category": "base", "derivedFrom": ["kuu"], "notes": "Also derives from VA (poly/many) — restore ref when misc category lands." },
+  { "id": "vakuu", "romanization": "VAKUU", "glosses": ["maze", "dungeon", "labyrinth"], "category": "base", "derivedFrom": ["va", "kuu"] },
   { "id": "lexia", "romanization": "LEXIA", "glosses": ["wisdom"], "category": "base" },
   { "id": "nuazhel", "romanization": "NUAZHEL", "glosses": ["explosion"], "category": "base" },
   { "id": "nuazhefeld", "romanization": "NUAZHEFELD", "glosses": ["cannon"], "category": "base", "derivedFrom": ["nuazhel", "zhefeld"] },
