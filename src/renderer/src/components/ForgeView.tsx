@@ -425,13 +425,18 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
             </div>
           </div>
           {!editing && (
-            <div className="flex gap-2">
-              <button className={btn} onClick={startEdit}>
-                Edit
-              </button>
-              <button className={btn} onClick={uncarve}>
-                Uncarve
-              </button>
+            <div className="flex flex-col items-end gap-1.5">
+              <div className="flex gap-2">
+                <button className={btn} onClick={startEdit} title="Reopen the carved bars in the editor">
+                  Edit
+                </button>
+                <button className={btn} onClick={uncarve} title="Delete this glyph and reopen the configurator">
+                  Uncarve
+                </button>
+              </div>
+              <span className="text-dim text-[8px] tracking-[0.1em] uppercase">
+                In use by every derived spelling
+              </span>
             </div>
           )}
         </div>
@@ -503,6 +508,15 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
               </button>
             ))}
           </div>
+          <div className="text-dim mt-2 text-[9px] leading-relaxed">
+            Four drafts per roll — click one to fine-tune, then carve.{' '}
+            <span className="text-ink/70">Strokes</span> sets how many strokes the generator aims
+            for · <span className="text-ink/70">Cross</span> is how often strokes cross each other
+            · <span className="text-ink/70">Blocks</span> adds single-cell accents ·{' '}
+            <span className="text-ink/70">Side</span> biases strokes toward one edge ·{' '}
+            <span className="text-ink/70">Reroll</span> draws four fresh drafts. Drafts matching a
+            letter reroll themselves automatically.
+          </div>
           {editing && (
             <DraftEditor bars={editing} onChange={setEditing} onCarve={carveDraft} onCancel={() => { setEditing(null); setWarn(null) }} />
           )}
@@ -533,15 +547,26 @@ export function ForgeView(): React.JSX.Element {
           <Diamond className="text-seal text-[9px]" />
           <span className="font-display text-2xl font-semibold tracking-wide">The Forge</span>
         </div>
-        <p className="text-dim mt-1.5 max-w-xl text-[11px] leading-relaxed">
-          Parametric logograph drafts on the base-glyph lattice — or compose your own strokes by
-          hand. Either way, shapes that match an existing letter are blacklisted: generated drafts
-          reroll themselves, and the carve button refuses look-alikes. Carved glyphs save to the
-          drop zone and propagate to every derived compound.
+        <p className="text-dim mt-1.5 max-w-2xl text-[11px] leading-relaxed">
+          The logograph workshop, in three acts. <span className="text-ink">Campaign I</span>{' '}
+          holds the fixed elemental roots. <span className="text-ink">Campaign II</span> lets you
+          promote any dictionary word into a new root. <span className="text-ink">The Loom</span>{' '}
+          shows every word whose spelling now embeds a root logograph, and lets you edit the
+          relationships that drive those spellings. Carved glyphs save to the drop zone, persist
+          across restarts, and re-spell every derived word instantly. One law rules all of it:
+          no logograph may resemble an existing letter — generated drafts reroll themselves, and
+          the carve button refuses look-alikes.
         </p>
       </div>
       <div>
         <SectionLabel>Campaign I — The Elements</SectionLabel>
+        <p className="text-dim mb-2 max-w-2xl text-[10px] leading-relaxed">
+          The eleven core concepts: earth, water, fire, wind, ice, lightning, sky, flora, fauna,
+          dark, light. Each panel has two tabs — <span className="text-ink">Forge</span> rolls
+          parametric drafts seeded by the root&apos;s elemental theme;{' '}
+          <span className="text-ink">Compose</span> is freehand placement on the same lattice.
+          Once carved, the panel collapses to a compact card with Edit / Uncarve.
+        </p>
         <div className="flex flex-col gap-3">
           {PILOT_ROOTS.map((id) => (
             <RootForge key={id} rootId={id} />
@@ -550,6 +575,13 @@ export function ForgeView(): React.JSX.Element {
       </div>
       <div>
         <SectionLabel>Campaign II — Chosen Roots</SectionLabel>
+        <p className="text-dim mb-2 max-w-2xl text-[10px] leading-relaxed">
+          Promote any word into a root: it gains a configurator here, joins the spelling system,
+          and every word that derives from it (and contains its letters) re-spells with its
+          logograph. Promotions persist to <span className="text-ink">relations.local.json</span>{' '}
+          and can be demoted anytime — demoting only retires the root from spellings, it deletes
+          nothing.
+        </p>
         <div className="flex flex-col gap-3">
           <RootPromoter />
           {promoted.map((id) => (
@@ -562,6 +594,14 @@ export function ForgeView(): React.JSX.Element {
       </div>
       <div>
         <SectionLabel>The Loom — relationships &amp; spellings</SectionLabel>
+        <p className="text-dim mb-2 max-w-2xl text-[10px] leading-relaxed">
+          The audit table for mixed-script spelling. A word appears here when its derivation
+          chain reaches an active root <span className="text-ink">and</span> that root&apos;s
+          letters appear contiguously in the word — then the root portion is written with the
+          logograph, kanji-style. Wrongly logographed? Hit{' '}
+          <span className="text-ink">Letters only</span> to force syllabic spelling, or open{' '}
+          <span className="text-ink">Relations</span> and fix the links themselves.
+        </p>
         <MixedScriptRegistry />
       </div>
     </div>

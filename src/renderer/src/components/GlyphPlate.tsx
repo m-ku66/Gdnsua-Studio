@@ -201,6 +201,12 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
             ? `logograph (${logo.source}) · spelled with ${letterCount} letters`
             : `${letterCount} letters${spell.some((t) => t.type === 'letter' && !getLetterGlyph(t.id)) ? ' — some glyphs uncarved' : ''}`}
       </div>
+      {logoCount > 0 && (
+        <div className="text-dim mt-1 text-center text-[8px] leading-relaxed tracking-[0.08em]">
+          Heavy-framed cell = root logograph standing in for those letters (hover it for the
+          root). A red dashed cell means the root exists but its glyph isn&apos;t carved yet.
+        </div>
+      )}
     </Panel>
   )
 }

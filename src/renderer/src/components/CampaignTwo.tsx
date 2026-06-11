@@ -123,8 +123,11 @@ export function RootPromoter(): React.JSX.Element {
       </div>
       {warn && <div className="text-seal mt-2 text-[9px] tracking-[0.08em] uppercase">⚠ {warn}</div>}
       <div className="text-dim mt-2 text-[9px] leading-relaxed">
-        ×N = words that would immediately spell with this logograph. Promoted roots get a full
-        configurator below and join the spelling system everywhere.
+        The pool ranks unpromoted words by <span className="text-ink/70">×N</span> — how many
+        words would immediately spell with that logograph (they derive from it and contain its
+        letters). The pool grows as you link relationships in the registry below. The search box
+        promotes <span className="text-ink/70">any</span> word, even with zero derived spellings —
+        link its family afterward. Hover a candidate for its meaning.
       </div>
     </Panel>
   )
@@ -200,6 +203,11 @@ export function MixedScriptRegistry(): React.JSX.Element {
   return (
     <Panel className="px-5 py-4">
       <SectionLabel>Mixed-script registry — {rows.length} words</SectionLabel>
+      <div className="text-dim mt-1 text-[9px] leading-relaxed">
+        Columns: word · its mixed spelling (<span className="text-seal">⟨ROOT⟩ = logograph</span>,
+        plain caps = letters; <span className="line-through">struck through</span> = you forced
+        letters-only, shown so you can undo it) · meaning · controls.
+      </div>
       <div className="mt-2 flex max-h-96 flex-col gap-1 overflow-y-auto pr-1">
         {rows.map(({ word, tokens }) => (
           <div key={word.id} className="border-rule border-b pb-1 last:border-b-0">
@@ -213,10 +221,18 @@ export function MixedScriptRegistry(): React.JSX.Element {
               <span className="text-dim min-w-0 flex-1 truncate text-[10px]">
                 {word.glosses.join(', ')}
               </span>
-              <button className={btn} onClick={() => setSyllabicOnly(word.id, !word.syllabicOnly)}>
+              <button
+                className={btn}
+                onClick={() => setSyllabicOnly(word.id, !word.syllabicOnly)}
+                title={word.syllabicOnly ? 'Restore the logograph spelling' : 'Force this word to spell with letters only'}
+              >
                 {word.syllabicOnly ? 'Use logograph' : 'Letters only'}
               </button>
-              <button className={btn} onClick={() => setOpen(open === word.id ? null : word.id)}>
+              <button
+                className={btn}
+                onClick={() => setOpen(open === word.id ? null : word.id)}
+                title="Edit this word's derivedFrom / relatedTo links"
+              >
                 {open === word.id ? 'Close' : 'Relations'}
               </button>
             </div>
@@ -234,6 +250,14 @@ export function MixedScriptRegistry(): React.JSX.Element {
                   onAdd={(t) => addRelated(word.id, t)}
                   onRemove={(t) => removeRelated(word.id, t)}
                 />
+                <div className="text-dim text-[9px] leading-relaxed">
+                  <span className="text-ink/70">Derived from</span> = etymology; it drives
+                  logograph spelling and the dictionary&apos;s etymology chain.{' '}
+                  <span className="text-ink/70">Related to</span> = kindred meaning (synonyms,
+                  dialect twins); links are kept symmetric on both words and feed the promotion
+                  pool. Type a romanization or id and Enter / + Link; a red box means no such
+                  word. Edits apply live and persist to relations.local.json.
+                </div>
               </div>
             )}
           </div>
