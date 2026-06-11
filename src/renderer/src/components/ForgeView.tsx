@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { wordById } from '../data'
 import {
   barsToSvg,
+  CAMPAIGN_ROOTS,
   COLX,
   defaultParams,
   generateDrafts,
@@ -35,7 +36,7 @@ import { Diamond, SectionLabel } from './ui/primitives'
 import { Panel } from './ui/Panel'
 
 const U = 58 // editor nudge step (half-grid for fine kiss alignment)
-const PILOT_ROOTS = ['taus', 'fuia', 'iia', 'val', 'uii', 'zkas', 'hez', 'amn', 'kharne', 'eld', 'huld']
+const PILOT_ROOTS = CAMPAIGN_ROOTS
 const SIDES: Side[] = ['none', 'top', 'bottom', 'left', 'right']
 const TIERS: { id: Tier; label: string }[] = [
   { id: 'cell', label: 'Cell' },

@@ -314,11 +314,14 @@ export const ROOT_THEMES: Record<string, keyof typeof THEMES> = {
   uii: 'ice',
   zkas: 'lightning',
   hez: 'sky',
-  eld: 'dark',
-  huld: 'light',
   amn: 'flora',
-  kharne: 'fauna'
+  kharne: 'fauna',
+  eld: 'dark',
+  huld: 'light'
 }
+
+/** Campaign roots in display order — single source of truth */
+export const CAMPAIGN_ROOTS = Object.keys(ROOT_THEMES)
 
 export function defaultParams(rootId: string): GenParams {
   return { ...THEMES[ROOT_THEMES[rootId] ?? 'abstract'].params }

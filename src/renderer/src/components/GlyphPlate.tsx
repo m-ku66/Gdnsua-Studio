@@ -2,11 +2,11 @@
 // Two anatomies:
 //   words     → letter cells in sequence
 //   modifiers → a mark attached to a grey host glyph (cf. dakuten)
-import { letterById } from '../data'
+import { letterById, wordById } from '../data'
 import { isModifier, type MarkPosition, type Word } from '../data/types'
 import { getLetterGlyph, getModifierInfo } from '../lib/glyphRegistry'
 import { resolveLogograph, useGlyphStore } from '../lib/logographSource'
-import { tokenizeRomanization } from '../lib/tokenize'
+import { spellWord } from '../lib/spelling'
 import { Panel } from './ui/Panel'
 
 const markCell =
@@ -97,9 +97,11 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useGlyphStore((s) => s.version) // re-render when Forge approves a glyph
   const logo = resolveLogograph(word.id)
-  const { tokens } = tokenizeRomanization(word.romanization, {
+  const spell = spellWord(word, {
     trueW: word.regions?.includes('Kharmat') || word.regions?.includes('Haadfahuta')
   })
+  const letterCount = spell.filter((t) => t.type === 'letter').length
+  const logoCount = spell.length - letterCount
 
   return (
     <Panel corners className="px-6 py-7">
@@ -116,7 +118,40 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
       <div
         className={`flex flex-wrap items-center justify-center ${logo ? 'gap-1 opacity-80' : 'gap-2'}`}
       >
-        {tokens.map((id, i) => {
+        {spell.map((tok, i) => {
+          if (tok.type === 'logo') {
+            const rootWord = wordById.get(tok.rootId)
+            const rootLogo = resolveLogograph(tok.rootId)
+            const title = rootWord
+              ? `⟨${rootWord.romanization}⟩ logograph — ${rootWord.glosses.join(', ')}`
+              : tok.rootRomanization
+            return (
+              <div
+                key={`logo-${tok.rootId}-${i}`}
+                title={title}
+                className={`flex h-14 w-14 items-center justify-center border-2
+                  ${rootLogo ? 'border-ink' : 'border-seal/70 border-dashed'}`}
+              >
+                {rootLogo ? (
+                  <div
+                    className="text-ink h-10 w-10 [&_svg]:h-full [&_svg]:w-full"
+                    dangerouslySetInnerHTML={{ __html: rootLogo.svg }}
+                  />
+                ) : (
+                  <div className="relative flex h-10 w-10 items-center justify-center">
+                    <svg viewBox="0 0 40 40" className="text-seal/50 absolute inset-0 h-full w-full">
+                      <rect x="1" y="1" width="38" height="38" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                      <line x1="3" y1="37" x2="37" y2="3" stroke="currentColor" strokeWidth="1.5" />
+                    </svg>
+                    <span className="text-seal bg-vellum relative px-0.5 text-[8px] font-medium">
+                      {tok.rootRomanization}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )
+          }
+          const id = tok.id
           const letter = letterById.get(id)
           const svg = getLetterGlyph(id)
           return (
@@ -151,9 +186,17 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
         {word.romanization}
       </div>
       <div className="text-dim mt-2 text-center text-[9px] tracking-[0.2em] uppercase">
-        {logo
-          ? `logograph (${logo.source}) · spelled with ${tokens.length} letters`
-          : `${tokens.length} letters${tokens.some((id) => !getLetterGlyph(id)) ? ' — some glyphs uncarved' : ''}`}
+        {logoCount > 0
+          ? `spelled as ${spell
+              .map((t) =>
+                t.type === 'logo'
+                  ? `⟨${t.rootRomanization}⟩`
+                  : (letterById.get(t.id)?.romanization ?? t.id.toUpperCase())
+              )
+              .join(' ')}`
+          : logo
+            ? `logograph (${logo.source}) · spelled with ${letterCount} letters`
+            : `${letterCount} letters${spell.some((t) => t.type === 'letter' && !getLetterGlyph(t.id)) ? ' — some glyphs uncarved' : ''}`}
       </div>
     </Panel>
   )
