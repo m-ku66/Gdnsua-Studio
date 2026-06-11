@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────
 // Glyph registry — auto-loads SVGs dropped into
-// src/renderer/src/glyphs/{letters,modifiers,logographs}
+// src/renderer/src/glyphs/{letters,modifiers,logographs,numbers}
 // Files are keyed by filename: "mn.svg" → letter id "mn"
 // ─────────────────────────────────────────────
 import { letters } from '../data'
@@ -18,6 +18,12 @@ const modifierFiles = import.meta.glob('../glyphs/modifiers/*.svg', {
 }) as Record<string, string>
 
 const logographFiles = import.meta.glob('../glyphs/logographs/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true
+}) as Record<string, string>
+
+const numberFiles = import.meta.glob('../glyphs/numbers/*.svg', {
   query: '?raw',
   import: 'default',
   eager: true
@@ -58,17 +64,27 @@ const MODIFIER_ALIASES: Record<string, string> = {
 export const modifierGlyphs = buildMap(modifierFiles, (n) => MODIFIER_ALIASES[n] ?? n)
 export const logographGlyphs = buildMap(logographFiles)
 
+// Number files use natural names; two collide with other word ids
+const NUMBER_ALIASES: Record<string, string> = {
+  eh: 'eh-num',
+  ha: 'ha-144'
+}
+export const numberGlyphs = buildMap(numberFiles, (n) => NUMBER_ALIASES[n] ?? n)
+
 export const getLetterGlyph = (id: string): string | null => letterGlyphs.get(id) ?? null
 
 export const getModifierGlyph = (id: string): string | null => modifierGlyphs.get(id) ?? null
 
 export const getLogographGlyph = (id: string): string | null => logographGlyphs.get(id) ?? null
 
+export const getNumberGlyph = (id: string): string | null => numberGlyphs.get(id) ?? null
+
 /** Carving progress, e.g. for the footer or plate captions */
 export const glyphCounts = {
   letters: letterGlyphs.size,
   modifiers: modifierGlyphs.size,
-  logographs: logographGlyphs.size
+  logographs: logographGlyphs.size,
+  numbers: numberGlyphs.size
 }
 
 // ── Modifier SVG analysis ─────────────────────

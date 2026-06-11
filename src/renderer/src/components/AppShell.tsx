@@ -64,7 +64,9 @@ export function AppShell({ children }: { children: ReactNode }): React.JSX.Eleme
       <footer className="border-rule text-dim relative z-10 flex items-center justify-between border-t px-5 py-2 text-[9px] tracking-[0.16em] uppercase">
         <span>
           {words.length} records <span className="px-1">{'//'}</span> {glyphCounts.letters}/
-          {letters.length} letters carved <span className="px-1">{'//'}</span> archive stable
+          {letters.length} letters carved <span className="px-1">{'//'}</span>{' '}
+          {glyphCounts.logographs} logographs <span className="px-1">{'//'}</span>{' '}
+          {glyphCounts.numbers}/20 numerals <span className="px-1">{'//'}</span> archive stable
         </span>
         <span>v0.1.0</span>
       </footer>

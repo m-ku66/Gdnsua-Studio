@@ -4,7 +4,7 @@
 //   modifiers → a mark attached to a grey host glyph (cf. dakuten)
 import { letterById, wordById } from '../data'
 import { isModifier, type MarkPosition, type Word } from '../data/types'
-import { getLetterGlyph, getModifierInfo } from '../lib/glyphRegistry'
+import { getLetterGlyph, getModifierInfo, getNumberGlyph } from '../lib/glyphRegistry'
 import { resolveLogograph, useGlyphStore } from '../lib/logographSource'
 import { useRelationsStore } from '../lib/relations'
 import { spellWord } from '../lib/spelling'
@@ -94,12 +94,14 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
     )
   }
 
-  // ── Standard word: logograph hero when available, else letters ──
+  // ── Standard word: number/logograph hero when available, else letters ──
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useGlyphStore((s) => s.version) // re-render when Forge approves a glyph
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useRelationsStore((s) => s.version) // re-render when relationships change
-  const logo = resolveLogograph(word.id)
+  const numeral = word.category === 'number' ? getNumberGlyph(word.id) : null
+  const logo = numeral ? null : resolveLogograph(word.id)
+  const hero = numeral ?? logo?.svg ?? null
   const spell = spellWord(word, {
     trueW: word.regions?.includes('Kharmat') || word.regions?.includes('Haadfahuta')
   })
@@ -108,18 +110,18 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
 
   return (
     <Panel corners className="px-6 py-7">
-      {logo && (
+      {hero && (
         <div className="mb-5 flex justify-center">
           <div className="border-ink/40 flex h-36 w-36 items-center justify-center border p-3">
             <div
               className="text-ink h-full w-full [&_svg]:h-full [&_svg]:w-full"
-              dangerouslySetInnerHTML={{ __html: logo.svg }}
+              dangerouslySetInnerHTML={{ __html: hero }}
             />
           </div>
         </div>
       )}
       <div
-        className={`flex flex-wrap items-center justify-center ${logo ? 'gap-1 opacity-80' : 'gap-2'}`}
+        className={`flex flex-wrap items-center justify-center ${hero ? 'gap-1 opacity-80' : 'gap-2'}`}
       >
         {spell.map((tok, i) => {
           if (tok.type === 'logo') {
@@ -197,9 +199,11 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
                   : (letterById.get(t.id)?.romanization ?? t.id.toUpperCase())
               )
               .join(' ')}`
-          : logo
-            ? `logograph (${logo.source}) · spelled with ${letterCount} letters`
-            : `${letterCount} letters${spell.some((t) => t.type === 'letter' && !getLetterGlyph(t.id)) ? ' — some glyphs uncarved' : ''}`}
+          : numeral
+            ? `base-12 numeral · spelled with ${letterCount} letters`
+            : logo
+              ? `logograph (${logo.source}) · spelled with ${letterCount} letters`
+              : `${letterCount} letters${spell.some((t) => t.type === 'letter' && !getLetterGlyph(t.id)) ? ' — some glyphs uncarved' : ''}`}
       </div>
       {logoCount > 0 && (
         <div className="text-dim mt-1 text-center text-[8px] leading-relaxed tracking-[0.08em]">
