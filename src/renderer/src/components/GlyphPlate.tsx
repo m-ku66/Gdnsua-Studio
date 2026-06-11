@@ -129,7 +129,7 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
             const rootWord = wordById.get(tok.rootId)
             const rootLogo = resolveLogograph(tok.rootId)
             const title = rootWord
-              ? `⟨${rootWord.romanization}⟩ logograph — ${rootWord.glosses.join(', ')}`
+              ? `⟨${rootWord.romanization}⟩ logograph — ${rootWord.glosses.join(', ')}${tok.clipped ? ' (clipped reading: stands in for part of its letters)' : ''}`
               : tok.rootRomanization
             return (
               <div

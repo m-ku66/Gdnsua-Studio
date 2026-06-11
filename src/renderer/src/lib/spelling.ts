@@ -21,7 +21,7 @@ export const activeRoots = (): string[] => [
 
 export type SpellToken =
   | { type: 'letter'; id: string }
-  | { type: 'logo'; rootId: string; rootRomanization: string }
+  | { type: 'logo'; rootId: string; rootRomanization: string; clipped?: boolean }
 
 /** Does this word's derivation chain reach rootId? (transitive, depth-limited) */
 export function derivesFrom(wordId: string, rootId: string, depth = 0): boolean {
@@ -36,12 +36,17 @@ interface RootMatch {
   end: number
   rootId: string
   rom: string
+  clipped: boolean
 }
 
 /**
  * Spell a word as mixed script: logograph tokens for embedded roots
  * the word actually derives from, letter tokens for everything else.
  * Longest roots claim their span first; occurrences never overlap.
+ * Clipped readings (irregular kanji-style): when a derived root's
+ * full romanization is absent from the word, its logograph may stand
+ * in for the longest present PREFIX of the root (≥ 2 letters) — so
+ * ZIAVA ← zizi spells ⟨ZIZI⟩ over the letters "ZI".
  */
 export function spellWord(word: Word, opts: TokenizeOptions = {}): SpellToken[] {
   const rom = word.romanization.toUpperCase()
@@ -54,16 +59,37 @@ export function spellWord(word: Word, opts: TokenizeOptions = {}): SpellToken[] 
         .sort((a, b) => b.rom.length - a.rom.length)
 
   const matches: RootMatch[] = []
+  const overlaps = (a: number, b: number): boolean =>
+    matches.some((m) => a < m.end && m.start < b)
+
   for (const root of roots) {
-    let from = 0
-    for (;;) {
-      const i = rom.indexOf(root.rom, from)
-      if (i === -1) break
-      const end = i + root.rom.length
-      if (!matches.some((m) => i < m.end && m.start < end)) {
-        matches.push({ start: i, end, rootId: root.id, rom: root.rom })
+    if (rom.includes(root.rom)) {
+      // full reading: claim every non-overlapping occurrence
+      let from = 0
+      for (;;) {
+        const i = rom.indexOf(root.rom, from)
+        if (i === -1) break
+        const end = i + root.rom.length
+        if (!overlaps(i, end)) {
+          matches.push({ start: i, end, rootId: root.id, rom: root.rom, clipped: false })
+        }
+        from = i + 1
       }
-      from = i + 1
+    } else {
+      // clipped reading: longest present prefix of the root, first fit
+      outer: for (let len = root.rom.length - 1; len >= 2; len--) {
+        const prefix = root.rom.slice(0, len)
+        let from = 0
+        for (;;) {
+          const i = rom.indexOf(prefix, from)
+          if (i === -1) break
+          if (!overlaps(i, i + len)) {
+            matches.push({ start: i, end: i + len, rootId: root.id, rom: root.rom, clipped: true })
+            break outer
+          }
+          from = i + 1
+        }
+      }
     }
   }
   matches.sort((a, b) => a.start - b.start)
@@ -76,7 +102,7 @@ export function spellWord(word: Word, opts: TokenizeOptions = {}): SpellToken[] 
   }
   for (const m of matches) {
     pushLetters(rom.slice(cursor, m.start))
-    out.push({ type: 'logo', rootId: m.rootId, rootRomanization: m.rom })
+    out.push({ type: 'logo', rootId: m.rootId, rootRomanization: m.rom, clipped: m.clipped })
     cursor = m.end
   }
   pushLetters(rom.slice(cursor))

@@ -25,6 +25,52 @@ const PLACE_IDS = ['', 'uze', 'ha-144', 'han', 'hanil', 'hazfil', 'hz']
 const placeName = (p: number): string =>
   wordById.get(PLACE_IDS[p])?.romanization ?? PLACE_IDS[p].toUpperCase()
 
+/** One unit of the spoken/written reading, mapped to a glyph source */
+export interface ReadingToken {
+  /** word id for numeral glyph lookup, 'an' for the negation mark, or null */
+  id: string | null
+  label: string
+  isModifierMark?: boolean
+}
+
+/**
+ * Reading as glyph-renderable tokens (same rules as dozenalReading).
+ * "DIGIT ZE" composed dozens reuse the UZE glyph for the ZE part.
+ */
+export function dozenalReadingTokens(n: number): ReadingToken[] | null {
+  if (!Number.isInteger(n) || Math.abs(n) >= 12 ** 7) return null
+  const out: ReadingToken[] = []
+  if (n < 0) out.push({ id: 'an', label: 'AN', isModifierMark: true })
+  if (n === 0) {
+    out.push({ id: DIGIT_WORD_IDS[0], label: digitName(0) })
+    return out
+  }
+  let abs = Math.abs(n)
+  const digits: number[] = []
+  while (abs > 0) {
+    digits.push(abs % 12)
+    abs = Math.floor(abs / 12)
+  }
+  for (let p = digits.length - 1; p >= 0; p--) {
+    const d = digits[p]
+    if (d === 0) continue
+    if (p === 0) out.push({ id: DIGIT_WORD_IDS[d], label: digitName(d) })
+    else if (p === 1) {
+      if (d === 1) out.push({ id: 'uze', label: placeName(1) })
+      else if (d === 2) out.push({ id: 'ize', label: wordById.get('ize')?.romanization ?? 'IZE' })
+      else if (d === 3) out.push({ id: 'lize', label: wordById.get('lize')?.romanization ?? 'LIZE' })
+      else {
+        out.push({ id: DIGIT_WORD_IDS[d], label: digitName(d) })
+        out.push({ id: 'uze', label: 'ZE' })
+      }
+    } else {
+      if (d !== 1) out.push({ id: DIGIT_WORD_IDS[d], label: digitName(d) })
+      out.push({ id: PLACE_IDS[p], label: placeName(p) })
+    }
+  }
+  return out
+}
+
 // ── Expression evaluation ──
 /** Evaluate +−×÷() over literals in the given base. Throws on bad input. */
 export function evaluate(expr: string, base: 10 | 12): number {

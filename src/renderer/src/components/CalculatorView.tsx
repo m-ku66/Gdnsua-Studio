@@ -6,10 +6,13 @@ import { wordById } from '../data'
 import {
   DIGIT_WORD_IDS,
   dozenalReading,
+  dozenalReadingTokens,
   dozenalTokens,
   evaluate,
-  toDozenal
+  toDozenal,
+  type ReadingToken
 } from '../lib/dozenal'
+import { getModifierGlyph } from '../lib/glyphRegistry'
 import { useGlyphStore } from '../lib/logographSource'
 import { resolveNumberGlyph } from '../lib/numberSource'
 import { Diamond, SectionLabel } from './ui/primitives'
@@ -81,6 +84,34 @@ function DigitKey({
   )
 }
 
+/** One token of the named form: numeral glyph (or AN mark), labeled */
+function ReadingCell({ token }: { token: ReadingToken }): React.JSX.Element {
+  const svg = token.id
+    ? token.isModifierMark
+      ? getModifierGlyph(token.id)
+      : resolveNumberGlyph(token.id)
+    : null
+  return (
+    <div className="flex flex-col items-center gap-0.5" title={token.label}>
+      <div
+        className={`flex h-12 w-12 items-center justify-center border ${svg ? 'border-ink/40' : 'border-seal/70 border-dashed'}`}
+      >
+        {svg ? (
+          <div
+            className="text-ink h-9 w-9 [&_svg]:h-full [&_svg]:w-full"
+            dangerouslySetInnerHTML={{ __html: svg }}
+          />
+        ) : (
+          <span className="text-seal px-0.5 text-center text-[8px] leading-tight">
+            {token.label}
+          </span>
+        )}
+      </div>
+      <span className="text-dim text-[7px] tracking-[0.08em] uppercase">{token.label}</span>
+    </div>
+  )
+}
+
 export function CalculatorView(): React.JSX.Element {
   useGlyphStore((s) => s.version) // re-render when numerals are carved in the Foundry
   const [expr, setExpr] = useState('')
@@ -98,6 +129,7 @@ export function CalculatorView(): React.JSX.Element {
   const value = result?.value ?? null
   const dozenal = value !== null ? toDozenal(value) : null
   const reading = value !== null ? dozenalReading(value) : null
+  const readingTokens = value !== null ? dozenalReadingTokens(value) : null
   const press = (s: string): void => setExpr((e) => e + s)
   const equals = (): void => {
     if (value === null) return
@@ -168,7 +200,8 @@ export function CalculatorView(): React.JSX.Element {
             </div>
           ) : (
             <>
-              <div className="mt-3 flex flex-wrap items-center gap-1">
+              <div className="text-dim mt-2 text-[8px] tracking-[0.14em] uppercase">Positional</div>
+              <div className="mt-1 flex flex-wrap items-center gap-1">
                 {dozenalTokens(dozenal!.text).map((d, i) => (
                   <NumeralCell key={i} digit={d} />
                 ))}
@@ -176,6 +209,18 @@ export function CalculatorView(): React.JSX.Element {
                   <span className="text-dim self-end pb-1 text-[12px]">…</span>
                 )}
               </div>
+              {readingTokens && (
+                <>
+                  <div className="text-dim mt-3 text-[8px] tracking-[0.14em] uppercase">
+                    Named form
+                  </div>
+                  <div className="mt-1 flex flex-wrap items-start gap-1">
+                    {readingTokens.map((t, i) => (
+                      <ReadingCell key={i} token={t} />
+                    ))}
+                  </div>
+                </>
+              )}
               <div className="border-rule bg-vellum/60 mt-3 border px-3 py-2 text-[11px]">
                 <div className="flex items-baseline gap-3 py-0.5">
                   <span className="text-dim w-16 shrink-0 text-[8px] tracking-[0.14em] uppercase">Dozenal</span>
