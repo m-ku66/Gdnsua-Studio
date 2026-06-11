@@ -8,6 +8,8 @@
 // Multiple strokes may share a lane if their intervals
 // don't overlap. Crossings are segmented to kisses.
 // ─────────────────────────────────────────────
+import { letterMatch } from './glyphBlacklist'
+
 export interface Bar {
   x: number
   y: number
@@ -23,19 +25,27 @@ export interface GenParams {
 }
 
 // Canvas matches glyph_base (note: transposed vs letters)
-const W = 1160
-const H = 1164
-const SW = 264 // vertical stroke width
-const SH = 253 // horizontal stroke height
-const COLX = [0, 448, 896] // column lane lefts
-const ROWY = [0, 456, 911] // row lane tops
+export const W = 1160
+export const H = 1164
+export const SW = 264 // vertical stroke width
+export const SH = 253 // horizontal stroke height
+export const COLX = [0, 448, 896] // column lane lefts
+export const ROWY = [0, 456, 911] // row lane tops
 const MIN_SEG = 100
 
-type Tier = 'cell' | 'half' | 'two' | 'full'
-interface Span {
+export type Tier = 'cell' | 'half' | 'two' | 'full'
+export interface Span {
   a: number
   b: number
   tier: Tier
+}
+
+/** A logical stroke: orientation + lane + interval along the lane axis */
+export interface Placement {
+  horiz: boolean
+  lane: number
+  a: number
+  b: number
 }
 
 /** All legal spans along one axis, per the base glyph */
@@ -51,6 +61,14 @@ function buildSpans(starts: number[], size: number): Span[] {
 }
 const H_SPANS = buildSpans(COLX, SW) // x-spans for horizontal strokes
 const V_SPANS = buildSpans(ROWY, SH) // y-spans for vertical strokes
+
+/** Legal spans for one orientation (for the Compose editor) */
+export const spansFor = (horiz: boolean): Span[] => (horiz ? H_SPANS : V_SPANS)
+
+/** True if [a,b] is unoccupied in this lane among same-orientation placements */
+export function laneFree(placements: Placement[], horiz: boolean, lane: number, a: number, b: number): boolean {
+  return !placements.some((p) => p.horiz === horiz && p.lane === lane && a < p.b && p.a < b)
+}
 
 /** Deterministic RNG (mulberry32) — same seed, same drafts */
 function rng(seed: number): () => number {
@@ -127,6 +145,35 @@ function segmentRect(rect: Bar, horiz: boolean, perp: Bar[]): Bar[] {
     horiz ? { x: a, y: rect.y, w: b - a, h: rect.h } : { x: rect.x, y: a, w: rect.w, h: b - a }
   )
 }
+/** A rendered segment tagged with the placement it came from (Compose selection) */
+export interface TaggedSegment {
+  bar: Bar
+  idx: number
+}
+
+/**
+ * Realize logical placements as kiss-segmented bars, in order:
+ * each stroke is cut where it crosses earlier perpendicular strokes,
+ * exactly like the generator. Returns segments tagged by placement index.
+ */
+export function placementsToSegments(placements: Placement[]): TaggedSegment[] {
+  const hRects: Bar[] = []
+  const vRects: Bar[] = []
+  const out: TaggedSegment[] = []
+  placements.forEach((p, idx) => {
+    const rect: Bar = p.horiz
+      ? { x: p.a, y: ROWY[p.lane], w: p.b - p.a, h: SH }
+      : { x: COLX[p.lane], y: p.a, w: SW, h: p.b - p.a }
+    const segs = segmentRect(rect, p.horiz, p.horiz ? vRects : hRects)
+    ;(p.horiz ? hRects : vRects).push(rect)
+    for (const bar of segs) out.push({ bar, idx })
+  })
+  return out
+}
+
+export const placementsToBars = (placements: Placement[]): Bar[] =>
+  placementsToSegments(placements).map((s) => s.bar)
+
 /** Lane choice (0–2) biased toward the dominant side */
 function biasLane(r: () => number, side: Side, horiz: boolean): number {
   let v = r()
@@ -233,6 +280,25 @@ const THEMES: Record<string, Theme> = {
       place(true, 1, 896, 1160)
     }
   },
+  flora: {
+    orient: 'v',
+    params: p({ dominantSide: 'top', touching: 0.3, cornerDetail: 0.25 }),
+    seed: ({ place }) => {
+      place(false, 1, 456, 1164) // stem rising from the ground
+      place(true, 0, 0, 448) // left leaf
+      place(true, 1, 712, 1160) // right leaf
+    }
+  },
+  fauna: {
+    orient: 'mixed',
+    params: p({ strokes: 7, dominantSide: 'bottom', touching: 0.5 }),
+    seed: ({ place, cell }) => {
+      place(true, 1, 0, 1160) // body
+      place(false, 0, 911, 1164) // foreleg
+      place(false, 2, 911, 1164) // hindleg
+      cell(2, 0) // head
+    }
+  },
   abstract: {
     orient: 'mixed',
     params: p({ touching: 0.6 }),
@@ -249,14 +315,22 @@ export const ROOT_THEMES: Record<string, keyof typeof THEMES> = {
   zkas: 'lightning',
   hez: 'sky',
   eld: 'dark',
-  huld: 'light'
+  huld: 'light',
+  amn: 'flora',
+  kharne: 'fauna'
 }
 
 export function defaultParams(rootId: string): GenParams {
   return { ...THEMES[ROOT_THEMES[rootId] ?? 'abstract'].params }
 }
+/** A generated draft: rendered bars + the logical placements behind them */
+export interface Draft {
+  bars: Bar[]
+  placements: Placement[]
+}
+
 /** Generate one draft: catalog strokes on the base lattice */
-export function generateBars(rootId: string, seed: number, params: GenParams): Bar[] {
+export function generateDraft(rootId: string, seed: number, params: GenParams): Draft {
   const theme = THEMES[ROOT_THEMES[rootId] ?? 'abstract']
   const r = rng(hashId(rootId) ^ Math.imul(seed, 2654435761))
   // per-lane occupied intervals (multiple strokes per lane allowed)
@@ -265,6 +339,7 @@ export function generateBars(rootId: string, seed: number, params: GenParams): B
   const hLog: Bar[] = []
   const vLog: Bar[] = []
   const out: Bar[] = []
+  const placements: Placement[] = []
   let placed = 0
 
   const free = (list: [number, number][], a: number, b: number): boolean =>
@@ -282,6 +357,7 @@ export function generateBars(rootId: string, seed: number, params: GenParams): B
     ivs.push([a, b])
     ;(horiz ? hLog : vLog).push(rect)
     out.push(...segs)
+    placements.push({ horiz, lane, a, b })
     placed++
     return true
   }
@@ -334,17 +410,34 @@ export function generateBars(rootId: string, seed: number, params: GenParams): B
     cell(Math.floor(r() * 3), Math.floor(r() * 3))
   }
 
-  return out
+  return { bars: out, placements }
 }
 
-/** A row of editable candidates */
-export function generateCandidates(
+/** Back-compat: bars only */
+export function generateBars(rootId: string, seed: number, params: GenParams): Bar[] {
+  return generateDraft(rootId, seed, params).bars
+}
+
+/**
+ * A row of editable candidates. Each draft is checked against the
+ * letter blacklist — matches are rerolled with a perturbed seed so a
+ * logograph can never be confused with a carved letter.
+ */
+export function generateDrafts(
   rootId: string,
   baseSeed: number,
   params: GenParams,
   count = 4
-): Bar[][] {
-  const result: Bar[][] = []
-  for (let i = 0; i < count; i++) result.push(generateBars(rootId, baseSeed * 31 + i, params))
+): Draft[] {
+  const result: Draft[] = []
+  for (let i = 0; i < count; i++) {
+    let draft = generateDraft(rootId, baseSeed * 31 + i, params)
+    let attempt = 0
+    while (letterMatch(draft.bars) !== null && attempt < 8) {
+      attempt++
+      draft = generateDraft(rootId, baseSeed * 31 + i + attempt * 7919, params)
+    }
+    result.push(draft)
+  }
   return result
 }
