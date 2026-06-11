@@ -6,6 +6,9 @@ const api = {
   saveLogograph: (id: string, svg: string): Promise<boolean> =>
     ipcRenderer.invoke('save-logograph', id, svg),
   deleteLogograph: (id: string): Promise<boolean> => ipcRenderer.invoke('delete-logograph', id),
+  saveNumber: (id: string, svg: string): Promise<boolean> =>
+    ipcRenderer.invoke('save-number', id, svg),
+  deleteNumber: (id: string): Promise<boolean> => ipcRenderer.invoke('delete-number', id),
   loadRelations: (): Promise<unknown> => ipcRenderer.invoke('load-relations'),
   saveRelations: (data: unknown): Promise<boolean> => ipcRenderer.invoke('save-relations', data)
 }

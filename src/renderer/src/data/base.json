@@ -2,3948 +2,2515 @@
   {
     "id": "taus",
     "romanization": "TAUS",
-    "glosses": [
-      "world",
-      "field of soil",
-      "field of dirt",
-      "large land"
-    ],
+    "glosses": ["world", "field of soil", "field of dirt", "large land"],
     "category": "base"
   },
   {
     "id": "xtaus",
     "romanization": "XTAUS",
-    "glosses": [
-      "underground"
-    ],
+    "glosses": ["underground"],
     "category": "base",
-    "derivedFrom": [
-      "taus"
-    ]
+    "derivedFrom": ["taus"]
   },
   {
     "id": "tausm",
     "romanization": "TAUSM",
-    "glosses": [
-      "burrowing animal",
-      "one that lives in dirt"
-    ],
+    "glosses": ["burrowing animal", "one that lives in dirt"],
     "category": "base",
-    "derivedFrom": [
-      "taus"
-    ]
+    "derivedFrom": ["taus"]
   },
   {
     "id": "tiaus",
     "romanization": "TIAUS",
-    "glosses": [
-      "fragments of stone",
-      "to chip",
-      "to fragment",
-      "sand"
-    ],
+    "glosses": ["fragments of stone", "to chip", "to fragment", "sand"],
     "category": "base",
-    "derivedFrom": [
-      "taus"
-    ]
+    "derivedFrom": ["taus"]
   },
   {
     "id": "ataus",
     "romanization": "ATAUS",
-    "glosses": [
-      "to be down-to-earth",
-      "one with nature"
-    ],
+    "glosses": ["to be down-to-earth", "one with nature"],
     "category": "base",
-    "derivedFrom": [
-      "taus"
-    ]
+    "derivedFrom": ["taus"]
   },
   {
     "id": "kan",
     "romanization": "KAN",
-    "glosses": [
-      "hatred"
-    ],
+    "glosses": ["hatred"],
     "category": "base"
   },
   {
     "id": "kani",
     "romanization": "KANI",
-    "glosses": [
-      "maliciousness"
-    ],
+    "glosses": ["maliciousness"],
     "category": "base",
-    "derivedFrom": [
-      "kan"
-    ]
+    "derivedFrom": ["kan"]
   },
   {
     "id": "kankan",
     "romanization": "KANKAN",
-    "glosses": [
-      "to be full of hate"
-    ],
+    "glosses": ["to be full of hate"],
     "category": "base",
-    "derivedFrom": [
-      "kan"
-    ]
+    "derivedFrom": ["kan"]
   },
   {
     "id": "vel",
     "romanization": "VEL",
-    "glosses": [
-      "divinity",
-      "immortality"
-    ],
+    "glosses": ["divinity", "immortality"],
     "category": "base"
   },
   {
     "id": "vela",
     "romanization": "VELA",
-    "glosses": [
-      "eternal life"
-    ],
+    "glosses": ["eternal life"],
     "category": "base",
-    "derivedFrom": [
-      "vel"
-    ]
+    "derivedFrom": ["vel"]
   },
   {
     "id": "ksvelwah",
     "romanization": "KSVELWAH",
-    "glosses": [
-      "narcissism"
-    ],
+    "glosses": ["narcissism"],
     "category": "base",
-    "derivedFrom": [
-      "vel"
-    ]
+    "derivedFrom": ["vel"]
   },
   {
     "id": "avah",
     "romanization": "AVAH",
-    "glosses": [
-      "man",
-      "mankind",
-      "person"
-    ],
+    "glosses": ["man", "mankind", "person"],
     "category": "base",
-    "relatedTo": [
-      "jah"
-    ]
+    "relatedTo": ["jah"]
   },
   {
     "id": "aksmia",
     "romanization": "AKSMIA",
-    "glosses": [
-      "illness",
-      "disease"
-    ],
+    "glosses": ["illness", "disease"],
     "category": "base"
   },
   {
     "id": "eld",
     "romanization": "ELD",
-    "glosses": [
-      "black",
-      "shadow",
-      "darkness"
-    ],
+    "glosses": ["black", "shadow", "darkness"],
     "category": "base"
   },
   {
     "id": "huld",
     "romanization": "HULD",
-    "glosses": [
-      "white",
-      "brightness",
-      "light"
-    ],
+    "glosses": ["white", "brightness", "light"],
     "category": "base"
   },
   {
     "id": "firn",
     "romanization": "FIRN",
-    "glosses": [
-      "corruption"
-    ],
+    "glosses": ["corruption"],
     "category": "base"
   },
   {
     "id": "amn",
     "romanization": "AMN",
-    "glosses": [
-      "flower",
-      "plant"
-    ],
+    "glosses": ["flower", "plant"],
     "category": "base"
   },
   {
     "id": "aia",
     "romanization": "AIA",
-    "glosses": [
-      "safety",
-      "goodness"
-    ],
+    "glosses": ["safety", "goodness"],
     "category": "base"
   },
   {
     "id": "vavk",
     "romanization": "VAVK",
-    "glosses": [
-      "growth"
-    ],
+    "glosses": ["growth"],
     "category": "base"
   },
   {
     "id": "uii",
     "romanization": "UII",
-    "glosses": [
-      "ice",
-      "coldness"
-    ],
+    "glosses": ["ice", "coldness"],
     "category": "base"
   },
   {
     "id": "iia",
     "romanization": "IIA",
-    "glosses": [
-      "fire",
-      "heat"
-    ],
+    "glosses": ["fire", "heat"],
     "category": "base",
-    "relatedTo": [
-      "rr",
-      "fr",
-      "dnglfr"
-    ]
+    "relatedTo": ["rr", "fr", "dnglfr"]
   },
   {
     "id": "tipa",
     "romanization": "TIPA",
-    "glosses": [
-      "danger",
-      "unpleasantness"
-    ],
+    "glosses": ["danger", "unpleasantness"],
     "category": "base"
   },
   {
     "id": "fina",
     "romanization": "FINA",
-    "glosses": [
-      "song"
-    ],
+    "glosses": ["song"],
     "category": "base"
   },
   {
     "id": "vkskrel",
     "romanization": "VKSKREL",
-    "glosses": [
-      "repentance"
-    ],
+    "glosses": ["repentance"],
     "category": "base",
-    "derivedFrom": [
-      "krel"
-    ]
+    "derivedFrom": ["krel"]
   },
   {
     "id": "raid",
     "romanization": "RAID",
-    "glosses": [
-      "disaster",
-      "disastrous"
-    ],
+    "glosses": ["disaster", "disastrous"],
     "category": "base"
   },
   {
     "id": "zkeld",
     "romanization": "ZKELD",
-    "glosses": [
-      "fall",
-      "to fall"
-    ],
+    "glosses": ["fall", "to fall"],
     "category": "base"
   },
   {
     "id": "nuum",
     "romanization": "NUUM",
-    "glosses": [
-      "many",
-      "a lot"
-    ],
+    "glosses": ["many", "a lot"],
     "category": "base",
-    "relatedTo": [
-      "va"
-    ]
+    "relatedTo": ["va"]
   },
   {
     "id": "xin",
     "romanization": "XIN",
-    "glosses": [
-      "few",
-      "a little"
-    ],
+    "glosses": ["few", "a little"],
     "category": "base",
     "notes": "Homograph: see xin-claw (claw, nail)."
   },
   {
     "id": "ui",
     "romanization": "UI",
-    "glosses": [
-      "new",
-      "to fix"
-    ],
+    "glosses": ["new", "to fix"],
     "category": "base"
   },
   {
     "id": "kua",
     "romanization": "KUA",
-    "glosses": [
-      "old",
-      "to break"
-    ],
+    "glosses": ["old", "to break"],
     "category": "base"
   },
   {
     "id": "atata",
     "romanization": "ATATA",
-    "glosses": [
-      "height",
-      "to ascend"
-    ],
+    "glosses": ["height", "to ascend"],
     "category": "base"
   },
   {
     "id": "valad",
     "romanization": "VALAD",
-    "glosses": [
-      "descend",
-      "to descend"
-    ],
+    "glosses": ["descend", "to descend"],
     "category": "base"
   },
   {
     "id": "aa-a",
     "romanization": "AA-A",
-    "glosses": [
-      "length",
-      "extend",
-      "to extend"
-    ],
+    "glosses": ["length", "extend", "to extend"],
     "category": "base",
-    "relatedTo": [
-      "lekt"
-    ]
+    "relatedTo": ["lekt"]
   },
   {
     "id": "vad",
     "romanization": "VAD",
-    "glosses": [
-      "occurrence",
-      "event"
-    ],
+    "glosses": ["occurrence", "event"],
     "category": "base"
   },
   {
     "id": "ni",
     "romanization": "NI",
-    "glosses": [
-      "to be",
-      "is",
-      "are",
-      "am"
-    ],
+    "glosses": ["to be", "is", "are", "am"],
     "category": "base"
   },
   {
     "id": "ah",
     "romanization": "AH",
-    "glosses": [
-      "speech",
-      "word"
-    ],
+    "glosses": ["speech", "word"],
     "category": "base",
     "notes": "History section also lists AH/SUA for 'word'."
   },
   {
     "id": "man",
     "romanization": "MAN",
-    "glosses": [
-      "type",
-      "category"
-    ],
+    "glosses": ["type", "category"],
     "category": "base"
   },
   {
     "id": "pun",
     "romanization": "PUN",
-    "glosses": [
-      "travel"
-    ],
+    "glosses": ["travel"],
     "category": "base"
   },
   {
     "id": "dia",
     "romanization": "DIA",
-    "glosses": [
-      "future",
-      "later"
-    ],
+    "glosses": ["future", "later"],
     "category": "base"
   },
   {
     "id": "eia",
     "romanization": "EIA",
-    "glosses": [
-      "past",
-      "earlier"
-    ],
+    "glosses": ["past", "earlier"],
     "category": "base"
   },
   {
     "id": "xia",
     "romanization": "XIA",
-    "glosses": [
-      "present",
-      "now"
-    ],
+    "glosses": ["present", "now"],
     "category": "base"
   },
   {
     "id": "namn",
     "romanization": "NAMN",
-    "glosses": [
-      "to consume",
-      "to eat",
-      "to drink"
-    ],
+    "glosses": ["to consume", "to eat", "to drink"],
     "category": "base"
   },
   {
     "id": "pla",
     "romanization": "PLA",
-    "glosses": [
-      "language"
-    ],
+    "glosses": ["language"],
     "category": "base"
   },
   {
     "id": "eh",
     "romanization": "EH",
-    "glosses": [
-      "this"
-    ],
+    "glosses": ["this"],
     "category": "base",
     "notes": "Homograph: EH is also the number 10."
   },
   {
     "id": "kala",
     "romanization": "KALA",
-    "glosses": [
-      "that"
-    ],
+    "glosses": ["that"],
     "category": "base"
   },
   {
     "id": "jura",
     "romanization": "JURA",
-    "glosses": [
-      "he",
-      "she",
-      "they"
-    ],
+    "glosses": ["he", "she", "they"],
     "category": "base"
   },
   {
     "id": "eldril",
     "romanization": "ELDRIL",
-    "glosses": [
-      "transformation",
-      "change"
-    ],
+    "glosses": ["transformation", "change"],
     "category": "base"
   },
   {
     "id": "uin",
     "romanization": "UIN",
-    "glosses": [
-      "start",
-      "beginning",
-      "first"
-    ],
+    "glosses": ["start", "beginning", "first"],
     "category": "base",
-    "derivedFrom": [
-      "ui"
-    ]
+    "derivedFrom": ["ui"]
   },
   {
     "id": "kuar",
     "romanization": "KUAR",
-    "glosses": [
-      "end",
-      "ending",
-      "final"
-    ],
+    "glosses": ["end", "ending", "final"],
     "category": "base",
-    "derivedFrom": [
-      "kua"
-    ]
+    "derivedFrom": ["kua"]
   },
   {
     "id": "hea",
     "romanization": "HEA",
-    "glosses": [
-      "here"
-    ],
+    "glosses": ["here"],
     "category": "base"
   },
   {
     "id": "faks",
     "romanization": "FAKS",
-    "glosses": [
-      "there"
-    ],
+    "glosses": ["there"],
     "category": "base"
   },
   {
     "id": "maii",
     "romanization": "MAII",
-    "glosses": [
-      "difficulty"
-    ],
+    "glosses": ["difficulty"],
     "category": "base"
   },
   {
     "id": "vkam",
     "romanization": "VKAM",
-    "glosses": [
-      "ease"
-    ],
+    "glosses": ["ease"],
     "category": "base"
   },
   {
     "id": "krel",
     "romanization": "KREL",
-    "glosses": [
-      "creation"
-    ],
+    "glosses": ["creation"],
     "category": "base"
   },
   {
     "id": "vau",
     "romanization": "VAU",
-    "glosses": [
-      "overabundance"
-    ],
+    "glosses": ["overabundance"],
     "category": "base"
   },
   {
     "id": "sakasa",
     "romanization": "SAKASA",
-    "glosses": [
-      "scarcity"
-    ],
+    "glosses": ["scarcity"],
     "category": "base"
   },
   {
     "id": "imn",
     "romanization": "IMN",
-    "glosses": [
-      "pain",
-      "suffering"
-    ],
+    "glosses": ["pain", "suffering"],
     "category": "base"
   },
   {
     "id": "amnwah",
     "romanization": "AMNWAH",
-    "glosses": [
-      "prosperity"
-    ],
+    "glosses": ["prosperity"],
     "category": "base",
-    "derivedFrom": [
-      "amn"
-    ]
+    "derivedFrom": ["amn"]
   },
   {
     "id": "zkia",
     "romanization": "ZKIA",
-    "glosses": [
-      "cure",
-      "aid"
-    ],
+    "glosses": ["cure", "aid"],
     "category": "base"
   },
   {
     "id": "u-she",
     "romanization": "U-SHE",
-    "glosses": [
-      "transcription"
-    ],
+    "glosses": ["transcription"],
     "category": "base"
   },
   {
     "id": "fu",
     "romanization": "FU",
-    "glosses": [
-      "again",
-      "repeat"
-    ],
+    "glosses": ["again", "repeat"],
     "category": "base",
     "notes": "Homograph: see fu-ear (ear)."
   },
   {
     "id": "jai",
     "romanization": "JAI",
-    "glosses": [
-      "action",
-      "to do"
-    ],
+    "glosses": ["action", "to do"],
     "category": "base"
   },
   {
     "id": "dara",
     "romanization": "DARA",
-    "glosses": [
-      "circle"
-    ],
+    "glosses": ["circle"],
     "category": "base"
   },
   {
     "id": "mna",
     "romanization": "MNA",
-    "glosses": [
-      "child"
-    ],
+    "glosses": ["child"],
     "category": "base",
-    "derivedFrom": [
-      "mn"
-    ]
+    "derivedFrom": ["mn"]
   },
   {
     "id": "mn",
     "romanization": "MN",
-    "glosses": [
-      "adult"
-    ],
+    "glosses": ["adult"],
     "category": "base"
   },
   {
     "id": "ksshin",
     "romanization": "KSSHIN",
-    "glosses": [
-      "lie",
-      "fallacy"
-    ],
+    "glosses": ["lie", "fallacy"],
     "category": "base"
   },
   {
     "id": "eamn",
     "romanization": "EAMN",
-    "glosses": [
-      "truth"
-    ],
+    "glosses": ["truth"],
     "category": "base"
   },
   {
     "id": "huldni",
     "romanization": "HULDNI",
-    "glosses": [
-      "hope"
-    ],
+    "glosses": ["hope"],
     "category": "base",
-    "derivedFrom": [
-      "huld",
-      "ni"
-    ]
+    "derivedFrom": ["huld", "ni"]
   },
   {
     "id": "eldni",
     "romanization": "ELDNI",
-    "glosses": [
-      "despair"
-    ],
+    "glosses": ["despair"],
     "category": "base",
-    "derivedFrom": [
-      "eld",
-      "ni"
-    ]
+    "derivedFrom": ["eld", "ni"]
   },
   {
     "id": "zkas",
     "romanization": "ZKAS",
-    "glosses": [
-      "lightning",
-      "electricity"
-    ],
+    "glosses": ["lightning", "electricity"],
     "category": "base"
   },
   {
     "id": "fuia",
     "romanization": "FUIA",
-    "glosses": [
-      "water"
-    ],
+    "glosses": ["water"],
     "category": "base"
   },
   {
     "id": "mua",
     "romanization": "MUA",
-    "glosses": [
-      "body"
-    ],
+    "glosses": ["body"],
     "category": "base"
   },
   {
     "id": "nakt",
     "romanization": "NAKT",
-    "glosses": [
-      "base",
-      "foundation"
-    ],
+    "glosses": ["base", "foundation"],
     "category": "base"
   },
   {
     "id": "kir",
     "romanization": "KIR",
-    "glosses": [
-      "feeling",
-      "sense"
-    ],
+    "glosses": ["feeling", "sense"],
     "category": "base"
   },
   {
     "id": "tmpt",
     "romanization": "TMPT",
-    "glosses": [
-      "solidness",
-      "hardness"
-    ],
+    "glosses": ["solidness", "hardness"],
     "category": "base"
   },
   {
     "id": "fi",
     "romanization": "FI",
-    "glosses": [
-      "liquid"
-    ],
+    "glosses": ["liquid"],
     "category": "base",
     "notes": "Homograph: see fi-nextto (next to, physics)."
   },
   {
     "id": "alj",
     "romanization": "ALJ",
-    "glosses": [
-      "softness"
-    ],
+    "glosses": ["softness"],
     "category": "base"
   },
   {
     "id": "mnauzk",
     "romanization": "MNAUZK",
-    "glosses": [
-      "gas"
-    ],
+    "glosses": ["gas"],
     "category": "base"
   },
   {
     "id": "avni",
     "romanization": "AVNI",
-    "glosses": [
-      "mind",
-      "mental state",
-      "mental"
-    ],
+    "glosses": ["mind", "mental state", "mental"],
     "category": "base"
   },
   {
     "id": "shr",
     "romanization": "SHR",
-    "glosses": [
-      "hand"
-    ],
+    "glosses": ["hand"],
     "category": "base"
   },
   {
     "id": "ti",
     "romanization": "TI",
-    "glosses": [
-      "appendage"
-    ],
+    "glosses": ["appendage"],
     "category": "base"
   },
   {
     "id": "shrti",
     "romanization": "SHRTI",
-    "glosses": [
-      "finger"
-    ],
+    "glosses": ["finger"],
     "category": "base",
-    "derivedFrom": [
-      "shr",
-      "ti"
-    ]
+    "derivedFrom": ["shr", "ti"]
   },
   {
     "id": "lk",
     "romanization": "LK",
-    "glosses": [
-      "leg",
-      "foot"
-    ],
+    "glosses": ["leg", "foot"],
     "category": "base"
   },
   {
     "id": "katan",
     "romanization": "KATAN",
-    "glosses": [
-      "elbow"
-    ],
+    "glosses": ["elbow"],
     "category": "base",
-    "derivedFrom": [
-      "kat"
-    ]
+    "derivedFrom": ["kat"]
   },
   {
     "id": "kat",
     "romanization": "KAT",
-    "glosses": [
-      "corner",
-      "angle",
-      "over",
-      "above",
-      "exposure",
-      "on top"
-    ],
+    "glosses": ["corner", "angle", "over", "above", "exposure", "on top"],
     "category": "base",
     "notes": "Merged homographs: corner/angle + over/above/exposure + ontop (physics)."
   },
   {
     "id": "kalka",
     "romanization": "KALKA",
-    "glosses": [
-      "knee"
-    ],
+    "glosses": ["knee"],
     "category": "base"
   },
   {
     "id": "avahat",
     "romanization": "AVAHAT",
-    "glosses": [
-      "head"
-    ],
+    "glosses": ["head"],
     "category": "base",
-    "derivedFrom": [
-      "avah"
-    ]
+    "derivedFrom": ["avah"]
   },
   {
     "id": "hahm",
     "romanization": "HAHM",
-    "glosses": [
-      "chest"
-    ],
+    "glosses": ["chest"],
     "category": "base",
-    "derivedFrom": [
-      "hah"
-    ]
+    "derivedFrom": ["hah"]
   },
   {
     "id": "ha",
     "romanization": "HA",
-    "glosses": [
-      "structure",
-      "strength"
-    ],
+    "glosses": ["structure", "strength"],
     "category": "base",
     "notes": "Homograph: HA is also 144 in the number system.",
-    "relatedTo": [
-      "nanha",
-      "nelgr"
-    ]
+    "relatedTo": ["nanha", "nelgr"]
   },
   {
     "id": "katanti",
     "romanization": "KATANTI",
-    "glosses": [
-      "arm"
-    ],
+    "glosses": ["arm"],
     "category": "base",
-    "derivedFrom": [
-      "katan",
-      "ti"
-    ]
+    "derivedFrom": ["katan", "ti"]
   },
   {
     "id": "shrkir",
     "romanization": "SHRKIR",
-    "glosses": [
-      "touch",
-      "sense of touch"
-    ],
+    "glosses": ["touch", "sense of touch"],
     "category": "base",
-    "derivedFrom": [
-      "shr",
-      "kir"
-    ]
+    "derivedFrom": ["shr", "kir"]
   },
   {
     "id": "fukir",
     "romanization": "FUKIR",
-    "glosses": [
-      "sense of hearing",
-      "sound"
-    ],
+    "glosses": ["sense of hearing", "sound"],
     "category": "base",
-    "derivedFrom": [
-      "fu-ear",
-      "kir"
-    ]
+    "derivedFrom": ["fu-ear", "kir"]
   },
   {
     "id": "rai",
     "romanization": "RAI",
-    "glosses": [
-      "increase"
-    ],
+    "glosses": ["increase"],
     "category": "base"
   },
   {
     "id": "mei",
     "romanization": "MEI",
-    "glosses": [
-      "decrease"
-    ],
+    "glosses": ["decrease"],
     "category": "base"
   },
   {
     "id": "fu-ear",
     "romanization": "FU",
-    "glosses": [
-      "ear"
-    ],
+    "glosses": ["ear"],
     "category": "base",
     "notes": "Homograph: see fu (again, repeat)."
   },
   {
     "id": "lahkir",
     "romanization": "LAHKIR",
-    "glosses": [
-      "sense of taste",
-      "taste"
-    ],
+    "glosses": ["sense of taste", "taste"],
     "category": "base",
-    "derivedFrom": [
-      "lah",
-      "kir"
-    ]
+    "derivedFrom": ["lah", "kir"]
   },
   {
     "id": "hankir",
     "romanization": "HANKIR",
-    "glosses": [
-      "sense of smell",
-      "smell"
-    ],
+    "glosses": ["sense of smell", "smell"],
     "category": "base",
-    "derivedFrom": [
-      "hanz",
-      "kir"
-    ]
+    "derivedFrom": ["hanz", "kir"]
   },
   {
     "id": "lah",
     "romanization": "LAH",
-    "glosses": [
-      "tongue"
-    ],
+    "glosses": ["tongue"],
     "category": "base"
   },
   {
     "id": "hanz",
     "romanization": "HANZ",
-    "glosses": [
-      "nose"
-    ],
+    "glosses": ["nose"],
     "category": "base"
   },
   {
     "id": "nama",
     "romanization": "NAMA",
-    "glosses": [
-      "mouth",
-      "opening"
-    ],
+    "glosses": ["mouth", "opening"],
     "category": "base"
   },
   {
     "id": "avna",
     "romanization": "AVNA",
-    "glosses": [
-      "youth"
-    ],
+    "glosses": ["youth"],
     "category": "base"
   },
   {
     "id": "munl",
     "romanization": "MUNL",
-    "glosses": [
-      "health",
-      "state of being"
-    ],
+    "glosses": ["health", "state of being"],
     "category": "base"
   },
   {
     "id": "mun",
     "romanization": "MUN?",
-    "glosses": [
-      "how are you?"
-    ],
+    "glosses": ["how are you?"],
     "category": "base",
-    "tags": [
-      "phrase"
-    ]
+    "tags": ["phrase"]
   },
   {
     "id": "katinakt",
     "romanization": "KATINAKT",
-    "glosses": [
-      "shoulder"
-    ],
+    "glosses": ["shoulder"],
     "category": "base",
-    "derivedFrom": [
-      "kat",
-      "nakt"
-    ]
+    "derivedFrom": ["kat", "nakt"]
   },
   {
     "id": "val",
     "romanization": "VAL",
-    "glosses": [
-      "wind"
-    ],
+    "glosses": ["wind"],
     "category": "base"
   },
   {
     "id": "fimu",
     "romanization": "FIMU",
-    "glosses": [
-      "large body of liquid",
-      "large body of water"
-    ],
+    "glosses": ["large body of liquid", "large body of water"],
     "category": "base",
-    "derivedFrom": [
-      "fi"
-    ]
+    "derivedFrom": ["fi"]
   },
   {
     "id": "nui",
     "romanization": "NUI",
-    "glosses": [
-      "push",
-      "outward force"
-    ],
+    "glosses": ["push", "outward force"],
     "category": "base",
     "notes": "Alternate romanization: GUNG."
   },
   {
     "id": "nhmn",
     "romanization": "NHMN",
-    "glosses": [
-      "pull",
-      "inward force"
-    ],
+    "glosses": ["pull", "inward force"],
     "category": "base"
   },
   {
     "id": "nana",
     "romanization": "NANA",
-    "glosses": [
-      "muscle"
-    ],
+    "glosses": ["muscle"],
     "category": "base"
   },
   {
     "id": "nanha",
     "romanization": "NANHA",
-    "glosses": [
-      "strength"
-    ],
+    "glosses": ["strength"],
     "category": "base",
-    "derivedFrom": [
-      "nana",
-      "ha"
-    ],
-    "relatedTo": [
-      "ha",
-      "nelgr"
-    ]
+    "derivedFrom": ["nana", "ha"],
+    "relatedTo": ["ha", "nelgr"]
   },
   {
     "id": "sakaha",
     "romanization": "SAKAHA",
-    "glosses": [
-      "weakness"
-    ],
+    "glosses": ["weakness"],
     "category": "base",
-    "derivedFrom": [
-      "sakasa",
-      "ha"
-    ]
+    "derivedFrom": ["sakasa", "ha"]
   },
   {
     "id": "hmna",
     "romanization": "HMNA",
-    "glosses": [
-      "inside"
-    ],
+    "glosses": ["inside"],
     "category": "base"
   },
   {
     "id": "xui",
     "romanization": "XUI",
-    "glosses": [
-      "outside",
-      "outward"
-    ],
+    "glosses": ["outside", "outward"],
     "category": "base"
   },
   {
     "id": "nlt",
     "romanization": "NLT",
-    "glosses": [
-      "force"
-    ],
+    "glosses": ["force"],
     "category": "base"
   },
   {
     "id": "puksha",
     "romanization": "PUKSHA",
-    "glosses": [
-      "motion",
-      "movement"
-    ],
+    "glosses": ["motion", "movement"],
     "category": "base"
   },
   {
     "id": "koh",
     "romanization": "KOH",
-    "glosses": [
-      "energy"
-    ],
+    "glosses": ["energy"],
     "category": "base"
   },
   {
     "id": "vkrel",
     "romanization": "VKREL",
-    "glosses": [
-      "rank",
-      "prestige"
-    ],
+    "glosses": ["rank", "prestige"],
     "category": "base",
-    "derivedFrom": [
-      "krel"
-    ]
+    "derivedFrom": ["krel"]
   },
   {
     "id": "vkat",
     "romanization": "VKAT",
-    "glosses": [
-      "promotion"
-    ],
+    "glosses": ["promotion"],
     "category": "base",
-    "derivedFrom": [
-      "kat"
-    ]
+    "derivedFrom": ["kat"]
   },
   {
     "id": "aav",
     "romanization": "AAV",
-    "glosses": [
-      "head master",
-      "leader",
-      "captain"
-    ],
+    "glosses": ["head master", "leader", "captain"],
     "category": "base"
   },
   {
     "id": "aa-an",
     "romanization": "AA-AN",
-    "glosses": [
-      "but"
-    ],
+    "glosses": ["but"],
     "category": "base",
-    "derivedFrom": [
-      "aa-a",
-      "an"
-    ]
+    "derivedFrom": ["aa-a", "an"]
   },
   {
     "id": "pudia",
     "romanization": "PUDIA",
-    "glosses": [
-      "continuation"
-    ],
+    "glosses": ["continuation"],
     "category": "base",
-    "derivedFrom": [
-      "pun",
-      "dia"
-    ]
+    "derivedFrom": ["pun", "dia"]
   },
   {
     "id": "muni",
     "romanization": "MUNI",
-    "glosses": [
-      "i'm fine",
-      "i'm okay"
-    ],
+    "glosses": ["i'm fine", "i'm okay"],
     "category": "base",
-    "tags": [
-      "phrase"
-    ]
+    "tags": ["phrase"]
   },
   {
     "id": "ten",
     "romanization": "TEN",
-    "glosses": [
-      "eye"
-    ],
+    "glosses": ["eye"],
     "category": "base"
   },
   {
     "id": "tenpu",
     "romanization": "TENPU",
-    "glosses": [
-      "to see",
-      "to watch",
-      "to stare"
-    ],
+    "glosses": ["to see", "to watch", "to stare"],
     "category": "base",
-    "derivedFrom": [
-      "ten",
-      "pun"
-    ]
+    "derivedFrom": ["ten", "pun"]
   },
   {
     "id": "moetan",
     "romanization": "MOETAN",
-    "glosses": [
-      "rhythmic walking",
-      "skipping"
-    ],
+    "glosses": ["rhythmic walking", "skipping"],
     "category": "base"
   },
   {
     "id": "krul",
     "romanization": "KRUL",
-    "glosses": [
-      "kill",
-      "a kill"
-    ],
+    "glosses": ["kill", "a kill"],
     "category": "base"
   },
   {
     "id": "tentenpei",
     "romanization": "TENTENPEI",
-    "glosses": [
-      "deception"
-    ],
+    "glosses": ["deception"],
     "category": "base",
-    "derivedFrom": [
-      "ten",
-      "pei"
-    ]
+    "derivedFrom": ["ten", "pei"]
   },
   {
     "id": "pei",
     "romanization": "PEI",
-    "glosses": [
-      "mischief"
-    ],
+    "glosses": ["mischief"],
     "category": "base"
   },
   {
     "id": "pura",
     "romanization": "PURA",
-    "glosses": [
-      "spin",
-      "a spin"
-    ],
+    "glosses": ["spin", "a spin"],
     "category": "base"
   },
   {
     "id": "vkfukh",
     "romanization": "VKFUKH",
-    "glosses": [
-      "calculation"
-    ],
+    "glosses": ["calculation"],
     "category": "base"
   },
   {
     "id": "hanko",
     "romanization": "HANKO",
-    "glosses": [
-      "ethics"
-    ],
+    "glosses": ["ethics"],
     "category": "base"
   },
   {
     "id": "epokh",
     "romanization": "EPOKH",
-    "glosses": [
-      "logic"
-    ],
+    "glosses": ["logic"],
     "category": "base"
   },
   {
     "id": "helpii",
     "romanization": "HELPII",
-    "glosses": [
-      "torture"
-    ],
+    "glosses": ["torture"],
     "category": "base"
   },
   {
     "id": "pai",
     "romanization": "PAI",
-    "glosses": [
-      "thank you"
-    ],
+    "glosses": ["thank you"],
     "category": "base",
-    "tags": [
-      "phrase"
-    ]
+    "tags": ["phrase"]
   },
   {
     "id": "wain",
     "romanization": "WAIN",
-    "glosses": [
-      "i'm sorry"
-    ],
+    "glosses": ["i'm sorry"],
     "category": "base",
-    "tags": [
-      "phrase"
-    ]
+    "tags": ["phrase"]
   },
   {
     "id": "ea",
     "romanization": "EA",
-    "glosses": [
-      "yes"
-    ],
+    "glosses": ["yes"],
     "category": "base"
   },
   {
     "id": "mnva",
     "romanization": "MNVA",
-    "glosses": [
-      "name"
-    ],
+    "glosses": ["name"],
     "category": "base"
   },
   {
     "id": "vx",
     "romanization": "VX",
-    "glosses": [
-      "no"
-    ],
+    "glosses": ["no"],
     "category": "base"
   },
   {
     "id": "mnat",
     "romanization": "MNAT",
-    "glosses": [
-      "title",
-      "alias"
-    ],
+    "glosses": ["title", "alias"],
     "category": "base"
   },
   {
     "id": "pumei",
     "romanization": "PUMEI",
-    "glosses": [
-      "slowness"
-    ],
+    "glosses": ["slowness"],
     "category": "base",
-    "derivedFrom": [
-      "pun",
-      "mei"
-    ]
+    "derivedFrom": ["pun", "mei"]
   },
   {
     "id": "purai",
     "romanization": "PURAI",
-    "glosses": [
-      "speed"
-    ],
+    "glosses": ["speed"],
     "category": "base",
-    "derivedFrom": [
-      "pun",
-      "rai"
-    ]
+    "derivedFrom": ["pun", "rai"]
   },
   {
     "id": "a-a",
     "romanization": "A-A",
-    "glosses": [
-      "hello"
-    ],
+    "glosses": ["hello"],
     "category": "base",
-    "tags": [
-      "phrase"
-    ],
+    "tags": ["phrase"],
     "notes": "Distinct from AA-A (length, extend)."
   },
   {
     "id": "uun",
     "romanization": "UUN",
-    "glosses": [
-      "goodbye"
-    ],
+    "glosses": ["goodbye"],
     "category": "base",
-    "tags": [
-      "phrase"
-    ],
-    "relatedTo": [
-      "ki"
-    ]
+    "tags": ["phrase"],
+    "relatedTo": ["ki"]
   },
   {
     "id": "ki",
     "romanization": "KI",
-    "glosses": [
-      "greeting",
-      "goodbye"
-    ],
+    "glosses": ["greeting", "goodbye"],
     "category": "base",
-    "relatedTo": [
-      "uun"
-    ]
+    "relatedTo": ["uun"]
   },
   {
     "id": "laua",
     "romanization": "LAUA",
-    "glosses": [
-      "life"
-    ],
+    "glosses": ["life"],
     "category": "base",
-    "derivedFrom": [
-      "lau"
-    ]
+    "derivedFrom": ["lau"]
   },
   {
     "id": "fimn",
     "romanization": "FIMN",
-    "glosses": [
-      "death",
-      "limit"
-    ],
+    "glosses": ["death", "limit"],
     "category": "base"
   },
   {
     "id": "kafimn",
     "romanization": "KAFIMN",
-    "glosses": [
-      "sleep",
-      "slumber"
-    ],
+    "glosses": ["sleep", "slumber"],
     "category": "base",
-    "derivedFrom": [
-      "fimn"
-    ],
+    "derivedFrom": ["fimn"],
     "notes": "Homograph: KAFIMN is also 'maximum' (misc)."
   },
   {
     "id": "ankafimn",
     "romanization": "ANKAFIMN",
-    "glosses": [
-      "awakening",
-      "waking up"
-    ],
+    "glosses": ["awakening", "waking up"],
     "category": "base",
-    "derivedFrom": [
-      "kafimn"
-    ]
+    "derivedFrom": ["kafimn"]
   },
   {
     "id": "ikit",
     "romanization": "IKIT",
-    "glosses": [
-      "time",
-      "interval"
-    ],
+    "glosses": ["time", "interval"],
     "category": "base"
   },
   {
     "id": "lalu",
     "romanization": "LALU",
-    "glosses": [
-      "play",
-      "joke"
-    ],
+    "glosses": ["play", "joke"],
     "category": "base"
   },
   {
     "id": "lalakht",
     "romanization": "LALAKHT",
-    "glosses": [
-      "game"
-    ],
+    "glosses": ["game"],
     "category": "base",
-    "derivedFrom": [
-      "lalu"
-    ]
+    "derivedFrom": ["lalu"]
   },
   {
     "id": "umn",
     "romanization": "UMN",
-    "glosses": [
-      "space",
-      "distance"
-    ],
+    "glosses": ["space", "distance"],
     "category": "base"
   },
   {
     "id": "fukhre",
     "romanization": "FUKHRE",
-    "glosses": [
-      "count",
-      "a count"
-    ],
+    "glosses": ["count", "a count"],
     "category": "base"
   },
   {
     "id": "laima",
     "romanization": "LAIMA",
-    "glosses": [
-      "survival"
-    ],
+    "glosses": ["survival"],
     "category": "base"
   },
   {
     "id": "ai",
     "romanization": "AI",
-    "glosses": [
-      "up"
-    ],
+    "glosses": ["up"],
     "category": "base"
   },
   {
     "id": "vilt",
     "romanization": "VILT",
-    "glosses": [
-      "down"
-    ],
+    "glosses": ["down"],
     "category": "base"
   },
   {
     "id": "sted",
     "romanization": "STED",
-    "glosses": [
-      "will",
-      "determination"
-    ],
+    "glosses": ["will", "determination"],
     "category": "base"
   },
   {
     "id": "vkzkks",
     "romanization": "VKZKKS",
-    "glosses": [
-      "math"
-    ],
+    "glosses": ["math"],
     "category": "base"
   },
   {
     "id": "dhanzk",
     "romanization": "DHANZK",
-    "glosses": [
-      "science"
-    ],
+    "glosses": ["science"],
     "category": "base"
   },
   {
     "id": "delnus",
     "romanization": "DELNUS",
-    "glosses": [
-      "physics"
-    ],
+    "glosses": ["physics"],
     "category": "base",
     "notes": "Homograph: see delnus-storage."
   },
   {
     "id": "homa",
     "romanization": "HOMA",
-    "glosses": [
-      "art"
-    ],
+    "glosses": ["art"],
     "category": "base"
   },
   {
     "id": "khres",
     "romanization": "KHRES",
-    "glosses": [
-      "numbers"
-    ],
+    "glosses": ["numbers"],
     "category": "base"
   },
   {
     "id": "komah",
     "romanization": "KOMAH",
-    "glosses": [
-      "contact"
-    ],
+    "glosses": ["contact"],
     "category": "base"
   },
   {
     "id": "awa",
     "romanization": "AWA",
-    "glosses": [
-      "direct"
-    ],
+    "glosses": ["direct"],
     "category": "base"
   },
   {
     "id": "pdhu",
     "romanization": "PDHU",
-    "glosses": [
-      "square"
-    ],
+    "glosses": ["square"],
     "category": "base",
-    "derivedFrom": [
-      "hu"
-    ]
+    "derivedFrom": ["hu"]
   },
   {
     "id": "pdhulek",
     "romanization": "PDHULEK",
-    "glosses": [
-      "rectangle"
-    ],
+    "glosses": ["rectangle"],
     "category": "base",
-    "derivedFrom": [
-      "pdhu"
-    ]
+    "derivedFrom": ["pdhu"]
   },
   {
     "id": "lilhu",
     "romanization": "LILHU",
-    "glosses": [
-      "triangle"
-    ],
+    "glosses": ["triangle"],
     "category": "base",
-    "derivedFrom": [
-      "hu"
-    ]
+    "derivedFrom": ["hu"]
   },
   {
     "id": "vahu",
     "romanization": "VAHU",
-    "glosses": [
-      "polygon"
-    ],
+    "glosses": ["polygon"],
     "category": "base",
-    "derivedFrom": [
-      "hu"
-    ]
+    "derivedFrom": ["hu"]
   },
   {
     "id": "hu",
     "romanization": "HU",
-    "glosses": [
-      "side",
-      "face"
-    ],
+    "glosses": ["side", "face"],
     "category": "base"
   },
   {
     "id": "toto",
     "romanization": "TOTO",
-    "glosses": [
-      "entrance"
-    ],
+    "glosses": ["entrance"],
     "category": "base"
   },
   {
     "id": "raha",
     "romanization": "RAHA",
-    "glosses": [
-      "exit"
-    ],
+    "glosses": ["exit"],
     "category": "base"
   },
   {
     "id": "tenlau",
     "romanization": "TENLAU",
-    "glosses": [
-      "clairvoyance"
-    ],
+    "glosses": ["clairvoyance"],
     "category": "base",
-    "derivedFrom": [
-      "ten",
-      "lau"
-    ]
+    "derivedFrom": ["ten", "lau"]
   },
   {
     "id": "muka",
     "romanization": "MUKA",
-    "glosses": [
-      "stomach",
-      "belly"
-    ],
+    "glosses": ["stomach", "belly"],
     "category": "base"
   },
   {
     "id": "mukaava",
     "romanization": "MUKAAVA",
-    "glosses": [
-      "human"
-    ],
+    "glosses": ["human"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "muka",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["muka", "avah"]
   },
   {
     "id": "ziava",
     "romanization": "ZIAVA",
-    "glosses": [
-      "halfling"
-    ],
+    "glosses": ["halfling"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["avah"]
   },
   {
     "id": "iltlonava",
     "romanization": "ILTLONAVA",
-    "glosses": [
-      "goblin"
-    ],
+    "glosses": ["goblin"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "ilt",
-      "lon",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["ilt", "lon", "avah"]
   },
   {
     "id": "luava",
     "romanization": "LUAVA",
-    "glosses": [
-      "high elf"
-    ],
+    "glosses": ["high elf"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["lu", "avah"]
   },
   {
     "id": "tauava",
     "romanization": "TAUAVA",
-    "glosses": [
-      "dwarf"
-    ],
+    "glosses": ["dwarf"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "taus",
-      "avah"
-    ],
-    "relatedTo": [
-      "zi-man"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["taus", "avah"],
+    "relatedTo": ["zi-man"]
   },
   {
     "id": "haadava",
     "romanization": "HAADAVA",
-    "glosses": [
-      "giant"
-    ],
+    "glosses": ["giant"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "haad",
-      "avah"
-    ],
-    "relatedTo": [
-      "haa-man"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["haad", "avah"],
+    "relatedTo": ["haa-man"]
   },
   {
     "id": "kuava",
     "romanization": "KUAVA",
-    "glosses": [
-      "therian"
-    ],
+    "glosses": ["therian"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "avah"
-    ],
-    "relatedTo": [
-      "kuku"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["avah"],
+    "relatedTo": ["kuku"]
   },
   {
     "id": "akkava",
     "romanization": "AKKAVA",
-    "glosses": [
-      "ogre"
-    ],
+    "glosses": ["ogre"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "akk",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["akk", "avah"]
   },
   {
     "id": "halonava",
     "romanization": "HALONAVA",
-    "glosses": [
-      "hobgoblin"
-    ],
+    "glosses": ["hobgoblin"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "lon",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["lon", "avah"]
   },
   {
     "id": "taava",
     "romanization": "TAAVA",
-    "glosses": [
-      "caveling"
-    ],
+    "glosses": ["caveling"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["avah"]
   },
   {
     "id": "amnava",
     "romanization": "AMNAVA",
-    "glosses": [
-      "wood elf"
-    ],
+    "glosses": ["wood elf"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "amn",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["amn", "avah"]
   },
   {
     "id": "iiava",
     "romanization": "IIAVA",
-    "glosses": [
-      "dark elf"
-    ],
+    "glosses": ["dark elf"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "iia",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["iia", "avah"]
   },
   {
     "id": "saava",
     "romanization": "SAAVA",
-    "glosses": [
-      "half elf"
-    ],
+    "glosses": ["half elf"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["avah"]
   },
   {
     "id": "tenava",
     "romanization": "TENAVA",
-    "glosses": [
-      "cyclops"
-    ],
+    "glosses": ["cyclops"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "ten",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["ten", "avah"]
   },
   {
     "id": "henava",
     "romanization": "HENAVA",
-    "glosses": [
-      "berskia"
-    ],
+    "glosses": ["berskia"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "hen",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["hen", "avah"]
   },
   {
     "id": "arlava",
     "romanization": "ARLAVA",
-    "glosses": [
-      "gnome"
-    ],
+    "glosses": ["gnome"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["avah"]
   },
   {
     "id": "teneldava",
     "romanization": "TENELDAVA",
-    "glosses": [
-      "dweller"
-    ],
+    "glosses": ["dweller"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "ten",
-      "eld",
-      "avah"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["ten", "eld", "avah"]
   },
   {
     "id": "kharne",
     "romanization": "KHARNE",
-    "glosses": [
-      "animals"
-    ],
+    "glosses": ["animals"],
     "category": "base"
   },
   {
     "id": "nudorei",
     "romanization": "NUDOREI",
-    "glosses": [
-      "wild",
-      "out of control"
-    ],
+    "glosses": ["wild", "out of control"],
     "category": "base"
   },
   {
     "id": "keld",
     "romanization": "KELD",
-    "glosses": [
-      "tame",
-      "domestication"
-    ],
+    "glosses": ["tame", "domestication"],
     "category": "base"
   },
   {
     "id": "jak",
     "romanization": "JAK",
-    "glosses": [
-      "taking"
-    ],
+    "glosses": ["taking"],
     "category": "base"
   },
   {
     "id": "kah",
     "romanization": "KAH",
-    "glosses": [
-      "pot",
-      "bowl",
-      "container"
-    ],
+    "glosses": ["pot", "bowl", "container"],
     "category": "base"
   },
   {
     "id": "zon",
     "romanization": "ZON",
-    "glosses": [
-      "giving"
-    ],
+    "glosses": ["giving"],
     "category": "base"
   },
   {
     "id": "lau",
     "romanization": "LAU",
-    "glosses": [
-      "road",
-      "path",
-      "way"
-    ],
+    "glosses": ["road", "path", "way"],
     "category": "base",
-    "relatedTo": [
-      "ahzdel"
-    ]
+    "relatedTo": ["ahzdel"]
   },
   {
     "id": "mnakha",
     "romanization": "MNAKHA",
-    "glosses": [
-      "color"
-    ],
+    "glosses": ["color"],
     "category": "base"
   },
   {
     "id": "la",
     "romanization": "LA",
-    "glosses": [
-      "red"
-    ],
+    "glosses": ["red"],
     "category": "base"
   },
   {
     "id": "ilt",
     "romanization": "ILT",
-    "glosses": [
-      "blue"
-    ],
+    "glosses": ["blue"],
     "category": "base"
   },
   {
     "id": "lon",
     "romanization": "LON",
-    "glosses": [
-      "yellow"
-    ],
+    "glosses": ["yellow"],
     "category": "base"
   },
   {
     "id": "roko",
     "romanization": "ROKO",
-    "glosses": [
-      "tool"
-    ],
+    "glosses": ["tool"],
     "category": "base"
   },
   {
     "id": "akies",
     "romanization": "AKIES",
-    "glosses": [
-      "knowledge"
-    ],
+    "glosses": ["knowledge"],
     "category": "base"
   },
   {
     "id": "zkoe",
     "romanization": "ZKOE",
-    "glosses": [
-      "religion"
-    ],
+    "glosses": ["religion"],
     "category": "base"
   },
   {
     "id": "lalesh",
     "romanization": "LALESH",
-    "glosses": [
-      "story",
-      "fantasy",
-      "fiction"
-    ],
+    "glosses": ["story", "fantasy", "fiction"],
     "category": "base",
-    "relatedTo": [
-      "lau-she"
-    ]
+    "relatedTo": ["lau-she"]
   },
   {
     "id": "lau-she",
     "romanization": "LAU-SHE",
-    "glosses": [
-      "plot",
-      "story"
-    ],
+    "glosses": ["plot", "story"],
     "category": "base",
-    "derivedFrom": [
-      "lau",
-      "u-she"
-    ],
-    "relatedTo": [
-      "lalesh",
-      "u-shekak"
-    ]
+    "derivedFrom": ["lau", "u-she"],
+    "relatedTo": ["lalesh", "u-shekak"]
   },
   {
     "id": "rhajat",
     "romanization": "RHAJAT",
-    "glosses": [
-      "oral reciter",
-      "teller"
-    ],
+    "glosses": ["oral reciter", "teller"],
     "category": "base"
   },
   {
     "id": "aka",
     "romanization": "AKA",
-    "glosses": [
-      "clan",
-      "group",
-      "species"
-    ],
+    "glosses": ["clan", "group", "species"],
     "category": "base"
   },
   {
     "id": "moma",
     "romanization": "MOMA",
-    "glosses": [
-      "fondness",
-      "like"
-    ],
+    "glosses": ["fondness", "like"],
     "category": "base"
   },
   {
     "id": "zoo",
     "romanization": "ZOO",
-    "glosses": [
-      "aversion",
-      "dislike"
-    ],
+    "glosses": ["aversion", "dislike"],
     "category": "base"
   },
   {
     "id": "kuku",
     "romanization": "KUKU",
-    "glosses": [
-      "therian",
-      "beast people"
-    ],
+    "glosses": ["therian", "beast people"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "relatedTo": [
-      "kuava"
-    ]
+    "tags": ["race"],
+    "relatedTo": ["kuava"]
   },
   {
     "id": "zhed",
     "romanization": "ZHED",
-    "glosses": [
-      "demon"
-    ],
+    "glosses": ["demon"],
     "category": "base"
   },
   {
     "id": "nuut",
     "romanization": "NUUT",
-    "glosses": [
-      "evil"
-    ],
+    "glosses": ["evil"],
     "category": "base"
   },
   {
     "id": "vahs",
     "romanization": "VAHS",
-    "glosses": [
-      "angel"
-    ],
+    "glosses": ["angel"],
     "category": "base"
   },
   {
     "id": "ale",
     "romanization": "ALE",
-    "glosses": [
-      "good"
-    ],
+    "glosses": ["good"],
     "category": "base"
   },
   {
     "id": "jah",
     "romanization": "JAH",
-    "glosses": [
-      "man",
-      "male"
-    ],
+    "glosses": ["man", "male"],
     "category": "base",
-    "relatedTo": [
-      "avah"
-    ]
+    "relatedTo": ["avah"]
   },
   {
     "id": "hah",
     "romanization": "HAH",
-    "glosses": [
-      "woman",
-      "female"
-    ],
+    "glosses": ["woman", "female"],
     "category": "base",
     "notes": "Homographs: HAH paper (history), HAH plea modifier."
   },
   {
     "id": "olde",
     "romanization": "OLDE",
-    "glosses": [
-      "ancient"
-    ],
+    "glosses": ["ancient"],
     "category": "base"
   },
   {
     "id": "hahmn",
     "romanization": "HAHMN",
-    "glosses": [
-      "mom",
-      "mother"
-    ],
+    "glosses": ["mom", "mother"],
     "category": "base",
-    "derivedFrom": [
-      "hah",
-      "mn"
-    ]
+    "derivedFrom": ["hah", "mn"]
   },
   {
     "id": "jahmn",
     "romanization": "JAHMN",
-    "glosses": [
-      "dad",
-      "father"
-    ],
+    "glosses": ["dad", "father"],
     "category": "base",
-    "derivedFrom": [
-      "jah",
-      "mn"
-    ]
+    "derivedFrom": ["jah", "mn"]
   },
   {
     "id": "jajamn",
     "romanization": "JAJAMN",
-    "glosses": [
-      "brother",
-      "older brother"
-    ],
+    "glosses": ["brother", "older brother"],
     "category": "base",
-    "derivedFrom": [
-      "jah",
-      "mn"
-    ]
+    "derivedFrom": ["jah", "mn"]
   },
   {
     "id": "hahamn",
     "romanization": "HAHAMN",
-    "glosses": [
-      "sister",
-      "older sister"
-    ],
+    "glosses": ["sister", "older sister"],
     "category": "base",
-    "derivedFrom": [
-      "hah",
-      "mn"
-    ]
+    "derivedFrom": ["hah", "mn"]
   },
   {
     "id": "mnja",
     "romanization": "MNJA",
-    "glosses": [
-      "younger brother"
-    ],
+    "glosses": ["younger brother"],
     "category": "base",
-    "derivedFrom": [
-      "mn",
-      "jah"
-    ]
+    "derivedFrom": ["mn", "jah"]
   },
   {
     "id": "mnaha",
     "romanization": "MNAHA",
-    "glosses": [
-      "younger sister"
-    ],
+    "glosses": ["younger sister"],
     "category": "base",
-    "derivedFrom": [
-      "mn",
-      "hah"
-    ]
+    "derivedFrom": ["mn", "hah"]
   },
   {
     "id": "zheljah",
     "romanization": "ZHELJAH",
-    "glosses": [
-      "grandfather"
-    ],
+    "glosses": ["grandfather"],
     "category": "base",
-    "derivedFrom": [
-      "jah"
-    ]
+    "derivedFrom": ["jah"]
   },
   {
     "id": "zhelhah",
     "romanization": "ZHELHAH",
-    "glosses": [
-      "grandmother"
-    ],
+    "glosses": ["grandmother"],
     "category": "base",
-    "derivedFrom": [
-      "hah"
-    ]
+    "derivedFrom": ["hah"]
   },
   {
     "id": "mnmn",
     "romanization": "MNMN",
-    "glosses": [
-      "parents"
-    ],
+    "glosses": ["parents"],
     "category": "base",
-    "derivedFrom": [
-      "mn"
-    ]
+    "derivedFrom": ["mn"]
   },
   {
     "id": "mnajaha",
     "romanization": "MNAJAHA",
-    "glosses": [
-      "siblings"
-    ],
+    "glosses": ["siblings"],
     "category": "base"
   },
   {
     "id": "frn",
     "romanization": "FRN",
-    "glosses": [
-      "close"
-    ],
+    "glosses": ["close"],
     "category": "base"
   },
   {
     "id": "norn",
     "romanization": "NORN",
-    "glosses": [
-      "far"
-    ],
+    "glosses": ["far"],
     "category": "base"
   },
   {
     "id": "norjaha",
     "romanization": "NORJAHA",
-    "glosses": [
-      "cousins"
-    ],
+    "glosses": ["cousins"],
     "category": "base",
-    "derivedFrom": [
-      "norn"
-    ]
+    "derivedFrom": ["norn"]
   },
   {
     "id": "hawei",
     "romanization": "HAWEI",
-    "glosses": [
-      "marriage"
-    ],
+    "glosses": ["marriage"],
     "category": "base"
   },
   {
     "id": "lekt",
     "romanization": "LEKT",
-    "glosses": [
-      "extend"
-    ],
+    "glosses": ["extend"],
     "category": "base",
-    "relatedTo": [
-      "aa-a"
-    ]
+    "relatedTo": ["aa-a"]
   },
   {
     "id": "weid",
     "romanization": "WEID",
-    "glosses": [
-      "ritual",
-      "ceremony"
-    ],
+    "glosses": ["ritual", "ceremony"],
     "category": "base"
   },
   {
     "id": "hakah",
     "romanization": "HAKAH",
-    "glosses": [
-      "family"
-    ],
+    "glosses": ["family"],
     "category": "base",
-    "derivedFrom": [
-      "kah"
-    ]
+    "derivedFrom": ["kah"]
   },
   {
     "id": "zhelmnmn",
     "romanization": "ZHELMNMN",
-    "glosses": [
-      "grandparents"
-    ],
+    "glosses": ["grandparents"],
     "category": "base",
-    "derivedFrom": [
-      "mnmn"
-    ]
+    "derivedFrom": ["mnmn"]
   },
   {
     "id": "norhaka",
     "romanization": "NORHAKA",
-    "glosses": [
-      "relatives"
-    ],
+    "glosses": ["relatives"],
     "category": "base",
-    "derivedFrom": [
-      "norn",
-      "hakah"
-    ]
+    "derivedFrom": ["norn", "hakah"]
   },
   {
     "id": "xud",
     "romanization": "XUD",
-    "glosses": [
-      "public"
-    ],
+    "glosses": ["public"],
     "category": "base"
   },
   {
     "id": "hud",
     "romanization": "HUD",
-    "glosses": [
-      "private"
-    ],
+    "glosses": ["private"],
     "category": "base"
   },
   {
     "id": "shred",
     "romanization": "SHRED",
-    "glosses": [
-      "things",
-      "stuff"
-    ],
+    "glosses": ["things", "stuff"],
     "category": "base",
-    "derivedFrom": [
-      "shr"
-    ],
-    "relatedTo": [
-      "den"
-    ]
+    "derivedFrom": ["shr"],
+    "relatedTo": ["den"]
   },
   {
     "id": "norkha",
     "romanization": "NORKHA",
-    "glosses": [
-      "information"
-    ],
+    "glosses": ["information"],
     "category": "base"
   },
   {
     "id": "noned",
     "romanization": "NONED",
-    "glosses": [
-      "data"
-    ],
+    "glosses": ["data"],
     "category": "base"
   },
   {
     "id": "jaivad",
     "romanization": "JAIVAD",
-    "glosses": [
-      "experiment"
-    ],
+    "glosses": ["experiment"],
     "category": "base",
-    "derivedFrom": [
-      "jai",
-      "vad"
-    ]
+    "derivedFrom": ["jai", "vad"]
   },
   {
     "id": "hanreis",
     "romanization": "HANREIS",
-    "glosses": [
-      "society",
-      "community",
-      "civilization"
-    ],
+    "glosses": ["society", "community", "civilization"],
     "category": "base"
   },
   {
     "id": "haa-man",
     "romanization": "HAA-MAN",
-    "glosses": [
-      "giant"
-    ],
+    "glosses": ["giant"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
+    "tags": ["race"],
     "notes": "Alternate term: HAADAVA.",
-    "relatedTo": [
-      "haadava"
-    ]
+    "relatedTo": ["haadava"]
   },
   {
     "id": "zi-man",
     "romanization": "ZI-MAN",
-    "glosses": [
-      "dwarf"
-    ],
+    "glosses": ["dwarf"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
+    "tags": ["race"],
     "notes": "Alternate term: TAUAVA.",
-    "relatedTo": [
-      "tauava"
-    ]
+    "relatedTo": ["tauava"]
   },
   {
     "id": "janu",
     "romanization": "JANU",
-    "glosses": [
-      "son"
-    ],
+    "glosses": ["son"],
     "category": "base",
-    "derivedFrom": [
-      "jah"
-    ]
+    "derivedFrom": ["jah"]
   },
   {
     "id": "fu-man",
     "romanization": "FU-MAN",
-    "glosses": [
-      "atlantean"
-    ],
+    "glosses": ["atlantean"],
     "category": "base",
-    "tags": [
-      "race"
-    ]
+    "tags": ["race"]
   },
   {
     "id": "hanu",
     "romanization": "HANU",
-    "glosses": [
-      "daughter"
-    ],
+    "glosses": ["daughter"],
     "category": "base",
-    "derivedFrom": [
-      "hah"
-    ]
+    "derivedFrom": ["hah"]
   },
   {
     "id": "ah-man",
     "romanization": "AH-MAN",
-    "glosses": [
-      "fairy",
-      "pixie",
-      "lesser spirit"
-    ],
+    "glosses": ["fairy", "pixie", "lesser spirit"],
     "category": "base",
-    "tags": [
-      "race"
-    ]
+    "tags": ["race"]
   },
   {
     "id": "ahal",
     "romanization": "AHAL",
-    "glosses": [
-      "spirit",
-      "ghost"
-    ],
+    "glosses": ["spirit", "ghost"],
     "category": "base"
   },
   {
     "id": "enz-man",
     "romanization": "ENZ-MAN",
-    "glosses": [
-      "nymph"
-    ],
+    "glosses": ["nymph"],
     "category": "base",
-    "tags": [
-      "race"
-    ],
-    "derivedFrom": [
-      "enz"
-    ]
+    "tags": ["race"],
+    "derivedFrom": ["enz"]
   },
   {
     "id": "ozo",
     "romanization": "OZO",
-    "glosses": [
-      "king",
-      "ruler"
-    ],
+    "glosses": ["king", "ruler"],
     "category": "base",
-    "relatedTo": [
-      "hazo"
-    ]
+    "relatedTo": ["hazo"]
   },
   {
     "id": "hazo",
     "romanization": "HAZO",
-    "glosses": [
-      "queen",
-      "ruler"
-    ],
+    "glosses": ["queen", "ruler"],
     "category": "base",
-    "derivedFrom": [
-      "hah",
-      "ozo"
-    ],
-    "relatedTo": [
-      "ozo"
-    ]
+    "derivedFrom": ["hah", "ozo"],
+    "relatedTo": ["ozo"]
   },
   {
     "id": "ozoja",
     "romanization": "OZOJA",
-    "glosses": [
-      "prince"
-    ],
+    "glosses": ["prince"],
     "category": "base",
-    "derivedFrom": [
-      "ozo",
-      "jah"
-    ]
+    "derivedFrom": ["ozo", "jah"]
   },
   {
     "id": "ozoha",
     "romanization": "OZOHA",
-    "glosses": [
-      "princess"
-    ],
+    "glosses": ["princess"],
     "category": "base",
-    "derivedFrom": [
-      "ozo",
-      "hah"
-    ]
+    "derivedFrom": ["ozo", "hah"]
   },
   {
     "id": "zoei",
     "romanization": "ZOEI",
-    "glosses": [
-      "baron"
-    ],
+    "glosses": ["baron"],
     "category": "base"
   },
   {
     "id": "ozta",
     "romanization": "OZTA",
-    "glosses": [
-      "duke"
-    ],
+    "glosses": ["duke"],
     "category": "base",
-    "derivedFrom": [
-      "ozo"
-    ]
+    "derivedFrom": ["ozo"]
   },
   {
     "id": "ozhata",
     "romanization": "OZHATA",
-    "glosses": [
-      "duchess"
-    ],
+    "glosses": ["duchess"],
     "category": "base",
-    "derivedFrom": [
-      "ozo",
-      "hah"
-    ]
+    "derivedFrom": ["ozo", "hah"]
   },
   {
     "id": "povka",
     "romanization": "POVKA",
-    "glosses": [
-      "lord"
-    ],
+    "glosses": ["lord"],
     "category": "base"
   },
   {
     "id": "vkrelta",
     "romanization": "VKRELTA",
-    "glosses": [
-      "noble",
-      "high class"
-    ],
+    "glosses": ["noble", "high class"],
     "category": "base",
-    "derivedFrom": [
-      "vkrel"
-    ]
+    "derivedFrom": ["vkrel"]
   },
   {
     "id": "potausm",
     "romanization": "POTAUSM",
-    "glosses": [
-      "commoner",
-      "peasant"
-    ],
+    "glosses": ["commoner", "peasant"],
     "category": "base",
-    "derivedFrom": [
-      "tausm"
-    ]
+    "derivedFrom": ["tausm"]
   },
   {
     "id": "hen",
     "romanization": "HEN",
-    "glosses": [
-      "fight",
-      "battle"
-    ],
+    "glosses": ["fight", "battle"],
     "category": "base"
   },
   {
     "id": "haadhen",
     "romanization": "HAADHEN",
-    "glosses": [
-      "war"
-    ],
+    "glosses": ["war"],
     "category": "base",
-    "derivedFrom": [
-      "haad",
-      "hen"
-    ]
+    "derivedFrom": ["haad", "hen"]
   },
   {
     "id": "enz",
     "romanization": "ENZ",
-    "glosses": [
-      "nature",
-      "environment"
-    ],
+    "glosses": ["nature", "environment"],
     "category": "base"
   },
   {
     "id": "pohen",
     "romanization": "POHEN",
-    "glosses": [
-      "soldier"
-    ],
+    "glosses": ["soldier"],
     "category": "base",
-    "derivedFrom": [
-      "hen"
-    ]
+    "derivedFrom": ["hen"]
   },
   {
     "id": "aseria",
     "romanization": "ASERIA",
-    "glosses": [
-      "emptiness"
-    ],
+    "glosses": ["emptiness"],
     "category": "base"
   },
   {
     "id": "inltenz",
     "romanization": "INLTENZ",
-    "glosses": [
-      "element",
-      "force of nature"
-    ],
+    "glosses": ["element", "force of nature"],
     "category": "base",
-    "derivedFrom": [
-      "nlt",
-      "enz"
-    ]
+    "derivedFrom": ["nlt", "enz"]
   },
   {
     "id": "koko",
     "romanization": "KOKO",
-    "glosses": [
-      "fullness"
-    ],
+    "glosses": ["fullness"],
     "category": "base"
   },
   {
     "id": "hau-she",
     "romanization": "HAU-SHE",
-    "glosses": [
-      "draw",
-      "to draw"
-    ],
+    "glosses": ["draw", "to draw"],
     "category": "base"
   },
   {
     "id": "haad",
     "romanization": "HAAD",
-    "glosses": [
-      "big"
-    ],
+    "glosses": ["big"],
     "category": "base"
   },
   {
     "id": "zizi",
     "romanization": "ZIZI",
-    "glosses": [
-      "small"
-    ],
+    "glosses": ["small"],
     "category": "base"
   },
   {
     "id": "zikui",
     "romanization": "ZIKUI",
-    "glosses": [
-      "quiet"
-    ],
+    "glosses": ["quiet"],
     "category": "base",
-    "derivedFrom": [
-      "zizi",
-      "kui"
-    ]
+    "derivedFrom": ["zizi", "kui"]
   },
   {
     "id": "kui",
     "romanization": "KUI",
-    "glosses": [
-      "noise"
-    ],
+    "glosses": ["noise"],
     "category": "base"
   },
   {
     "id": "haakui",
     "romanization": "HAAKUI",
-    "glosses": [
-      "loud"
-    ],
+    "glosses": ["loud"],
     "category": "base",
-    "derivedFrom": [
-      "haad",
-      "kui"
-    ]
+    "derivedFrom": ["haad", "kui"]
   },
   {
     "id": "llahen",
     "romanization": "LLAHEN",
-    "glosses": [
-      "voice",
-      "animal cry"
-    ],
+    "glosses": ["voice", "animal cry"],
     "category": "base"
   },
   {
     "id": "nult",
     "romanization": "NULT",
-    "glosses": [
-      "curse",
-      "dark magic"
-    ],
+    "glosses": ["curse", "dark magic"],
     "category": "base"
   },
   {
     "id": "magia",
     "romanization": "MAGIA",
-    "glosses": [
-      "magic",
-      "magical energy"
-    ],
+    "glosses": ["magic", "magical energy"],
     "category": "base"
   },
   {
     "id": "alnt",
     "romanization": "ALNT",
-    "glosses": [
-      "blessing"
-    ],
+    "glosses": ["blessing"],
     "category": "base"
   },
   {
     "id": "velvad",
     "romanization": "VELVAD",
-    "glosses": [
-      "miracle"
-    ],
+    "glosses": ["miracle"],
     "category": "base",
-    "derivedFrom": [
-      "vel",
-      "vad"
-    ]
+    "derivedFrom": ["vel", "vad"]
   },
   {
     "id": "u-shekak",
     "romanization": "U-SHEKAK",
-    "glosses": [
-      "projection",
-      "plan",
-      "schedule",
-      "plot"
-    ],
+    "glosses": ["projection", "plan", "schedule", "plot"],
     "category": "base",
-    "derivedFrom": [
-      "u-she"
-    ],
-    "relatedTo": [
-      "lau-she"
-    ]
+    "derivedFrom": ["u-she"],
+    "relatedTo": ["lau-she"]
   },
   {
     "id": "sefari",
     "romanization": "SEFARI",
-    "glosses": [
-      "preparedness"
-    ],
+    "glosses": ["preparedness"],
     "category": "base"
   },
   {
     "id": "donata",
     "romanization": "DONATA",
-    "glosses": [
-      "message"
-    ],
+    "glosses": ["message"],
     "category": "base"
   },
   {
     "id": "fiir",
     "romanization": "FIIR",
-    "glosses": [
-      "hero",
-      "heroine",
-      "victor"
-    ],
+    "glosses": ["hero", "heroine", "victor"],
     "category": "base"
   },
   {
     "id": "sevaris",
     "romanization": "SEVARIS",
-    "glosses": [
-      "villain",
-      "villainess",
-      "loser"
-    ],
+    "glosses": ["villain", "villainess", "loser"],
     "category": "base"
   },
   {
     "id": "alo",
     "romanization": "ALO",
-    "glosses": [
-      "win"
-    ],
+    "glosses": ["win"],
     "category": "base"
   },
   {
     "id": "noka",
     "romanization": "NOKA",
-    "glosses": [
-      "lose"
-    ],
+    "glosses": ["lose"],
     "category": "base"
   },
   {
     "id": "ezase",
     "romanization": "EZASE",
-    "glosses": [
-      "complete"
-    ],
+    "glosses": ["complete"],
     "category": "base"
   },
   {
     "id": "ezko",
     "romanization": "EZKO",
-    "glosses": [
-      "incomplete"
-    ],
+    "glosses": ["incomplete"],
     "category": "base"
   },
   {
     "id": "jelt",
     "romanization": "JELT",
-    "glosses": [
-      "under",
-      "below",
-      "protection"
-    ],
+    "glosses": ["under", "below", "protection"],
     "category": "base"
   },
   {
     "id": "poka",
     "romanization": "POKA",
-    "glosses": [
-      "cover",
-      "blanket",
-      "sheet of fabric"
-    ],
+    "glosses": ["cover", "blanket", "sheet of fabric"],
     "category": "base"
   },
   {
     "id": "pohmka",
     "romanization": "POHMKA",
-    "glosses": [
-      "shirt",
-      "tunic"
-    ],
+    "glosses": ["shirt", "tunic"],
     "category": "base",
-    "derivedFrom": [
-      "poka",
-      "hahm"
-    ]
+    "derivedFrom": ["poka", "hahm"]
   },
   {
     "id": "lkka",
     "romanization": "LKKA",
-    "glosses": [
-      "pants",
-      "leggings"
-    ],
+    "glosses": ["pants", "leggings"],
     "category": "base",
-    "derivedFrom": [
-      "lk",
-      "poka"
-    ]
+    "derivedFrom": ["lk", "poka"]
   },
   {
     "id": "polka",
     "romanization": "POLKA",
-    "glosses": [
-      "socks"
-    ],
+    "glosses": ["socks"],
     "category": "base",
-    "derivedFrom": [
-      "poka",
-      "lk"
-    ]
+    "derivedFrom": ["poka", "lk"]
   },
   {
     "id": "tmplka",
     "romanization": "TMPLKA",
-    "glosses": [
-      "shoes",
-      "boots",
-      "sandals",
-      "footwear"
-    ],
+    "glosses": ["shoes", "boots", "sandals", "footwear"],
     "category": "base",
-    "derivedFrom": [
-      "tmpt",
-      "lk"
-    ]
+    "derivedFrom": ["tmpt", "lk"]
   },
   {
     "id": "shrka",
     "romanization": "SHRKA",
-    "glosses": [
-      "gloves"
-    ],
+    "glosses": ["gloves"],
     "category": "base",
-    "derivedFrom": [
-      "shr",
-      "poka"
-    ]
+    "derivedFrom": ["shr", "poka"]
   },
   {
     "id": "aahka",
     "romanization": "AAHKA",
-    "glosses": [
-      "hat"
-    ],
+    "glosses": ["hat"],
     "category": "base",
-    "derivedFrom": [
-      "poka"
-    ]
+    "derivedFrom": ["poka"]
   },
   {
     "id": "jeka",
     "romanization": "JEKA",
-    "glosses": [
-      "underwear",
-      "undergarments"
-    ],
+    "glosses": ["underwear", "undergarments"],
     "category": "base",
-    "derivedFrom": [
-      "jelt",
-      "poka"
-    ]
+    "derivedFrom": ["jelt", "poka"]
   },
   {
     "id": "rz",
     "romanization": "RZ",
-    "glosses": [
-      "observation"
-    ],
+    "glosses": ["observation"],
     "category": "base"
   },
   {
     "id": "zhrtz",
     "romanization": "ZHRTZ",
-    "glosses": [
-      "experience"
-    ],
+    "glosses": ["experience"],
     "category": "base"
   },
   {
     "id": "delnus-storage",
     "romanization": "DELNUS",
-    "glosses": [
-      "storage"
-    ],
+    "glosses": ["storage"],
     "category": "base",
     "notes": "Homograph: see delnus (physics)."
   },
   {
     "id": "ahzdel",
     "romanization": "AHZDEL",
-    "glosses": [
-      "path",
-      "road",
-      "walkway"
-    ],
+    "glosses": ["path", "road", "walkway"],
     "category": "base",
-    "relatedTo": [
-      "lau"
-    ]
+    "relatedTo": ["lau"]
   },
   {
     "id": "haakuiah",
     "romanization": "HAAKUIAH",
-    "glosses": [
-      "yell",
-      "shout",
-      "raise voice"
-    ],
+    "glosses": ["yell", "shout", "raise voice"],
     "category": "base",
-    "derivedFrom": [
-      "haakui",
-      "ah"
-    ]
+    "derivedFrom": ["haakui", "ah"]
   },
   {
     "id": "kakaka",
     "romanization": "KAKAKA",
-    "glosses": [
-      "vehicle"
-    ],
+    "glosses": ["vehicle"],
     "category": "base"
   },
   {
     "id": "zikuiah",
     "romanization": "ZIKUIAH",
-    "glosses": [
-      "whisper",
-      "murmur",
-      "lower voice"
-    ],
+    "glosses": ["whisper", "murmur", "lower voice"],
     "category": "base",
-    "derivedFrom": [
-      "zikui",
-      "ah"
-    ]
+    "derivedFrom": ["zikui", "ah"]
   },
   {
     "id": "korir",
     "romanization": "KORIR",
-    "glosses": [
-      "around"
-    ],
+    "glosses": ["around"],
     "category": "base"
   },
   {
     "id": "lala",
     "romanization": "LALA",
-    "glosses": [
-      "across"
-    ],
+    "glosses": ["across"],
     "category": "base"
   },
   {
     "id": "droo",
     "romanization": "DROO",
-    "glosses": [
-      "through"
-    ],
+    "glosses": ["through"],
     "category": "base"
   },
   {
     "id": "api",
     "romanization": "API",
-    "glosses": [
-      "however"
-    ],
+    "glosses": ["however"],
     "category": "base"
   },
   {
     "id": "reiz",
     "romanization": "REIZ",
-    "glosses": [
-      "weapon"
-    ],
+    "glosses": ["weapon"],
     "category": "base"
   },
   {
     "id": "januhen",
     "romanization": "JANUHEN",
-    "glosses": [
-      "army",
-      "lots of soldiers"
-    ],
+    "glosses": ["army", "lots of soldiers"],
     "category": "base",
-    "derivedFrom": [
-      "janu",
-      "hen"
-    ]
+    "derivedFrom": ["janu", "hen"]
   },
   {
     "id": "hez",
     "romanization": "HEZ",
-    "glosses": [
-      "sky",
-      "atmosphere",
-      "air"
-    ],
+    "glosses": ["sky", "atmosphere", "air"],
     "category": "base"
   },
   {
     "id": "fiit",
     "romanization": "FIIT",
-    "glosses": [
-      "flight",
-      "jump",
-      "air-based movement"
-    ],
+    "glosses": ["flight", "jump", "air-based movement"],
     "category": "base"
   },
   {
     "id": "xinushfiit",
     "romanization": "XINUSHFIIT",
-    "glosses": [
-      "gliding"
-    ],
+    "glosses": ["gliding"],
     "category": "base",
-    "derivedFrom": [
-      "fiit"
-    ]
+    "derivedFrom": ["fiit"]
   },
   {
     "id": "shauia",
     "romanization": "SHAUIA",
-    "glosses": [
-      "swimming",
-      "water-based movement",
-      "boating"
-    ],
+    "glosses": ["swimming", "water-based movement", "boating"],
     "category": "base"
   },
   {
     "id": "pnushakan",
     "romanization": "PNUSHAKAN",
-    "glosses": [
-      "race",
-      "footrace"
-    ],
+    "glosses": ["race", "footrace"],
     "category": "base",
-    "derivedFrom": [
-      "pnusha"
-    ]
+    "derivedFrom": ["pnusha"]
   },
   {
     "id": "kakan",
     "romanization": "KAKAN",
-    "glosses": [
-      "competition",
-      "challenge"
-    ],
+    "glosses": ["competition", "challenge"],
     "category": "base"
   },
   {
     "id": "pokan",
     "romanization": "POKAN",
-    "glosses": [
-      "rival",
-      "worthy opponent"
-    ],
+    "glosses": ["rival", "worthy opponent"],
     "category": "base",
-    "derivedFrom": [
-      "kakan"
-    ]
+    "derivedFrom": ["kakan"]
   },
   {
     "id": "kokaa",
     "romanization": "KOKAA",
-    "glosses": [
-      "the other side",
-      "the other person",
-      "counterpart"
-    ],
+    "glosses": ["the other side", "the other person", "counterpart"],
     "category": "base",
     "notes": "Like Japanese 相手 (aite)."
   },
   {
     "id": "namnkha",
     "romanization": "NAMNKHA",
-    "glosses": [
-      "meat"
-    ],
+    "glosses": ["meat"],
     "category": "base",
-    "derivedFrom": [
-      "namn"
-    ]
+    "derivedFrom": ["namn"]
   },
   {
     "id": "namna",
     "romanization": "NAMNA",
-    "glosses": [
-      "vegetable"
-    ],
+    "glosses": ["vegetable"],
     "category": "base",
-    "derivedFrom": [
-      "namn"
-    ]
+    "derivedFrom": ["namn"]
   },
   {
     "id": "naden",
     "romanization": "NADEN",
-    "glosses": [
-      "food",
-      "edible substance",
-      "drinkable substance"
-    ],
+    "glosses": ["food", "edible substance", "drinkable substance"],
     "category": "base",
-    "derivedFrom": [
-      "namn",
-      "den"
-    ]
+    "derivedFrom": ["namn", "den"]
   },
   {
     "id": "hezmitaus",
     "romanization": "HEZMITAUS",
-    "glosses": [
-      "farm"
-    ],
+    "glosses": ["farm"],
     "category": "base",
-    "derivedFrom": [
-      "hez",
-      "taus"
-    ]
+    "derivedFrom": ["hez", "taus"]
   },
   {
     "id": "hezhant",
     "romanization": "HEZHANT",
-    "glosses": [
-      "urban"
-    ],
+    "glosses": ["urban"],
     "category": "base",
-    "derivedFrom": [
-      "hez"
-    ]
+    "derivedFrom": ["hez"]
   },
   {
     "id": "enzhant",
     "romanization": "ENZHANT",
-    "glosses": [
-      "rural"
-    ],
+    "glosses": ["rural"],
     "category": "base",
-    "derivedFrom": [
-      "enz"
-    ]
+    "derivedFrom": ["enz"]
   },
   {
     "id": "hezmiko",
     "romanization": "HEZMIKO",
-    "glosses": [
-      "facility",
-      "man-made construct"
-    ],
+    "glosses": ["facility", "man-made construct"],
     "category": "base",
-    "derivedFrom": [
-      "hez"
-    ]
+    "derivedFrom": ["hez"]
   },
   {
     "id": "kovak",
     "romanization": "KOVAK",
-    "glosses": [
-      "study"
-    ],
+    "glosses": ["study"],
     "category": "base"
   },
   {
     "id": "kuu",
     "romanization": "KUU",
-    "glosses": [
-      "hall"
-    ],
+    "glosses": ["hall"],
     "category": "base"
   },
   {
     "id": "zifa",
     "romanization": "ZIFA",
-    "glosses": [
-      "room",
-      "small space"
-    ],
+    "glosses": ["room", "small space"],
     "category": "base",
-    "derivedFrom": [
-      "zizi",
-      "famn"
-    ]
+    "derivedFrom": ["zizi", "famn"]
   },
   {
     "id": "dan",
     "romanization": "DAN",
-    "glosses": [
-      "door"
-    ],
+    "glosses": ["door"],
     "category": "base",
     "notes": "Alternate romanization: MON."
   },
   {
     "id": "moti",
     "romanization": "MOTI",
-    "glosses": [
-      "doorknob"
-    ],
+    "glosses": ["doorknob"],
     "category": "base"
   },
   {
     "id": "vakuu",
     "romanization": "VAKUU",
-    "glosses": [
-      "maze",
-      "dungeon",
-      "labyrinth"
-    ],
+    "glosses": ["maze", "dungeon", "labyrinth"],
     "category": "base",
-    "derivedFrom": [
-      "va",
-      "kuu"
-    ],
-    "relatedTo": [
-      "stein"
-    ]
+    "derivedFrom": ["va", "kuu"],
+    "relatedTo": ["stein"]
   },
   {
     "id": "lexia",
     "romanization": "LEXIA",
-    "glosses": [
-      "wisdom"
-    ],
+    "glosses": ["wisdom"],
     "category": "base"
   },
   {
     "id": "nuazhel",
     "romanization": "NUAZHEL",
-    "glosses": [
-      "explosion"
-    ],
+    "glosses": ["explosion"],
     "category": "base"
   },
   {
     "id": "nuazhefeld",
     "romanization": "NUAZHEFELD",
-    "glosses": [
-      "cannon"
-    ],
+    "glosses": ["cannon"],
     "category": "base",
-    "derivedFrom": [
-      "nuazhel",
-      "zhefeld"
-    ]
+    "derivedFrom": ["nuazhel", "zhefeld"]
   },
   {
     "id": "zhefeld",
     "romanization": "ZHEFELD",
-    "glosses": [
-      "gun",
-      "firearm"
-    ],
+    "glosses": ["gun", "firearm"],
     "category": "base"
   },
   {
     "id": "kadenka",
     "romanization": "KADENKA",
-    "glosses": [
-      "cart",
-      "driving vehicle"
-    ],
+    "glosses": ["cart", "driving vehicle"],
     "category": "base",
-    "derivedFrom": [
-      "denka"
-    ]
+    "derivedFrom": ["denka"]
   },
   {
     "id": "denka",
     "romanization": "DENKA",
-    "glosses": [
-      "wheel"
-    ],
+    "glosses": ["wheel"],
     "category": "base"
   },
   {
     "id": "kadenzhefeld",
     "romanization": "KADENZHEFELD",
-    "glosses": [
-      "tank",
-      "cannon-armed driving vehicle"
-    ],
+    "glosses": ["tank", "cannon-armed driving vehicle"],
     "category": "base",
-    "derivedFrom": [
-      "kadenka",
-      "zhefeld"
-    ]
+    "derivedFrom": ["kadenka", "zhefeld"]
   },
   {
     "id": "nuti",
     "romanization": "NUTI",
-    "glosses": [
-      "gun powder"
-    ],
+    "glosses": ["gun powder"],
     "category": "base"
   },
   {
     "id": "anikit",
     "romanization": "ANIKIT",
-    "glosses": [
-      "permanent",
-      "unending",
-      "indefinite"
-    ],
+    "glosses": ["permanent", "unending", "indefinite"],
     "category": "base",
-    "derivedFrom": [
-      "ikit"
-    ]
+    "derivedFrom": ["ikit"]
   },
   {
     "id": "finikit",
     "romanization": "FINIKIT",
-    "glosses": [
-      "temporary",
-      "limited",
-      "finite"
-    ],
+    "glosses": ["temporary", "limited", "finite"],
     "category": "base",
-    "derivedFrom": [
-      "fimn",
-      "ikit"
-    ]
+    "derivedFrom": ["fimn", "ikit"]
   },
   {
     "id": "jakjak",
     "romanization": "JAKJAK",
-    "glosses": [
-      "gathering"
-    ],
+    "glosses": ["gathering"],
     "category": "base",
-    "derivedFrom": [
-      "jak"
-    ]
+    "derivedFrom": ["jak"]
   },
   {
     "id": "eztaz",
     "romanization": "EZTAZ",
-    "glosses": [
-      "job",
-      "duty",
-      "task"
-    ],
+    "glosses": ["job", "duty", "task"],
     "category": "base"
   },
   {
     "id": "pnusha",
     "romanization": "PNUSHA",
-    "glosses": [
-      "hurry",
-      "rush"
-    ],
+    "glosses": ["hurry", "rush"],
     "category": "base"
   },
   {
     "id": "xinusha",
     "romanization": "XINUSHA",
-    "glosses": [
-      "slow pace"
-    ],
+    "glosses": ["slow pace"],
     "category": "base",
-    "derivedFrom": [
-      "xin",
-      "pnusha"
-    ]
+    "derivedFrom": ["xin", "pnusha"]
   },
   {
     "id": "den",
     "romanization": "DEN",
-    "glosses": [
-      "stuff",
-      "thing"
-    ],
+    "glosses": ["stuff", "thing"],
     "category": "base",
-    "relatedTo": [
-      "shred"
-    ]
+    "relatedTo": ["shred"]
   },
   {
     "id": "kizi",
     "romanization": "KIZI",
-    "glosses": [
-      "sharp"
-    ],
+    "glosses": ["sharp"],
     "category": "base"
   },
   {
     "id": "alza",
     "romanization": "ALZA",
-    "glosses": [
-      "dull"
-    ],
+    "glosses": ["dull"],
     "category": "base"
   },
   {
     "id": "tedan",
     "romanization": "TEDAN",
-    "glosses": [
-      "wall",
-      "border",
-      "boundary"
-    ],
+    "glosses": ["wall", "border", "boundary"],
     "category": "base",
-    "derivedFrom": [
-      "dan"
-    ]
+    "derivedFrom": ["dan"]
   },
   {
     "id": "mokka",
     "romanization": "MOKKA",
-    "glosses": [
-      "grab"
-    ],
+    "glosses": ["grab"],
     "category": "base"
   },
   {
     "id": "erhinfals",
     "romanization": "ERHINFALS",
-    "glosses": [
-      "retribution",
-      "revenge",
-      "counter-attack"
-    ],
+    "glosses": ["retribution", "revenge", "counter-attack"],
     "category": "base"
   },
   {
     "id": "meksaris",
     "romanization": "MEKSARIS",
-    "glosses": [
-      "first strike"
-    ],
+    "glosses": ["first strike"],
     "category": "base"
   },
   {
     "id": "mazoranis",
     "romanization": "MAZORANIS",
-    "glosses": [
-      "catharsis"
-    ],
+    "glosses": ["catharsis"],
     "category": "base"
   },
   {
     "id": "xik",
     "romanization": "XIK",
-    "glosses": [
-      "cut"
-    ],
+    "glosses": ["cut"],
     "category": "base"
   },
   {
     "id": "zia",
     "romanization": "ZIA",
-    "glosses": [
-      "slice"
-    ],
+    "glosses": ["slice"],
     "category": "base",
-    "relatedTo": [
-      "kura"
-    ]
+    "relatedTo": ["kura"]
   },
   {
     "id": "zelsh",
     "romanization": "ZELSH",
-    "glosses": [
-      "blade"
-    ],
+    "glosses": ["blade"],
     "category": "base"
   },
   {
     "id": "taizoo",
     "romanization": "TAIZOO",
-    "glosses": [
-      "bond",
-      "welding",
-      "glue"
-    ],
+    "glosses": ["bond", "welding", "glue"],
     "category": "base"
   },
   {
     "id": "famn",
     "romanization": "FAMN",
-    "glosses": [
-      "place",
-      "spot",
-      "area"
-    ],
+    "glosses": ["place", "spot", "area"],
     "category": "base"
   },
   {
     "id": "manin",
     "romanization": "MANIN",
-    "glosses": [
-      "leaving",
-      "setting something down",
-      "placing an object"
-    ],
+    "glosses": ["leaving", "setting something down", "placing an object"],
     "category": "base"
   },
   {
     "id": "mu",
     "romanization": "MU",
-    "glosses": [
-      "candy",
-      "sweets",
-      "snacks"
-    ],
+    "glosses": ["candy", "sweets", "snacks"],
     "category": "base"
   },
   {
     "id": "feya",
     "romanization": "FEYA",
-    "glosses": [
-      "clouds",
-      "fluffiness"
-    ],
+    "glosses": ["clouds", "fluffiness"],
     "category": "base"
   },
   {
     "id": "mumufe",
     "romanization": "MUMUFE",
-    "glosses": [
-      "cotton candy"
-    ],
+    "glosses": ["cotton candy"],
     "category": "base",
-    "derivedFrom": [
-      "mu",
-      "feya"
-    ]
+    "derivedFrom": ["mu", "feya"]
   },
   {
     "id": "shf",
     "romanization": "SHF",
-    "glosses": [
-      "urine"
-    ],
+    "glosses": ["urine"],
     "category": "base"
   },
   {
     "id": "hankid",
     "romanization": "HANKID",
-    "glosses": [
-      "poop"
-    ],
+    "glosses": ["poop"],
     "category": "base"
   },
   {
     "id": "famak",
     "romanization": "FAMAK",
-    "glosses": [
-      "scum",
-      "stain"
-    ],
+    "glosses": ["scum", "stain"],
     "category": "base",
-    "derivedFrom": [
-      "mak"
-    ]
+    "derivedFrom": ["mak"]
   },
   {
     "id": "mak",
     "romanization": "MAK",
-    "glosses": [
-      "trash",
-      "waste"
-    ],
+    "glosses": ["trash", "waste"],
     "category": "base"
   },
   {
     "id": "ihr",
     "romanization": "IHR",
-    "glosses": [
-      "summer"
-    ],
+    "glosses": ["summer"],
     "category": "base",
     "notes": "Astrology section lists KHRI PRAK for summer; both kept."
   },
   {
     "id": "uvollt",
     "romanization": "UVOLLT",
-    "glosses": [
-      "winter"
-    ],
+    "glosses": ["winter"],
     "category": "base"
   },
   {
     "id": "mher",
     "romanization": "MHER",
-    "glosses": [
-      "spring"
-    ],
+    "glosses": ["spring"],
     "category": "base"
   },
   {
     "id": "jertz",
     "romanization": "JERTZ",
-    "glosses": [
-      "fall",
-      "autumn"
-    ],
+    "glosses": ["fall", "autumn"],
     "category": "base"
   },
   {
     "id": "ika",
     "romanization": "IKA",
-    "glosses": [
-      "sunny"
-    ],
+    "glosses": ["sunny"],
     "category": "base"
   },
   {
     "id": "feyadah",
     "romanization": "FEYADAH",
-    "glosses": [
-      "cloudy"
-    ],
+    "glosses": ["cloudy"],
     "category": "base",
-    "derivedFrom": [
-      "feya"
-    ]
+    "derivedFrom": ["feya"]
   },
   {
     "id": "vallah",
     "romanization": "VALLAH",
-    "glosses": [
-      "windy"
-    ],
+    "glosses": ["windy"],
     "category": "base",
-    "derivedFrom": [
-      "val"
-    ]
+    "derivedFrom": ["val"]
   },
   {
     "id": "lu",
     "romanization": "LU",
-    "glosses": [
-      "snow"
-    ],
+    "glosses": ["snow"],
     "category": "base"
   },
   {
     "id": "tmlut",
     "romanization": "TMLUT",
-    "glosses": [
-      "hail"
-    ],
+    "glosses": ["hail"],
     "category": "base",
-    "derivedFrom": [
-      "tmpt",
-      "lu"
-    ]
+    "derivedFrom": ["tmpt", "lu"]
   },
   {
     "id": "humnet",
     "romanization": "HUMNET",
-    "glosses": [
-      "chase",
-      "pursuit"
-    ],
+    "glosses": ["chase", "pursuit"],
     "category": "base",
-    "derivedFrom": [
-      "umn"
-    ]
+    "derivedFrom": ["umn"]
   },
   {
     "id": "akk",
     "romanization": "AKK",
-    "glosses": [
-      "horn",
-      "antler",
-      "protruding bone"
-    ],
+    "glosses": ["horn", "antler", "protruding bone"],
     "category": "base"
   },
   {
     "id": "xin-claw",
     "romanization": "XIN",
-    "glosses": [
-      "claw",
-      "nail"
-    ],
+    "glosses": ["claw", "nail"],
     "category": "base",
     "notes": "Homograph: see xin (few, a little)."
   },
   {
     "id": "nelav",
     "romanization": "NELAV",
-    "glosses": [
-      "smart",
-      "intelligent"
-    ],
+    "glosses": ["smart", "intelligent"],
     "category": "base"
   },
   {
     "id": "nelavlalakht",
     "romanization": "NELAVLALAKHT",
-    "glosses": [
-      "puzzle",
-      "riddle"
-    ],
+    "glosses": ["puzzle", "riddle"],
     "category": "base",
-    "derivedFrom": [
-      "nelav",
-      "lalakht"
-    ]
+    "derivedFrom": ["nelav", "lalakht"]
   },
   {
     "id": "fen",
     "romanization": "FEN",
-    "glosses": [
-      "city"
-    ],
+    "glosses": ["city"],
     "category": "base"
   },
   {
     "id": "stein",
     "romanization": "STEIN",
-    "glosses": [
-      "labyrinth"
-    ],
+    "glosses": ["labyrinth"],
     "category": "base",
     "notes": "Alternate term: VAKUU.",
-    "relatedTo": [
-      "vakuu"
-    ]
+    "relatedTo": ["vakuu"]
   },
   {
     "id": "heim",
     "romanization": "HEIM",
-    "glosses": [
-      "domain",
-      "enclosure"
-    ],
+    "glosses": ["domain", "enclosure"],
     "category": "base"
   }
 ]

@@ -4,8 +4,9 @@
 //   modifiers → a mark attached to a grey host glyph (cf. dakuten)
 import { letterById, wordById } from '../data'
 import { isModifier, type MarkPosition, type Word } from '../data/types'
-import { getLetterGlyph, getModifierInfo, getNumberGlyph } from '../lib/glyphRegistry'
+import { getLetterGlyph, getModifierInfo } from '../lib/glyphRegistry'
 import { resolveLogograph, useGlyphStore } from '../lib/logographSource'
+import { resolveNumberGlyph } from '../lib/numberSource'
 import { useRelationsStore } from '../lib/relations'
 import { spellWord } from '../lib/spelling'
 import { Panel } from './ui/Panel'
@@ -99,7 +100,7 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
   useGlyphStore((s) => s.version) // re-render when Forge approves a glyph
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useRelationsStore((s) => s.version) // re-render when relationships change
-  const numeral = word.category === 'number' ? getNumberGlyph(word.id) : null
+  const numeral = word.category === 'number' ? resolveNumberGlyph(word.id) : null
   const logo = numeral ? null : resolveLogograph(word.id)
   const hero = numeral ?? logo?.svg ?? null
   const spell = spellWord(word, {

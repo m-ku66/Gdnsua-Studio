@@ -49,6 +49,29 @@ ipcMain.handle('delete-logograph', async (_e, id: string): Promise<boolean> => {
   }
 })
 
+// Numeral glyphs carved in the Foundry (dev only)
+ipcMain.handle('save-number', async (_e, id: string, svg: string): Promise<boolean> => {
+  if (!is.dev || !/^[a-z0-9-]+$/.test(id)) return false
+  try {
+    const dir = join(app.getAppPath(), 'src/renderer/src/glyphs/numbers')
+    await mkdir(dir, { recursive: true })
+    await writeFile(join(dir, id + '.svg'), svg, 'utf-8')
+    return true
+  } catch {
+    return false
+  }
+})
+
+ipcMain.handle('delete-number', async (_e, id: string): Promise<boolean> => {
+  if (!is.dev || !/^[a-z0-9-]+$/.test(id)) return false
+  try {
+    await unlink(join(app.getAppPath(), 'src/renderer/src/glyphs/numbers', id + '.svg'))
+    return true
+  } catch {
+    return false
+  }
+})
+
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({

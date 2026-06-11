@@ -2,6 +2,8 @@
 import type { ReactNode } from 'react'
 import { letters, words } from '../data'
 import { glyphCounts } from '../lib/glyphRegistry'
+import { useGlyphStore } from '../lib/logographSource'
+import { carvedNumeralCount, NUMBER_WORD_IDS } from '../lib/numberSource'
 import { useAppStore, type Section } from '../store/useAppStore'
 import { Diamond } from './ui/primitives'
 import { CornerOrnaments } from './CornerOrnaments'
@@ -34,6 +36,7 @@ function RailItem({ id, label, ready }: (typeof SECTIONS)[number]): React.JSX.El
 
 export function AppShell({ children }: { children: ReactNode }): React.JSX.Element {
   const section = useAppStore((s) => s.section)
+  useGlyphStore((s) => s.version) // live footer tallies
   return (
     <div className="relative flex h-screen flex-col overflow-hidden">
       <CornerOrnaments />
@@ -66,7 +69,8 @@ export function AppShell({ children }: { children: ReactNode }): React.JSX.Eleme
           {words.length} records <span className="px-1">{'//'}</span> {glyphCounts.letters}/
           {letters.length} letters carved <span className="px-1">{'//'}</span>{' '}
           {glyphCounts.logographs} logographs <span className="px-1">{'//'}</span>{' '}
-          {glyphCounts.numbers}/20 numerals <span className="px-1">{'//'}</span> archive stable
+          {carvedNumeralCount()}/{NUMBER_WORD_IDS.length} numerals{' '}
+          <span className="px-1">{'//'}</span> archive stable
         </span>
         <span>v0.1.0</span>
       </footer>

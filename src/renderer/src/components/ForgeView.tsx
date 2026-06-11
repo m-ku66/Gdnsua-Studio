@@ -25,13 +25,19 @@ import {
   type Side,
   type Tier
 } from '../lib/logographGen'
-import { letterMatch, logographMatch, parseRects } from '../lib/glyphBlacklist'
+import { letterMatch, logographMatch, numeralMatch, parseRects } from '../lib/glyphBlacklist'
 import {
   removeRuntimeLogograph,
   resolveLogograph,
   setRuntimeLogograph,
   useGlyphStore
 } from '../lib/logographSource'
+import {
+  NUMBER_WORD_IDS,
+  removeRuntimeNumber,
+  resolveNumberGlyph,
+  setRuntimeNumber
+} from '../lib/numberSource'
 import { Diamond, SectionLabel } from './ui/primitives'
 import { Panel } from './ui/Panel'
 import { MixedScriptRegistry, PromotedRootBar, RootPromoter, FilterInput, wordMatches } from './CampaignTwo'
@@ -39,6 +45,50 @@ import { promotedRoots, useRelationsStore } from '../lib/relations'
 
 const U = 58 // editor nudge step (half-grid for fine kiss alignment)
 const PILOT_ROOTS = CAMPAIGN_ROOTS
+
+/** What kind of glyph a forge panel carves, and where it lives */
+interface CarveTarget {
+  noun: string
+  usedLabel: string
+  current: (id: string) => string | null
+  save: (id: string, svg: string) => Promise<void>
+  remove: (id: string) => Promise<void>
+  dup: (bars: Bar[], excludeId: string) => string | null
+}
+
+const LOGO_TARGET: CarveTarget = {
+  noun: 'logograph',
+  usedLabel: 'In use by every derived spelling',
+  current: (id) => {
+    const r = resolveLogograph(id)
+    return r?.source === 'carved' ? r.svg : null
+  },
+  save: async (id, svg) => {
+    setRuntimeLogograph(id, svg)
+    await window.api.saveLogograph(id, svg)
+  },
+  remove: async (id) => {
+    removeRuntimeLogograph(id)
+    await window.api.deleteLogograph(id)
+  },
+  dup: logographMatch
+}
+
+const NUMERAL_TARGET: CarveTarget = {
+  noun: 'numeral',
+  usedLabel: 'In use by the Abacus and number plates',
+  current: resolveNumberGlyph,
+  save: async (id, svg) => {
+    setRuntimeNumber(id, svg)
+    await window.api.saveNumber(id, svg)
+  },
+  remove: async (id) => {
+    removeRuntimeNumber(id)
+    await window.api.deleteNumber(id)
+  },
+  dup: numeralMatch
+}
+
 const SIDES: Side[] = ['none', 'top', 'bottom', 'left', 'right']
 const TIERS: { id: Tier; label: string }[] = [
   { id: 'cell', label: 'Cell' },
@@ -179,13 +229,13 @@ function DraftEditor({
 
 // ── Compose: manual stroke placement on the glyph_base lattice ──
 function ComposeEditor({
-  rootId,
+  duplicateOf,
   placements,
   onChange,
   onCarve,
   drafts
 }: {
-  rootId: string
+  duplicateOf: (bars: Bar[]) => string | null
   placements: Placement[]
   onChange: (p: Placement[]) => void
   onCarve: () => void
@@ -199,8 +249,8 @@ function ComposeEditor({
   const segments = useMemo(() => placementsToSegments(placements), [placements])
   const match = useMemo(() => letterMatch(segments.map((s) => s.bar)), [segments])
   const dup = useMemo(
-    () => logographMatch(segments.map((s) => s.bar), rootId),
-    [segments, rootId]
+    () => duplicateOf(segments.map((s) => s.bar)),
+    [segments, duplicateOf]
   )
 
   const plRect = (pl: Placement): Bar =>
@@ -349,7 +399,7 @@ function ComposeEditor({
         )}
         {!match && dup && (
           <div className="text-seal text-[9px] tracking-[0.08em] uppercase">
-            ⚠ Identical to “{wordById.get(dup)?.romanization ?? dup}”&apos;s logograph — change at
+            ⚠ Identical to “{wordById.get(dup)?.romanization ?? dup}”&apos;s glyph — change at
             least one stroke
           </div>
         )}
@@ -367,7 +417,13 @@ function ComposeEditor({
   )
 }
 
-function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
+function RootForge({
+  rootId,
+  target = LOGO_TARGET
+}: {
+  rootId: string
+  target?: CarveTarget
+}): React.JSX.Element | null {
   const glyphVersion = useGlyphStore((s) => s.version)
   const word = wordById.get(rootId)
   const [tab, setTab] = useState<'forge' | 'compose'>('forge')
@@ -377,14 +433,14 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
   const [composition, setComposition] = useState<Placement[]>([])
   const [warn, setWarn] = useState<string | null>(null)
   const drafts = useMemo(
-    () => generateDrafts(rootId, seed, params, 4),
-    // glyphVersion: reroll drafts that would duplicate a newly carved logograph
-    [rootId, seed, params, glyphVersion]
+    () => generateDrafts(rootId, seed, params, 4, (bars) => target.dup(bars, rootId)),
+    // glyphVersion: reroll drafts that would duplicate a newly carved glyph
+    [rootId, seed, params, glyphVersion, target]
   )
   if (!word) return null
 
-  const current = resolveLogograph(rootId)
-  const carved = current?.source === 'carved'
+  const current = target.current(rootId)
+  const carved = current !== null
   const set = (patch: Partial<GenParams>): void => setParams((p) => ({ ...p, ...patch }))
 
   const commit = async (bars: Bar[]): Promise<boolean> => {
@@ -393,16 +449,14 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
       setWarn(`Refused — this shape matches the letter “${hit}”. Adjust it and try again.`)
       return false
     }
-    const dup = logographMatch(bars, rootId)
+    const dup = target.dup(bars, rootId)
     if (dup) {
       const dupRom = wordById.get(dup)?.romanization ?? dup
-      setWarn(`Refused — identical to the logograph already carved for “${dupRom}”. Change at least one stroke.`)
+      setWarn(`Refused — identical to the ${target.noun} already carved for “${dupRom}”. Change at least one stroke.`)
       return false
     }
     setWarn(null)
-    const svg = barsToSvg(bars)
-    setRuntimeLogograph(rootId, svg)
-    await window.api.saveLogograph(rootId, svg)
+    await target.save(rootId, barsToSvg(bars))
     return true
   }
 
@@ -414,17 +468,18 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
     await commit(placementsToBars(composition))
   }
   const uncarve = async (): Promise<void> => {
-    removeRuntimeLogograph(rootId)
     setEditing(null)
     setWarn(null)
-    await window.api.deleteLogograph(rootId)
+    await target.remove(rootId)
   }
 
   // ── Carved state: one unified compact view, however it was made ──
   if (carved && current) {
+    const carvedBars = parseRects(current)
+    const editable = carvedBars.length > 0 // hand-drawn path-based SVGs can't reopen as bars
     const startEdit = (): void => {
       setWarn(null)
-      setEditing(parseRects(current.svg).map((b) => ({ ...b })))
+      setEditing(carvedBars.map((b) => ({ ...b })))
     }
     return (
       <Panel className="px-5 py-4">
@@ -433,7 +488,7 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
             <div className="border-rule bg-sand/60 flex h-20 w-20 shrink-0 items-center justify-center border p-2">
               <div
                 className="text-ink h-full w-full [&_svg]:h-full [&_svg]:w-full"
-                dangerouslySetInnerHTML={{ __html: current.svg }}
+                dangerouslySetInnerHTML={{ __html: current }}
               />
             </div>
             <div>
@@ -449,15 +504,28 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
           {!editing && (
             <div className="flex flex-col items-end gap-1.5">
               <div className="flex gap-2">
-                <button className={btn} onClick={startEdit} title="Reopen the carved bars in the editor">
+                <button
+                  className={btn}
+                  disabled={!editable}
+                  onClick={startEdit}
+                  title={
+                    editable
+                      ? 'Reopen the carved bars in the editor'
+                      : 'Hand-drawn SVG (paths) — edit it in Figma, or Uncarve and re-forge'
+                  }
+                >
                   Edit
                 </button>
-                <button className={btn} onClick={uncarve} title="Delete this glyph and reopen the configurator">
+                <button
+                  className={btn}
+                  onClick={uncarve}
+                  title={`Delete this ${target.noun}'s SVG file and reopen the configurator`}
+                >
                   Uncarve
                 </button>
               </div>
               <span className="text-dim text-[8px] tracking-[0.1em] uppercase">
-                In use by every derived spelling
+                {target.usedLabel}
               </span>
             </div>
           )}
@@ -537,7 +605,7 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
             · <span className="text-ink/70">Blocks</span> adds single-cell accents ·{' '}
             <span className="text-ink/70">Side</span> biases strokes toward one edge ·{' '}
             <span className="text-ink/70">Reroll</span> draws four fresh drafts. Drafts that match
-            a letter or duplicate an existing logograph reroll themselves automatically.
+            a letter or duplicate an existing glyph reroll themselves automatically.
           </div>
           {editing && (
             <DraftEditor bars={editing} onChange={setEditing} onCarve={carveDraft} onCancel={() => { setEditing(null); setWarn(null) }} />
@@ -546,7 +614,7 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
       )}
       {tab === 'compose' && (
         <ComposeEditor
-          rootId={rootId}
+          duplicateOf={(bars) => target.dup(bars, rootId)}
           placements={composition}
           onChange={setComposition}
           onCarve={carveComposition}
@@ -562,15 +630,18 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
 
 export function ForgeView(): React.JSX.Element {
   useRelationsStore((s) => s.version)
+  useGlyphStore((s) => s.version)
   const promoted = promotedRoots()
   const [filterOne, setFilterOne] = useState('')
   const [filterTwo, setFilterTwo] = useState('')
+  const [filterNum, setFilterNum] = useState('')
   const byFilter = (q: string) => (id: string) => {
     const w = wordById.get(id)
     return w ? wordMatches(w, q) : false
   }
   const visibleOne = PILOT_ROOTS.filter(byFilter(filterOne))
   const visibleTwo = promoted.filter(byFilter(filterTwo))
+  const visibleNum = NUMBER_WORD_IDS.filter(byFilter(filterNum))
   return (
     <div className="fade-up flex h-full flex-col gap-5 overflow-y-auto p-6">
       <div>
@@ -645,6 +716,33 @@ export function ForgeView(): React.JSX.Element {
               <PromotedRootBar rootId={id} />
               <RootForge rootId={id} />
             </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <SectionLabel>
+            The Numeral Foundry
+            {filterNum ? ` — ${visibleNum.length} of ${NUMBER_WORD_IDS.length}` : ''}
+          </SectionLabel>
+          <FilterInput value={filterNum} onChange={setFilterNum} placeholder="Filter numerals…" />
+        </div>
+        <p className="text-dim mb-2 max-w-2xl text-[10px] leading-relaxed">
+          Forge numeral glyphs the same way as logographs — generate, compose, carve. Carvings
+          save to <span className="text-ink">glyphs/numbers/</span> and appear instantly in the
+          Abacus and on number plates. Hand-drawn numerals from Figma show as carved; they can be
+          uncarved (deletes the SVG file — recoverable via git) but only forge-carved shapes can
+          reopen in the editor. Numerals follow the same two laws: never resemble a letter, never
+          duplicate another numeral.
+        </p>
+        <div className="flex flex-col gap-3">
+          {visibleNum.length === 0 && (
+            <div className="text-dim py-2 text-[10px] tracking-[0.12em] uppercase">
+              No numerals match “{filterNum}”
+            </div>
+          )}
+          {visibleNum.map((id) => (
+            <RootForge key={id} rootId={id} target={NUMERAL_TARGET} />
           ))}
         </div>
       </div>

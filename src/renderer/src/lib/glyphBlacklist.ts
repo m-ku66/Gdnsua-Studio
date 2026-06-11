@@ -7,6 +7,7 @@
 // ─────────────────────────────────────────────
 import { letterGlyphs } from './glyphRegistry'
 import { allCarvedLogographs } from './logographSource'
+import { allNumeralGlyphs } from './numberSource'
 import type { Bar } from './logographGen'
 
 const N = 12
@@ -117,6 +118,24 @@ export function logographMatch(bars: Bar[], excludeId: string): string | null {
   if (bars.length === 0) return null
   const sig = signature(bars, 1160, 1164)
   for (const { id, svg } of allCarvedLogographs()) {
+    if (id === excludeId) continue
+    const rects = parseRects(svg)
+    if (!rects.length) continue
+    const vb = (svg.match(/viewBox="([^"]+)"/)?.[1] ?? '0 0 1160 1164').split(/\s+/).map(Number)
+    if (iou(sig, signature(rects, vb[2] || 1160, vb[3] || 1164)) >= DUP_THRESH) return id
+  }
+  return null
+}
+
+/**
+ * Same near-identical rule for numerals: a carved numeral may not
+ * duplicate any existing numeral glyph (hand-made files included).
+ * Hand-made SVGs without <rect>s can't be signatured and are skipped.
+ */
+export function numeralMatch(bars: Bar[], excludeId: string): string | null {
+  if (bars.length === 0) return null
+  const sig = signature(bars, 1160, 1164)
+  for (const { id, svg } of allNumeralGlyphs()) {
     if (id === excludeId) continue
     const rects = parseRects(svg)
     if (!rects.length) continue

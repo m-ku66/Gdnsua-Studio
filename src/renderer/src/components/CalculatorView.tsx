@@ -10,7 +10,8 @@ import {
   evaluate,
   toDozenal
 } from '../lib/dozenal'
-import { getNumberGlyph } from '../lib/glyphRegistry'
+import { useGlyphStore } from '../lib/logographSource'
+import { resolveNumberGlyph } from '../lib/numberSource'
 import { Diamond, SectionLabel } from './ui/primitives'
 import { Panel } from './ui/Panel'
 
@@ -29,7 +30,7 @@ function NumeralCell({ digit }: { digit: number | '.' | '-' }): React.JSX.Elemen
     )
   }
   const word = wordById.get(DIGIT_WORD_IDS[digit])
-  const svg = getNumberGlyph(DIGIT_WORD_IDS[digit])
+  const svg = resolveNumberGlyph(DIGIT_WORD_IDS[digit])
   return (
     <div
       title={word ? `${word.romanization} — ${word.glosses[0]}` : String(digit)}
@@ -57,7 +58,7 @@ function DigitKey({
   disabled?: boolean
   onPress: (s: string) => void
 }): React.JSX.Element {
-  const svg = getNumberGlyph(DIGIT_WORD_IDS[digit])
+  const svg = resolveNumberGlyph(DIGIT_WORD_IDS[digit])
   const label = '0123456789AB'[digit]
   const word = wordById.get(DIGIT_WORD_IDS[digit])
   return (
@@ -81,6 +82,7 @@ function DigitKey({
 }
 
 export function CalculatorView(): React.JSX.Element {
+  useGlyphStore((s) => s.version) // re-render when numerals are carved in the Foundry
   const [expr, setExpr] = useState('')
   const [base, setBase] = useState<10 | 12>(10)
 

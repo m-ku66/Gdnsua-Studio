@@ -430,11 +430,13 @@ export function generateDrafts(
   rootId: string,
   baseSeed: number,
   params: GenParams,
-  count = 4
+  count = 4,
+  /** Override the duplicate check (default: carved logographs) */
+  dupCheck?: (bars: Bar[]) => string | null
 ): Draft[] {
   const result: Draft[] = []
-  const offends = (bars: Bar[]): boolean =>
-    letterMatch(bars) !== null || logographMatch(bars, rootId) !== null
+  const isDup = dupCheck ?? ((bars: Bar[]) => logographMatch(bars, rootId))
+  const offends = (bars: Bar[]): boolean => letterMatch(bars) !== null || isDup(bars) !== null
   for (let i = 0; i < count; i++) {
     let draft = generateDraft(rootId, baseSeed * 31 + i, params)
     let attempt = 0
