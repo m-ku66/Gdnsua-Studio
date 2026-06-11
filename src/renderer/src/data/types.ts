@@ -64,10 +64,24 @@ export interface Word {
   notes?: string
 }
 
+/**
+ * Where a modifier mark sits relative to its host glyph.
+ * Modifiers are NOT spelled with letters — they are diacritic-like
+ * marks (cf. Japanese dakuten/handakuten) attached to a host glyph.
+ */
+export type MarkPosition = 'left' | 'right' | 'top' | 'bottom' | 'overlay' | 'unassigned'
+
 /** Modifier words get extra behavioral metadata */
 export interface Modifier extends Word {
   /** What the modifier does, e.g. "negates target meaning" */
   effect: string
   /** Standalone form repeats: HAH → HAHAH */
   standaloneForm: string
+  /** Position of the mark relative to its host glyph */
+  markPosition?: MarkPosition
+}
+
+/** Type guard: modifiers render as marks, never as letter sequences */
+export function isModifier(word: Word): word is Modifier {
+  return word.category === 'modifier'
 }

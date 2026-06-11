@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { words } from '../data'
 import { useAppStore, type Section } from '../store/useAppStore'
 import { Diamond } from './ui/primitives'
-import { MazeBackdrop } from './MazeBackdrop'
+import { CornerOrnaments } from './CornerOrnaments'
 
 const SECTIONS: { id: Section; label: string; ready: boolean }[] = [
   { id: 'dictionary', label: 'Dictionary', ready: true },
@@ -35,7 +35,7 @@ export function AppShell({ children }: { children: ReactNode }): React.JSX.Eleme
   const section = useAppStore((s) => s.section)
   return (
     <div className="relative flex h-screen flex-col overflow-hidden">
-      <MazeBackdrop />
+      <CornerOrnaments />
 
       {/* Top bar */}
       <header className="border-rule relative z-10 flex items-center justify-between border-b px-5 py-3">

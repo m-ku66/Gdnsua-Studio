@@ -38,6 +38,14 @@ export function WordDetail({ word }: { word: Word }): React.JSX.Element {
           {'effect' in word && typeof word.effect === 'string' && (
             <MetaRow label="Effect">{word.effect}</MetaRow>
           )}
+          {'standaloneForm' in word && typeof word.standaloneForm === 'string' && (
+            <MetaRow label="Standalone">
+              <span className="font-display text-[14px] font-semibold">
+                {word.standaloneForm}
+              </span>
+              <span className="text-dim ml-2 text-[10px]">(mark doubles when used alone)</span>
+            </MetaRow>
+          )}
           {word.notes && <MetaRow label="Notes">{word.notes}</MetaRow>}
         </div>
       </div>
