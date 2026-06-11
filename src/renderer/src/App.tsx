@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import { AppShell } from './components/AppShell'
+import { ForgeView } from './components/ForgeView'
 import { ResultsList } from './components/ResultsList'
 import { SearchBar } from './components/SearchBar'
 import { WordDetail } from './components/WordDetail'
@@ -47,11 +48,8 @@ function DictionaryView(): React.JSX.Element {
 }
 
 function App(): React.JSX.Element {
-  return (
-    <AppShell>
-      <DictionaryView />
-    </AppShell>
-  )
+  const section = useAppStore((s) => s.section)
+  return <AppShell>{section === 'tools' ? <ForgeView /> : <DictionaryView />}</AppShell>
 }
 
 export default App

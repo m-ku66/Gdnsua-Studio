@@ -10,7 +10,7 @@ const SECTIONS: { id: Section; label: string; ready: boolean }[] = [
   { id: 'dictionary', label: 'Dictionary', ready: true },
   { id: 'names', label: 'Names', ready: false },
   { id: 'numbers', label: 'Numbers', ready: false },
-  { id: 'tools', label: 'Tools', ready: false }
+  { id: 'tools', label: 'Tools', ready: true }
 ]
 
 function RailItem({ id, label, ready }: (typeof SECTIONS)[number]): React.JSX.Element {

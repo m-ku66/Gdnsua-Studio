@@ -5,6 +5,7 @@
 import { letterById } from '../data'
 import { isModifier, type MarkPosition, type Word } from '../data/types'
 import { getLetterGlyph, getModifierInfo } from '../lib/glyphRegistry'
+import { resolveLogograph, useGlyphStore } from '../lib/logographSource'
 import { tokenizeRomanization } from '../lib/tokenize'
 import { Panel } from './ui/Panel'
 
@@ -92,14 +93,29 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
     )
   }
 
-  // ── Standard word: letter sequence ──
+  // ── Standard word: logograph hero when available, else letters ──
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useGlyphStore((s) => s.version) // re-render when Forge approves a glyph
+  const logo = resolveLogograph(word.id)
   const { tokens } = tokenizeRomanization(word.romanization, {
     trueW: word.regions?.includes('Kharmat') || word.regions?.includes('Haadfahuta')
   })
 
   return (
     <Panel corners className="px-6 py-7">
-      <div className="flex flex-wrap items-center justify-center gap-2">
+      {logo && (
+        <div className="mb-5 flex justify-center">
+          <div className="border-ink/40 flex h-36 w-36 items-center justify-center border p-3">
+            <div
+              className="text-ink h-full w-full [&_svg]:h-full [&_svg]:w-full"
+              dangerouslySetInnerHTML={{ __html: logo.svg }}
+            />
+          </div>
+        </div>
+      )}
+      <div
+        className={`flex flex-wrap items-center justify-center ${logo ? 'gap-1 opacity-80' : 'gap-2'}`}
+      >
         {tokens.map((id, i) => {
           const letter = letterById.get(id)
           const svg = getLetterGlyph(id)
@@ -135,8 +151,9 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
         {word.romanization}
       </div>
       <div className="text-dim mt-2 text-center text-[9px] tracking-[0.2em] uppercase">
-        {tokens.length} letters
-        {tokens.some((id) => !getLetterGlyph(id)) && ' — some glyphs uncarved'}
+        {logo
+          ? `logograph (${logo.source}) · spelled with ${tokens.length} letters`
+          : `${tokens.length} letters${tokens.some((id) => !getLetterGlyph(id)) ? ' — some glyphs uncarved' : ''}`}
       </div>
     </Panel>
   )

@@ -1,7 +1,21 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { writeFile, mkdir } from 'fs/promises'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+
+// Save an approved logograph draft into the glyph drop zone (dev only)
+ipcMain.handle('save-logograph', async (_e, id: string, svg: string): Promise<boolean> => {
+  if (!is.dev || !/^[a-z0-9-]+$/.test(id)) return false
+  try {
+    const dir = join(app.getAppPath(), 'src/renderer/src/glyphs/logographs')
+    await mkdir(dir, { recursive: true })
+    await writeFile(join(dir, id + '.svg'), svg, 'utf-8')
+    return true
+  } catch {
+    return false
+  }
+})
 
 function createWindow(): void {
   // Create the browser window.
