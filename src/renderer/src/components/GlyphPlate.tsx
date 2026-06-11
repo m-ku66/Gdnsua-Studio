@@ -6,6 +6,7 @@ import { letterById, wordById } from '../data'
 import { isModifier, type MarkPosition, type Word } from '../data/types'
 import { getLetterGlyph, getModifierInfo } from '../lib/glyphRegistry'
 import { resolveLogograph, useGlyphStore } from '../lib/logographSource'
+import { useRelationsStore } from '../lib/relations'
 import { spellWord } from '../lib/spelling'
 import { Panel } from './ui/Panel'
 
@@ -96,6 +97,8 @@ export function GlyphPlate({ word }: { word: Word }): React.JSX.Element {
   // ── Standard word: logograph hero when available, else letters ──
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useGlyphStore((s) => s.version) // re-render when Forge approves a glyph
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useRelationsStore((s) => s.version) // re-render when relationships change
   const logo = resolveLogograph(word.id)
   const spell = spellWord(word, {
     trueW: word.regions?.includes('Kharmat') || word.regions?.includes('Haadfahuta')

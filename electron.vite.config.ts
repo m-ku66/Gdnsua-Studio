@@ -18,7 +18,7 @@ export default defineConfig({
         // Carving writes SVGs here at runtime; the eager glob in
         // glyphRegistry would otherwise trigger a full app reload.
         // Runtime state already renders new carvings instantly.
-        ignored: ['**/glyphs/logographs/**']
+        ignored: ['**/glyphs/logographs/**', '**/data/relations.local.json']
       }
     }
   }

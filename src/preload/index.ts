@@ -5,7 +5,9 @@ import { electronAPI } from '@electron-toolkit/preload'
 const api = {
   saveLogograph: (id: string, svg: string): Promise<boolean> =>
     ipcRenderer.invoke('save-logograph', id, svg),
-  deleteLogograph: (id: string): Promise<boolean> => ipcRenderer.invoke('delete-logograph', id)
+  deleteLogograph: (id: string): Promise<boolean> => ipcRenderer.invoke('delete-logograph', id),
+  loadRelations: (): Promise<unknown> => ipcRenderer.invoke('load-relations'),
+  saveRelations: (data: unknown): Promise<boolean> => ipcRenderer.invoke('save-relations', data)
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

@@ -60,6 +60,10 @@ export interface Word {
   regions?: string[]
   /** Word ids this compound derives from, e.g. ["ten", "pu"] */
   derivedFrom?: string[]
+  /** Synonym / conceptual links — same or overlapping meaning */
+  relatedTo?: string[]
+  /** Force letter-only spelling even when a root logograph would embed */
+  syllabicOnly?: boolean
   /** Longer definition, lore, slang flags, usage notes */
   notes?: string
 }

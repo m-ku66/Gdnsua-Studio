@@ -1,6 +1,7 @@
 // WordDetail — glyph plate + record metadata + etymology chain
 import { wordById } from '../data'
 import type { Word } from '../data/types'
+import { useRelationsStore } from '../lib/relations'
 import { useAppStore } from '../store/useAppStore'
 import { GlyphPlate } from './GlyphPlate'
 import { Diamond, SectionLabel } from './ui/primitives'
@@ -18,7 +19,11 @@ function MetaRow({ label, children }: { label: string; children: React.ReactNode
 
 export function WordDetail({ word }: { word: Word }): React.JSX.Element {
   const select = useAppStore((s) => s.select)
+  useRelationsStore((s) => s.version) // re-render when relationships change
   const derived = (word.derivedFrom ?? [])
+    .map((id) => wordById.get(id))
+    .filter((w): w is Word => Boolean(w))
+  const related = (word.relatedTo ?? [])
     .map((id) => wordById.get(id))
     .filter((w): w is Word => Boolean(w))
 
@@ -69,6 +74,26 @@ export function WordDetail({ word }: { word: Word }): React.JSX.Element {
               </span>
             ))}
             <span className="text-dim text-[11px]">→ {word.glosses[0]}</span>
+          </div>
+        </div>
+      )}
+
+      {related.length > 0 && (
+        <div>
+          <SectionLabel>Related — kindred meanings</SectionLabel>
+          <div className="flex flex-wrap items-center gap-2">
+            {related.map((d) => (
+              <button
+                key={d.id}
+                onClick={() => select(d.id)}
+                className="border-rule bg-vellum hover:bg-ink hover:text-sand cursor-pointer
+                  border px-2.5 py-1 text-[11px] transition-colors focus-visible:outline-1
+                  focus-visible:outline-ink"
+              >
+                <span className="font-display text-[13px] font-semibold">{d.romanization}</span>
+                <span className="text-dim ml-2 text-[10px]">{d.glosses[0]}</span>
+              </button>
+            ))}
           </div>
         </div>
       )}

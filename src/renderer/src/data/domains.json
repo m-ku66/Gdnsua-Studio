@@ -1,467 +1,4747 @@
 [
-  { "id": "planz", "romanization": "PLANZ", "glosses": ["sales"], "category": "economics" },
-  { "id": "ufa", "romanization": "UFA", "glosses": ["market", "store"], "category": "economics" },
-  { "id": "ufpas", "romanization": "UFPAS", "glosses": ["stock"], "category": "economics", "derivedFrom": ["ufa"] },
-  { "id": "uwao", "romanization": "UWAO", "glosses": ["exchange", "trade"], "category": "economics" },
-  { "id": "haadentaht", "romanization": "HAADENTAHT", "glosses": ["economy"], "category": "economics", "derivedFrom": ["haad", "taht"], "notes": "Alternate term: THOSAZ." },
-  { "id": "lalupo", "romanization": "LALUPO", "glosses": ["con man"], "category": "economics", "derivedFrom": ["lalu"] },
-  { "id": "lalupuwa", "romanization": "LALUPUWA", "glosses": ["ripoff"], "category": "economics", "derivedFrom": ["lalu", "puwa"] },
-  { "id": "puwa", "romanization": "PUWA", "glosses": ["deal"], "category": "economics" },
-  { "id": "targ", "romanization": "TARG", "glosses": ["agreement"], "category": "economics" },
-  { "id": "heztaht", "romanization": "HEZTAHT", "glosses": ["bank"], "category": "economics", "derivedFrom": ["hez", "taht"], "notes": "Alternate term: ZATHKUDAF." },
-  { "id": "tavkss", "romanization": "TAVKSS", "glosses": ["bankrupt"], "category": "economics" },
-  { "id": "jakpo", "romanization": "JAKPO", "glosses": ["thief"], "category": "economics", "derivedFrom": ["jak"] },
-  { "id": "zonpo", "romanization": "ZONPO", "glosses": ["giver"], "category": "economics", "derivedFrom": ["zon"] },
-  { "id": "hkah", "romanization": "HKAH", "glosses": ["buy"], "category": "economics" },
-  { "id": "leih", "romanization": "LEIH", "glosses": ["sell"], "category": "economics" },
-  { "id": "taht", "romanization": "TAHT", "glosses": ["money"], "category": "economics" },
-  { "id": "tavau", "romanization": "TAVAU", "glosses": ["rich"], "category": "economics", "derivedFrom": ["taht", "vau"] },
-  { "id": "tkasa", "romanization": "TKASA", "glosses": ["poor"], "category": "economics", "derivedFrom": ["taht", "sakasa"] },
-  { "id": "dukaden", "romanization": "DUKADEN", "glosses": ["market"], "category": "economics", "notes": "Alternate term: UFA." },
-  { "id": "zathkuda", "romanization": "ZATHKUDA", "glosses": ["currency"], "category": "economics", "derivedFrom": ["zathku"] },
-  { "id": "zathku", "romanization": "ZATHKU", "glosses": ["coin"], "category": "economics" },
-  { "id": "zathkudaf", "romanization": "ZATHKUDAF", "glosses": ["bank"], "category": "economics", "derivedFrom": ["zathkuda"] },
-  { "id": "thosa", "romanization": "THOSA", "glosses": ["trade"], "category": "economics" },
-  { "id": "thosaha", "romanization": "THOSAHA", "glosses": ["trader"], "category": "economics", "derivedFrom": ["thosa"] },
-  { "id": "zathzos", "romanization": "ZATHZOS", "glosses": ["wealth"], "category": "economics" },
-  { "id": "thosar", "romanization": "THOSAR", "glosses": ["exchange"], "category": "economics", "derivedFrom": ["thosa"] },
-  { "id": "thosarha", "romanization": "THOSARHA", "glosses": ["broker"], "category": "economics", "derivedFrom": ["thosar"] },
-  { "id": "zathko", "romanization": "ZATHKO", "glosses": ["investment"], "category": "economics", "notes": "Also a Subterras name meaning 'the investor, child of wealth'." },
-  { "id": "zathkoz", "romanization": "ZATHKOZ", "glosses": ["investor"], "category": "economics", "derivedFrom": ["zathko"] },
-  { "id": "gakthosa", "romanization": "GAKTHOSA", "glosses": ["import"], "category": "economics", "derivedFrom": ["thosa"] },
-  { "id": "hothosa", "romanization": "HOTHOSA", "glosses": ["export"], "category": "economics", "derivedFrom": ["thosa"] },
-  { "id": "hothosaha", "romanization": "HOTHOSAHA", "glosses": ["exporter"], "category": "economics", "derivedFrom": ["hothosa"] },
-  { "id": "gakthosaha", "romanization": "GAKTHOSAHA", "glosses": ["importer"], "category": "economics", "derivedFrom": ["gakthosa"] },
-  { "id": "zathzol", "romanization": "ZATHZOL", "glosses": ["tax"], "category": "economics" },
-  { "id": "zathzolha", "romanization": "ZATHZOLHA", "glosses": ["taxpayer"], "category": "economics", "derivedFrom": ["zathzol"] },
-  { "id": "zathzolnem", "romanization": "ZATHZOLNEM", "glosses": ["taxation"], "category": "economics", "derivedFrom": ["zathzol"] },
-  { "id": "zathzolhaz", "romanization": "ZATHZOLHAZ", "glosses": ["taxation system"], "category": "economics", "derivedFrom": ["zathzol"] },
-  { "id": "gakthosar", "romanization": "GAKTHOSAR", "glosses": ["customs"], "category": "economics", "derivedFrom": ["gakthosa"] },
-  { "id": "gakthosarha", "romanization": "GAKTHOSARHA", "glosses": ["customs officer"], "category": "economics", "derivedFrom": ["gakthosar"] },
-  { "id": "thosaz", "romanization": "THOSAZ", "glosses": ["economy"], "category": "economics", "derivedFrom": ["thosa"] },
-  { "id": "thosazha", "romanization": "THOSAZHA", "glosses": ["economist"], "category": "economics", "derivedFrom": ["thosaz"] },
-  { "id": "zathkudes", "romanization": "ZATHKUDES", "glosses": ["investment fund"], "category": "economics", "derivedFrom": ["zathkuda"] },
-  { "id": "zathkudesz", "romanization": "ZATHKUDESZ", "glosses": ["fund manager"], "category": "economics", "derivedFrom": ["zathkudes"] },
-  { "id": "taralu", "romanization": "TARALU", "glosses": ["fertilize"], "category": "reproduction" },
-  { "id": "haga", "romanization": "HAGA", "glosses": ["sex"], "category": "reproduction", "tags": ["mature"] },
-  { "id": "loral", "romanization": "LORAL", "glosses": ["penis"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "loloo", "romanization": "LOLOO", "glosses": ["dick"], "category": "reproduction", "tags": ["slang", "mature"] },
-  { "id": "naral", "romanization": "NARAL", "glosses": ["vagina"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "nanara", "romanization": "NANARA", "glosses": ["puss"], "category": "reproduction", "tags": ["slang", "mature"] },
-  { "id": "talural", "romanization": "TALURAL", "glosses": ["ovaries"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "jok", "romanization": "JOK", "glosses": ["urethra"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "guu", "romanization": "GUU", "glosses": ["sperm"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "hagu", "romanization": "HAGU", "glosses": ["vaginal fluid"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "lamiral", "romanization": "LAMIRAL", "glosses": ["eggs", "ova"], "category": "reproduction", "tags": ["anatomy"] },
-  { "id": "esui", "romanization": "ESUI", "glosses": ["baby", "newborn"], "category": "reproduction" },
-  { "id": "panpan", "romanization": "PANPAN", "glosses": ["aroused", "excited"], "category": "reproduction", "tags": ["mature"] },
-  { "id": "amama", "romanization": "AMAMA", "glosses": ["flirting", "flirt"], "category": "reproduction" },
-  { "id": "laleld", "romanization": "LALELD", "glosses": ["blush"], "category": "reproduction", "derivedFrom": ["la", "eld"] },
-  { "id": "wan-cute", "romanization": "WAN", "glosses": ["cute"], "category": "reproduction", "notes": "Homograph: WAN is also the regional letter name (wan)." },
-  { "id": "pika", "romanization": "PIKA", "glosses": ["hot", "sexy"], "category": "reproduction", "tags": ["mature"] },
-  { "id": "gognj", "romanization": "GOGNJ", "glosses": ["handsome"], "category": "reproduction" },
-  { "id": "iitz", "romanization": "IITZ", "glosses": ["cool"], "category": "reproduction" },
-  { "id": "lela", "romanization": "LELA", "glosses": ["horny"], "category": "reproduction", "tags": ["mature"] },
-  { "id": "nath", "romanization": "NATH", "glosses": ["virgin"], "category": "reproduction" },
-  { "id": "annath", "romanization": "ANNATH", "glosses": ["non-virgin"], "category": "reproduction", "derivedFrom": ["nath"] },
-  { "id": "annapan", "romanization": "ANNAPAN", "glosses": ["slut"], "category": "reproduction", "tags": ["slang", "mature"], "derivedFrom": ["panpan"] },
-  { "id": "jahhnoka", "romanization": "JAHHNOKA", "glosses": ["beta male"], "category": "reproduction", "tags": ["slang"], "derivedFrom": ["jah", "noka"] },
-  { "id": "avjah", "romanization": "AVJAH", "glosses": ["alpha male"], "category": "reproduction", "tags": ["slang"], "derivedFrom": ["jah"] },
-  { "id": "mik", "romanization": "MIK", "glosses": ["simp"], "category": "reproduction", "tags": ["slang"] },
-  { "id": "guo", "romanization": "GUO", "glosses": ["chad"], "category": "reproduction", "tags": ["slang"] },
-  { "id": "japa", "romanization": "JAPA", "glosses": ["normal girl"], "category": "reproduction", "notes": "Special terminology." },
-  { "id": "hapa", "romanization": "HAPA", "glosses": ["normal guy"], "category": "reproduction", "notes": "Special terminology." },
-  { "id": "momaha", "romanization": "MOMAHA", "glosses": ["nympho"], "category": "reproduction", "tags": ["slang", "mature"], "derivedFrom": ["moma"] },
-  { "id": "helta", "romanization": "HELTA", "glosses": ["tease"], "category": "reproduction" },
-  { "id": "taramn", "romanization": "TARAMN", "glosses": ["to pleasure"], "category": "reproduction", "tags": ["mature"] },
-  { "id": "espariit", "romanization": "ESPARIIT", "glosses": ["to be born"], "category": "reproduction" },
-  { "id": "mukamna", "romanization": "MUKAMNA", "glosses": ["pregnant", "to be pregnant"], "category": "reproduction", "derivedFrom": ["muka", "mna"] },
-  { "id": "mnapu", "romanization": "MNAPU", "glosses": ["to be in labor"], "category": "reproduction", "derivedFrom": ["mna", "pun"] },
-  { "id": "falala", "romanization": "FALALA", "glosses": ["climax"], "category": "reproduction", "tags": ["mature"] },
-  { "id": "gaar", "romanization": "GAAR", "glosses": ["reproduction"], "category": "reproduction" },
-  { "id": "gaarha", "romanization": "GAARHA", "glosses": ["reproducer"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "gaarzo", "romanization": "GAARZO", "glosses": ["reproduction system"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "uldaar", "romanization": "ULDAAR", "glosses": ["fertility"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "uldaarha", "romanization": "ULDAARHA", "glosses": ["fertile individual"], "category": "reproduction", "derivedFrom": ["uldaar"] },
-  { "id": "uldaarzo", "romanization": "ULDAARZO", "glosses": ["fertility cycle"], "category": "reproduction", "derivedFrom": ["uldaar"] },
-  { "id": "gaarzi", "romanization": "GAARZI", "glosses": ["offspring"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "gaarzija", "romanization": "GAARZIJA", "glosses": ["child"], "category": "reproduction", "derivedFrom": ["gaarzi"] },
-  { "id": "gaarzimn", "romanization": "GAARZIMN", "glosses": ["family"], "category": "reproduction", "derivedFrom": ["gaarzi", "mn"], "notes": "Alternate term: HAKAH." },
-  { "id": "gaarzimnha", "romanization": "GAARZIMNHA", "glosses": ["family member"], "category": "reproduction", "derivedFrom": ["gaarzimn"] },
-  { "id": "gaarzimnz", "romanization": "GAARZIMNZ", "glosses": ["progeny"], "category": "reproduction", "derivedFrom": ["gaarzimn"] },
-  { "id": "gaarzimnza", "romanization": "GAARZIMNZA", "glosses": ["descendant"], "category": "reproduction", "derivedFrom": ["gaarzimnz"] },
-  { "id": "gaarfik", "romanization": "GAARFIK", "glosses": ["pregnancy"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "gaarfikha", "romanization": "GAARFIKHA", "glosses": ["pregnant individual"], "category": "reproduction", "derivedFrom": ["gaarfik"] },
-  { "id": "gaarfikzo", "romanization": "GAARFIKZO", "glosses": ["gestation period"], "category": "reproduction", "derivedFrom": ["gaarfik"] },
-  { "id": "gaarfikza", "romanization": "GAARFIKZA", "glosses": ["fetus"], "category": "reproduction", "derivedFrom": ["gaarfik"] },
-  { "id": "gaarhaad", "romanization": "GAARHAAD", "glosses": ["maternity"], "category": "reproduction", "derivedFrom": ["gaar", "haad"] },
-  { "id": "gaarhaadha", "romanization": "GAARHAADHA", "glosses": ["mother"], "category": "reproduction", "derivedFrom": ["gaarhaad"], "notes": "Alternate term: HAHMN." },
-  { "id": "gaarhaadzi", "romanization": "GAARHAADZI", "glosses": ["maternal lineage"], "category": "reproduction", "derivedFrom": ["gaarhaad"] },
-  { "id": "gaarhaadzija", "romanization": "GAARHAADZIJA", "glosses": ["sister"], "category": "reproduction", "derivedFrom": ["gaarhaadzi"], "notes": "Alternate term: HAHAMN." },
-  { "id": "gaarhaadzo", "romanization": "GAARHAADZO", "glosses": ["maternity system"], "category": "reproduction", "derivedFrom": ["gaarhaad"] },
-  { "id": "gaarhaadzan", "romanization": "GAARHAADZAN", "glosses": ["maternal love"], "category": "reproduction", "derivedFrom": ["gaarhaad"] },
-  { "id": "gaarlok", "romanization": "GAARLOK", "glosses": ["paternity"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "gaarlokha", "romanization": "GAARLOKHA", "glosses": ["father"], "category": "reproduction", "derivedFrom": ["gaarlok"], "notes": "Alternate term: JAHMN." },
-  { "id": "gaarlokzi", "romanization": "GAARLOKZI", "glosses": ["paternal lineage"], "category": "reproduction", "derivedFrom": ["gaarlok"] },
-  { "id": "gaarlokzija", "romanization": "GAARLOKZIJA", "glosses": ["brother"], "category": "reproduction", "derivedFrom": ["gaarlokzi"], "notes": "Alternate term: JAJAMN." },
-  { "id": "gaarlokzo", "romanization": "GAARLOKZO", "glosses": ["paternity system"], "category": "reproduction", "derivedFrom": ["gaarlok"] },
-  { "id": "gaarlokzan", "romanization": "GAARLOKZAN", "glosses": ["paternal love"], "category": "reproduction", "derivedFrom": ["gaarlok"] },
-  { "id": "gaarler", "romanization": "GAARLER", "glosses": ["childbirth"], "category": "reproduction", "derivedFrom": ["gaar"] },
-  { "id": "gaarlerha", "romanization": "GAARLERHA", "glosses": ["childbearer"], "category": "reproduction", "derivedFrom": ["gaarler"] },
-  { "id": "gaarlerzo", "romanization": "GAARLERZO", "glosses": ["birthing process"], "category": "reproduction", "derivedFrom": ["gaarler"] },
-  { "id": "hahgaln", "romanization": "HAHGALN", "glosses": ["flat"], "category": "physics", "notes": "Derives from GALN (dimension) — restore ref when math category lands." },
-  { "id": "anhahgaln", "romanization": "ANHAHGALN", "glosses": ["incline"], "category": "physics", "derivedFrom": ["hahgaln"] },
-  { "id": "zselt", "romanization": "ZSELT", "glosses": ["smooth"], "category": "physics" },
-  { "id": "ougi", "romanization": "OUGI", "glosses": ["rough"], "category": "physics" },
-  { "id": "anzelt", "romanization": "ANZELT", "glosses": ["bumpy"], "category": "physics", "notes": "Negation of ZSELT (written ANZELT in source — single S)." },
-  { "id": "taha", "romanization": "TAHA", "glosses": ["plane"], "category": "physics" },
-  { "id": "fi-nextto", "romanization": "FI", "glosses": ["next to"], "category": "physics", "notes": "Homograph: see fi (liquid)." },
-  { "id": "zhuspa", "romanization": "ZHUSPA", "glosses": ["in front"], "category": "physics" },
-  { "id": "zhifipa", "romanization": "ZHIFIPA", "glosses": ["behind"], "category": "physics" },
-  { "id": "surta", "romanization": "SURTA", "glosses": ["horizontal"], "category": "physics" },
-  { "id": "zurta", "romanization": "ZURTA", "glosses": ["vertical"], "category": "physics" },
-  { "id": "suzukan", "romanization": "SUZUKAN", "glosses": ["diagonal"], "category": "physics", "derivedFrom": ["surta", "zurta"] },
-  { "id": "ia", "romanization": "IA", "glosses": ["energy"], "category": "physics", "notes": "Suffix form, e.g. MAGIA = magic energy." },
-  { "id": "leita", "romanization": "LEITA", "glosses": ["distance"], "category": "physics" },
-  { "id": "fasko", "romanization": "FASKO", "glosses": ["physics"], "category": "physics", "notes": "Alternate term: DELNUS (older)." },
-  { "id": "faskoh", "romanization": "FASKOH", "glosses": ["physicist"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskoza", "romanization": "FASKOZA", "glosses": ["physics system"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskomn", "romanization": "FASKOMN", "glosses": ["energy"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskomnha", "romanization": "FASKOMNHA", "glosses": ["energetic individual"], "category": "physics", "derivedFrom": ["faskomn"] },
-  { "id": "faskomnza", "romanization": "FASKOMNZA", "glosses": ["power"], "category": "physics", "derivedFrom": ["faskomn"] },
-  { "id": "faskorok", "romanization": "FASKOROK", "glosses": ["force"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskorokha", "romanization": "FASKOROKHA", "glosses": ["forceful individual"], "category": "physics", "derivedFrom": ["faskorok"] },
-  { "id": "faskorokza", "romanization": "FASKOROKZA", "glosses": ["strength"], "category": "physics", "derivedFrom": ["faskorok"] },
-  { "id": "faskorokzija", "romanization": "FASKOROKZIJA", "glosses": ["pressure"], "category": "physics", "derivedFrom": ["faskorok"] },
-  { "id": "faskazan", "romanization": "FASKAZAN", "glosses": ["momentum"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskazanha", "romanization": "FASKAZANHA", "glosses": ["momentum carrier"], "category": "physics", "derivedFrom": ["faskazan"] },
-  { "id": "faskam", "romanization": "FASKAM", "glosses": ["motion"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskamha", "romanization": "FASKAMHA", "glosses": ["moving individual"], "category": "physics", "derivedFrom": ["faskam"] },
-  { "id": "faskamza", "romanization": "FASKAMZA", "glosses": ["velocity"], "category": "physics", "derivedFrom": ["faskam"] },
-  { "id": "faskamzija", "romanization": "FASKAMZIJA", "glosses": ["speed"], "category": "physics", "derivedFrom": ["faskam"] },
-  { "id": "faskapad", "romanization": "FASKAPAD", "glosses": ["acceleration"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskapadha", "romanization": "FASKAPADHA", "glosses": ["accelerating individual"], "category": "physics", "derivedFrom": ["faskapad"] },
-  { "id": "faskapadza", "romanization": "FASKAPADZA", "glosses": ["acceleration rate"], "category": "physics", "derivedFrom": ["faskapad"] },
-  { "id": "faskapadzija", "romanization": "FASKAPADZIJA", "glosses": ["deceleration"], "category": "physics", "derivedFrom": ["faskapad"] },
-  { "id": "faskah", "romanization": "FASKAH", "glosses": ["action"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskaha", "romanization": "FASKAHA", "glosses": ["active individual"], "category": "physics", "derivedFrom": ["faskah"] },
-  { "id": "faskaza", "romanization": "FASKAZA", "glosses": ["work"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskazi", "romanization": "FASKAZI", "glosses": ["energy transformation"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskazija", "romanization": "FASKAZIJA", "glosses": ["conversion"], "category": "physics", "derivedFrom": ["faskazi"] },
-  { "id": "faskan", "romanization": "FASKAN", "glosses": ["matter"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskanha", "romanization": "FASKANHA", "glosses": ["material individual"], "category": "physics", "derivedFrom": ["faskan"] },
-  { "id": "faskanza", "romanization": "FASKANZA", "glosses": ["substance"], "category": "physics", "derivedFrom": ["faskan"] },
-  { "id": "faskad", "romanization": "FASKAD", "glosses": ["density"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskadha", "romanization": "FASKADHA", "glosses": ["dense individual"], "category": "physics", "derivedFrom": ["faskad"] },
-  { "id": "faskadza", "romanization": "FASKADZA", "glosses": ["concentration"], "category": "physics", "derivedFrom": ["faskad"] },
-  { "id": "faskarok", "romanization": "FASKAROK", "glosses": ["friction"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskarokha", "romanization": "FASKAROKHA", "glosses": ["frictional individual"], "category": "physics", "derivedFrom": ["faskarok"] },
-  { "id": "faskarokza", "romanization": "FASKAROKZA", "glosses": ["resistance"], "category": "physics", "derivedFrom": ["faskarok"] },
-  { "id": "faskarokzija", "romanization": "FASKAROKZIJA", "glosses": ["drag"], "category": "physics", "derivedFrom": ["faskarok"] },
-  { "id": "faskazeh", "romanization": "FASKAZEH", "glosses": ["heat"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskazehha", "romanization": "FASKAZEHHA", "glosses": ["hot individual"], "category": "physics", "derivedFrom": ["faskazeh"] },
-  { "id": "faskazehza", "romanization": "FASKAZEHZA", "glosses": ["temperature"], "category": "physics", "derivedFrom": ["faskazeh"] },
-  { "id": "faskazehzija", "romanization": "FASKAZEHZIJA", "glosses": ["thermal energy"], "category": "physics", "derivedFrom": ["faskazeh"] },
-  { "id": "faskuk", "romanization": "FASKUK", "glosses": ["light"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskukha", "romanization": "FASKUKHA", "glosses": ["illuminated individual"], "category": "physics", "derivedFrom": ["faskuk"] },
-  { "id": "faskukza", "romanization": "FASKUKZA", "glosses": ["radiance"], "category": "physics", "derivedFrom": ["faskuk"] },
-  { "id": "faskukzija", "romanization": "FASKUKZIJA", "glosses": ["brightness"], "category": "physics", "derivedFrom": ["faskuk"] },
-  { "id": "faskask", "romanization": "FASKASK", "glosses": ["sound"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskaskha", "romanization": "FASKASKHA", "glosses": ["sonorous individual"], "category": "physics", "derivedFrom": ["faskask"] },
-  { "id": "faskaskza", "romanization": "FASKASKZA", "glosses": ["volume"], "category": "physics", "derivedFrom": ["faskask"] },
-  { "id": "faskaskzija", "romanization": "FASKASKZIJA", "glosses": ["pitch"], "category": "physics", "derivedFrom": ["faskask"] },
-  { "id": "faskahka", "romanization": "FASKAHKA", "glosses": ["wave"], "category": "physics", "derivedFrom": ["fasko"] },
-  { "id": "faskahkaha", "romanization": "FASKAHKAHA", "glosses": ["wavy individual"], "category": "physics", "derivedFrom": ["faskahka"] },
-  { "id": "faskahkaza", "romanization": "FASKAHKAZA", "glosses": ["frequency"], "category": "physics", "derivedFrom": ["faskahka"] },
-  { "id": "anushekak", "romanization": "ANUSHEKAK", "glosses": ["reflection"], "category": "physics", "derivedFrom": ["u-shekak"] },
-  { "id": "hanushek", "romanization": "HANUSHEK", "glosses": ["mirror"], "category": "physics", "derivedFrom": ["u-she"] },
-  { "id": "rafta", "romanization": "RAFTA", "glosses": ["metal"], "category": "mechanical" },
-  { "id": "solz", "romanization": "SOLZ", "glosses": ["tool"], "category": "mechanical", "notes": "Alternate term: ROKO (base)." },
-  { "id": "ganluz", "romanization": "GANLUZ", "glosses": ["connect"], "category": "mechanical" },
-  { "id": "anluz", "romanization": "ANLUZ", "glosses": ["disconnect"], "category": "mechanical", "derivedFrom": ["ganluz"] },
-  { "id": "irga", "romanization": "IRGA", "glosses": ["build"], "category": "mechanical" },
-  { "id": "krata", "romanization": "KRATA", "glosses": ["destroy"], "category": "mechanical" },
-  { "id": "raun", "romanization": "RAUN", "glosses": ["fix"], "category": "mechanical" },
-  { "id": "lusna", "romanization": "LUSNA", "glosses": ["break"], "category": "mechanical" },
-  { "id": "nalz", "romanization": "NALZ", "glosses": ["invent"], "category": "mechanical" },
-  { "id": "klaiz", "romanization": "KLAIZ", "glosses": ["discover"], "category": "mechanical" },
-  { "id": "vakalz", "romanization": "VAKALZ", "glosses": ["combine", "fuse"], "category": "mechanical" },
-  { "id": "olil", "romanization": "OLIL", "glosses": ["machine"], "category": "mechanical" },
-  { "id": "trenlil", "romanization": "TRENLIL", "glosses": ["engine"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "narlil", "romanization": "NARLIL", "glosses": ["gear"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "klil", "romanization": "KLIL", "glosses": ["wheel"], "category": "mechanical", "derivedFrom": ["olil"], "notes": "Alternate term: DENKA (base)." },
-  { "id": "paklil", "romanization": "PAKLIL", "glosses": ["axle"], "category": "mechanical", "derivedFrom": ["klil"] },
-  { "id": "grilil", "romanization": "GRILIL", "glosses": ["pulley"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "zilil", "romanization": "ZILIL", "glosses": ["screw"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "kulil", "romanization": "KULIL", "glosses": ["bolt"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "vaklil", "romanization": "VAKLIL", "glosses": ["nut"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "malil", "romanization": "MALIL", "glosses": ["lever"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "palil", "romanization": "PALIL", "glosses": ["piston"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "umlil", "romanization": "UMLIL", "glosses": ["spring", "coil"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "kralil", "romanization": "KRALIL", "glosses": ["chain"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "zuklil", "romanization": "ZUKLIL", "glosses": ["hydraulic"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "fazlil", "romanization": "FAZLIL", "glosses": ["pneumatic"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "suhlil", "romanization": "SUHLIL", "glosses": ["circuit"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "haklil", "romanization": "HAKLIL", "glosses": ["fuse"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "zavlil", "romanization": "ZAVLIL", "glosses": ["weld"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "voklil", "romanization": "VOKLIL", "glosses": ["drill"], "category": "mechanical", "derivedFrom": ["olil"] },
-  { "id": "tara", "romanization": "TARA", "glosses": ["addition", "to add"], "category": "math" },
-  { "id": "arat", "romanization": "ARAT", "glosses": ["subtraction", "to subtract"], "category": "math" },
-  { "id": "fojah", "romanization": "FOJAH", "glosses": ["multiplication", "to multiply"], "category": "math" },
-  { "id": "hajfo", "romanization": "HAJFO", "glosses": ["division", "to divide"], "category": "math" },
-  { "id": "atatakhres", "romanization": "ATATAKHRES", "glosses": ["exponents"], "category": "math", "derivedFrom": ["atata", "khres"] },
-  { "id": "u-shelazdan", "romanization": "U SHELAZDAN", "glosses": ["parenthesis"], "category": "math", "notes": "Alternate romanization: U SHEGENLA." },
-  { "id": "xelkhre", "romanization": "XELKHRE", "glosses": ["fraction"], "category": "math", "derivedFrom": ["khres"] },
-  { "id": "hazkhres", "romanization": "HAZKHRES", "glosses": ["decimal"], "category": "math", "derivedFrom": ["khres"], "notes": "Alternate romanization: PENKHRES." },
-  { "id": "khrdenlazgan", "romanization": "KHRDENLAZGAN", "glosses": ["graph"], "category": "math" },
-  { "id": "nalaztedan", "romanization": "NALAZTEDAN", "glosses": ["grid"], "category": "math", "derivedFrom": ["na", "tedan"] },
-  { "id": "khrdendagarn", "romanization": "KHRDENDAGARN", "glosses": ["table"], "category": "math" },
-  { "id": "laokhan", "romanization": "LAOKHAN", "glosses": ["chart"], "category": "math" },
-  { "id": "taxok", "romanization": "TAXOK", "glosses": ["polynomial"], "category": "math", "derivedFrom": ["xok"] },
-  { "id": "jvkvd", "romanization": "JVKVD", "glosses": ["algebra"], "category": "math" },
-  { "id": "narl", "romanization": "NARL", "glosses": ["linear"], "category": "math", "derivedFrom": ["na"] },
-  { "id": "na", "romanization": "NA", "glosses": ["line"], "category": "math" },
-  { "id": "lukt", "romanization": "LUKT", "glosses": ["parallel"], "category": "math", "notes": "Canon fix: source had LUCT; C replaced with K per author ruling (June 2026)." },
-  { "id": "axis", "romanization": "AXIS", "glosses": ["perpendicular"], "category": "math" },
-  { "id": "ansur", "romanization": "ANSUR", "glosses": ["curve"], "category": "math", "derivedFrom": ["surta"] },
-  { "id": "zhelansur", "romanization": "ZHELANSUR", "glosses": ["wave"], "category": "math", "derivedFrom": ["ansur"] },
-  { "id": "itzansur", "romanization": "ITZANSUR", "glosses": ["parabola"], "category": "math", "derivedFrom": ["ansur"] },
-  { "id": "pdansur", "romanization": "PDANSUR", "glosses": ["hyperbola"], "category": "math", "derivedFrom": ["ansur"] },
-  { "id": "itzkan", "romanization": "ITZKAN", "glosses": ["quadratic"], "category": "math" },
-  { "id": "lilkan", "romanization": "LILKAN", "glosses": ["cubic"], "category": "math" },
-  { "id": "ankhrekan", "romanization": "ANKHREKAN", "glosses": ["transcendental"], "category": "math", "derivedFrom": ["khres"] },
-  { "id": "galn", "romanization": "GALN", "glosses": ["dimension"], "category": "math" },
-  { "id": "uus-galn", "romanization": "UUS GALN", "glosses": ["1d", "one-dimensional"], "category": "math", "derivedFrom": ["galn"] },
-  { "id": "itz-galn", "romanization": "ITZ GALN", "glosses": ["2d", "two-dimensional"], "category": "math", "derivedFrom": ["galn"] },
-  { "id": "lil-galn", "romanization": "LIL GALN", "glosses": ["3d", "three-dimensional"], "category": "math", "derivedFrom": ["galn"] },
-  { "id": "pd-galn", "romanization": "PD GALN", "glosses": ["4d", "four-dimensional"], "category": "math", "derivedFrom": ["galn"] },
-  { "id": "tenga", "romanization": "TENGA", "glosses": ["perspective"], "category": "math", "derivedFrom": ["ten"] },
-  { "id": "hajitz", "romanization": "HAJITZ", "glosses": ["even"], "category": "math", "derivedFrom": ["hajfo"] },
-  { "id": "anhajitz", "romanization": "ANHAJITZ", "glosses": ["odd"], "category": "math", "derivedFrom": ["hajitz"] },
-  { "id": "anakies", "romanization": "ANAKIES", "glosses": ["variable", "unknown"], "category": "math", "derivedFrom": ["akies"] },
-  { "id": "eldriikan", "romanization": "ELDRIIKAN", "glosses": ["conversion", "change"], "category": "math", "derivedFrom": ["eldril"] },
-  { "id": "okhre", "romanization": "OKHRE", "glosses": ["equation"], "category": "math", "derivedFrom": ["khres"] },
-  { "id": "xok", "romanization": "XOK", "glosses": ["expression"], "category": "math" },
-  { "id": "omah", "romanization": "OMAH", "glosses": ["equality", "balance"], "category": "math", "derivedFrom": ["oh", "mah"], "notes": "Literally OH (yin) + MAH (yang) — balance as the union of opposites." },
-  { "id": "anomah", "romanization": "ANOMAH", "glosses": ["inequality"], "category": "math", "derivedFrom": ["omah"] },
-  { "id": "khrefa", "romanization": "KHREFA", "glosses": ["place value"], "category": "math", "derivedFrom": ["khres", "famn"] },
-  { "id": "fukhrok", "romanization": "FUKHROK", "glosses": ["count", "to count"], "category": "math", "derivedFrom": ["fukhre"] },
-  { "id": "nakhkhan", "romanization": "NAKHKHAN", "glosses": ["mathematics"], "category": "math", "notes": "Alternate term: VKZKKS (base)." },
-  { "id": "nakhkhanha", "romanization": "NAKHKHANHA", "glosses": ["mathematician"], "category": "math", "derivedFrom": ["nakhkhan"] },
-  { "id": "gal", "romanization": "GAL", "glosses": ["number"], "category": "math" },
-  { "id": "galid", "romanization": "GALID", "glosses": ["digit"], "category": "math", "derivedFrom": ["gal"] },
-  { "id": "tarao", "romanization": "TARAO", "glosses": ["arithmetic"], "category": "math", "derivedFrom": ["tara"] },
-  { "id": "khrdenlazganohr", "romanization": "KHRDENLAZGANOHR", "glosses": ["geometry"], "category": "math", "derivedFrom": ["khrdenlazgan"] },
-  { "id": "khrdenlazganohkhre", "romanization": "KHRDENLAZGANOHKHRE", "glosses": ["trigonometry"], "category": "math", "derivedFrom": ["khrdenlazgan"] },
-  { "id": "khrdenlazganohkh", "romanization": "KHRDENLAZGANOHKH", "glosses": ["calculus"], "category": "math", "derivedFrom": ["khrdenlazgan"] },
-  { "id": "zamaitha", "romanization": "ZAMAITHA", "glosses": ["statistic"], "category": "math" },
-  { "id": "zamaithah", "romanization": "ZAMAITHAH", "glosses": ["probability"], "category": "math", "derivedFrom": ["zamaitha"] },
-  { "id": "xoklo", "romanization": "XOKLO", "glosses": ["function"], "category": "math", "derivedFrom": ["xok"] },
-  { "id": "nazkies", "romanization": "NAZKIES", "glosses": ["constant"], "category": "math", "derivedFrom": ["akies"] },
-  { "id": "khrdenlazganha", "romanization": "KHRDENLAZGANHA", "glosses": ["plot"], "category": "math", "derivedFrom": ["khrdenlazgan"] },
-  { "id": "khrdenlazganza", "romanization": "KHRDENLAZGANZA", "glosses": ["axis"], "category": "math", "derivedFrom": ["khrdenlazgan"] },
-  { "id": "khrdenlazganlo", "romanization": "KHRDENLAZGANLO", "glosses": ["coordinate"], "category": "math", "derivedFrom": ["khrdenlazgan"] },
-  { "id": "atatakh", "romanization": "ATATAKH", "glosses": ["exponential"], "category": "math", "derivedFrom": ["atata"] },
-  { "id": "nek", "romanization": "NEK", "glosses": ["root"], "category": "math" },
-  { "id": "itzkanek", "romanization": "ITZKANEK", "glosses": ["square"], "category": "math", "derivedFrom": ["itzkan", "nek"] },
-  { "id": "lilkanek", "romanization": "LILKANEK", "glosses": ["cube"], "category": "math", "derivedFrom": ["lilkan", "nek"] },
-  { "id": "tasurna", "romanization": "TASURNA", "glosses": ["triangle"], "category": "math", "derivedFrom": ["na"], "notes": "Alternate term: LILHU (base)." },
-  { "id": "lilgalndara", "romanization": "LILGALNDARA", "glosses": ["sphere"], "category": "math", "derivedFrom": ["lil-galn", "dara"] },
-  { "id": "itzgalndara", "romanization": "ITZGALNDARA", "glosses": ["cylinder"], "category": "math", "derivedFrom": ["itz-galn", "dara"] },
-  { "id": "nargalndara", "romanization": "NARGALNDARA", "glosses": ["pyramid"], "category": "math", "derivedFrom": ["galn", "dara"] },
-  { "id": "luur", "romanization": "LUUR", "glosses": ["volume"], "category": "math" },
-  { "id": "luurzisha", "romanization": "LUURZISHA", "glosses": ["surface area"], "category": "math", "derivedFrom": ["luur"] },
-  { "id": "maith", "romanization": "MAITH", "glosses": ["perimeter"], "category": "math" },
-  { "id": "rokhan", "romanization": "ROKHAN", "glosses": ["ratio"], "category": "math" },
-  { "id": "rokhanah", "romanization": "ROKHANAH", "glosses": ["proportion"], "category": "math", "derivedFrom": ["rokhan"] },
-  { "id": "penkhresrokhan", "romanization": "PENKHRESROKHAN", "glosses": ["percentage"], "category": "math", "derivedFrom": ["rokhan"] },
-  { "id": "fojza", "romanization": "FOJZA", "glosses": ["mean", "average"], "category": "math", "derivedFrom": ["fojah"] },
-  { "id": "fojzaha", "romanization": "FOJZAHA", "glosses": ["median"], "category": "math", "derivedFrom": ["fojza"] },
-  { "id": "fojzhan", "romanization": "FOJZHAN", "glosses": ["mode"], "category": "math", "derivedFrom": ["fojza"] },
-  { "id": "umni", "romanization": "UMNI", "glosses": ["outer space", "astrology"], "category": "astrology", "derivedFrom": ["umn"], "notes": "Alternate romanization: NULZ." },
-  { "id": "umnilaad", "romanization": "UMNILAAD", "glosses": ["galaxy"], "category": "astrology", "derivedFrom": ["umni", "laad"] },
-  { "id": "anfimn-xui", "romanization": "ANFIMN XUI", "glosses": ["universe"], "category": "astrology", "derivedFrom": ["fimn", "xui"], "notes": "Literally 'limitless outward'." },
-  { "id": "laad", "romanization": "LAAD", "glosses": ["stars", "star"], "category": "astrology" },
-  { "id": "laadengarn", "romanization": "LAADENGARN", "glosses": ["constellations", "constellation"], "category": "astrology", "derivedFrom": ["laad"] },
-  { "id": "zehin", "romanization": "ZEHIN", "glosses": ["eclipse"], "category": "astrology" },
-  { "id": "lazhul", "romanization": "LAZHUL", "glosses": ["sun"], "category": "astrology", "derivedFrom": ["la", "huld"], "notes": "Alternate names: KAIA, FAHUTA." },
-  { "id": "itzhul", "romanization": "ITZHUL", "glosses": ["moon"], "category": "astrology", "derivedFrom": ["huld"], "notes": "Alternate name: NIAH." },
-  { "id": "tausden", "romanization": "TAUSDEN", "glosses": ["planet"], "category": "astrology", "derivedFrom": ["taus", "den"], "notes": "TAUS alone can also mean planet." },
-  { "id": "daranlt", "romanization": "DARANLT", "glosses": ["orbit"], "category": "astrology", "derivedFrom": ["dara", "nlt"] },
-  { "id": "darapun", "romanization": "DARAPUN", "glosses": ["revolution", "revolve"], "category": "astrology", "derivedFrom": ["dara", "pun"] },
-  { "id": "un", "romanization": "UN", "glosses": ["north"], "category": "astrology" },
-  { "id": "in", "romanization": "IN", "glosses": ["south"], "category": "astrology" },
-  { "id": "lakt", "romanization": "LAKT", "glosses": ["east"], "category": "astrology" },
-  { "id": "no", "romanization": "NO", "glosses": ["west"], "category": "astrology" },
-  { "id": "kai", "romanization": "KAI", "glosses": ["day"], "category": "astrology" },
-  { "id": "wika", "romanization": "WIKA", "glosses": ["week"], "category": "astrology" },
-  { "id": "lotos", "romanization": "LOTOS", "glosses": ["month"], "category": "astrology" },
-  { "id": "yuun", "romanization": "YUUN", "glosses": ["year"], "category": "astrology", "regions": ["Kharmat", "Haadfahuta"], "notes": "Contains regional letter Y. Alternate term: JAZE. Pattern: UZE YUUN = 12 years." },
-  { "id": "niki", "romanization": "NIKI", "glosses": ["night"], "category": "astrology" },
-  { "id": "okan", "romanization": "OKAN", "glosses": ["middle"], "category": "astrology" },
-  { "id": "okai", "romanization": "OKAI", "glosses": ["midday"], "category": "astrology", "derivedFrom": ["okan", "kai"] },
-  { "id": "oniki", "romanization": "ONIKI", "glosses": ["midnight"], "category": "astrology", "derivedFrom": ["okan", "niki"] },
-  { "id": "lozinia", "romanization": "LOZINIA", "glosses": ["direction"], "category": "astrology" },
-  { "id": "ikita", "romanization": "IKITA", "glosses": ["period", "time slot", "duration"], "category": "astrology", "derivedFrom": ["ikit"] },
-  { "id": "du", "romanization": "DU", "glosses": ["second"], "category": "astrology" },
-  { "id": "duna", "romanization": "DUNA", "glosses": ["millisecond"], "category": "astrology", "derivedFrom": ["du"] },
-  { "id": "naor", "romanization": "NAOR", "glosses": ["minute"], "category": "astrology" },
-  { "id": "kikna", "romanization": "KIKNA", "glosses": ["hour"], "category": "astrology" },
-  { "id": "kaiiok", "romanization": "KAIIOK", "glosses": ["morning"], "category": "astrology", "derivedFrom": ["kai"] },
-  { "id": "naoriiok", "romanization": "NAORIIOK", "glosses": ["afternoon"], "category": "astrology", "derivedFrom": ["naor"] },
-  { "id": "niahiok", "romanization": "NIAHIOK", "glosses": ["evening"], "category": "astrology", "derivedFrom": ["itzhul"], "notes": "Built on NIAH (moon)." },
-  { "id": "kaiimar", "romanization": "KAIIMAR", "glosses": ["dawn"], "category": "astrology", "derivedFrom": ["kai"] },
-  { "id": "niimar", "romanization": "NIIMAR", "glosses": ["dusk"], "category": "astrology", "derivedFrom": ["niki"] },
-  { "id": "ummar", "romanization": "UMMAR", "glosses": ["twilight"], "category": "astrology" },
-  { "id": "zaprak", "romanization": "ZAPRAK", "glosses": ["spring"], "category": "astrology", "notes": "Alternate term: MHER (base)." },
-  { "id": "khri-prak", "romanization": "KHRI PRAK", "glosses": ["summer"], "category": "astrology", "notes": "Alternate term: IHR (base)." },
-  { "id": "vik-prak", "romanization": "VIK PRAK", "glosses": ["autumn", "fall"], "category": "astrology", "notes": "Alternate term: JERTZ (base)." },
-  { "id": "el-prak", "romanization": "EL PRAK", "glosses": ["winter"], "category": "astrology", "notes": "Alternate term: UVOLLT (base)." },
-  { "id": "ulzo", "romanization": "ULZO", "glosses": ["equinox"], "category": "astrology" },
-  { "id": "lashuk", "romanization": "LASHUK", "glosses": ["solstice"], "category": "astrology" },
-  { "id": "nulzzi", "romanization": "NULZZI", "glosses": ["astronomy"], "category": "astrology", "derivedFrom": ["umni"] },
-  { "id": "okitaha", "romanization": "OKITAHA", "glosses": ["chronology"], "category": "astrology", "derivedFrom": ["ikit"] },
-  { "id": "wikaith", "romanization": "WIKAITH", "glosses": ["calendar"], "category": "astrology", "derivedFrom": ["wika"] },
-  { "id": "okitahzul", "romanization": "OKITAHZUL", "glosses": ["clock"], "category": "astrology", "derivedFrom": ["okitaha"] },
-  { "id": "khez", "romanization": "KHEZ", "glosses": ["letter", "glyph"], "category": "history" },
-  { "id": "sua", "romanization": "SUA", "glosses": ["word"], "category": "history", "notes": "Alternate term: AH. As in GDNSUA, the language name." },
-  { "id": "dendakhez", "romanization": "DENDAKHEZ", "glosses": ["alphabet"], "category": "history", "derivedFrom": ["khez"] },
-  { "id": "dhar", "romanization": "DHAR", "glosses": ["book"], "category": "history" },
-  { "id": "hah-paper", "romanization": "HAH", "glosses": ["paper"], "category": "history", "notes": "Homograph: see hah (woman, female)." },
-  { "id": "dharlenakht", "romanization": "DHARLENAKHT", "glosses": ["legend"], "category": "history", "derivedFrom": ["dhar", "len", "akht"] },
-  { "id": "akht", "romanization": "AKHT", "glosses": ["event"], "category": "history" },
-  { "id": "len", "romanization": "LEN", "glosses": ["scar", "brand"], "category": "history" },
-  { "id": "okirempo", "romanization": "OKIREMPO", "glosses": ["historian"], "category": "history" },
-  { "id": "slenokirem", "romanization": "SLENOKIREM", "glosses": ["archive"], "category": "history" },
-  { "id": "hahalkan", "romanization": "HAHALKAN", "glosses": ["artifact"], "category": "history" },
-  { "id": "aldem", "romanization": "ALDEM", "glosses": ["ancient"], "category": "history", "notes": "Alternate term: OLDE (base)." },
-  { "id": "aldemlaad", "romanization": "ALDEMLAAD", "glosses": ["medieval"], "category": "history", "derivedFrom": ["aldem", "laad"] },
-  { "id": "imntdem", "romanization": "IMNTDEM", "glosses": ["modern"], "category": "history" },
-  { "id": "taaldem", "romanization": "TAALDEM", "glosses": ["prehistoric"], "category": "history", "derivedFrom": ["aldem"] },
-  { "id": "ahahalkan", "romanization": "AHAHALKAN", "glosses": ["archaeology"], "category": "history", "derivedFrom": ["hahalkan"] },
-  { "id": "okiremadar", "romanization": "OKIREMADAR", "glosses": ["historical site"], "category": "history", "derivedFrom": ["okirempo"] },
-  { "id": "ahalkanakht", "romanization": "AHALKANAKHT", "glosses": ["discovery"], "category": "history", "derivedFrom": ["ahalkan", "akht"] },
-  { "id": "dendamna", "romanization": "DENDAMNA", "glosses": ["civilization"], "category": "history", "notes": "Alternate term: HANREIS (base)." },
-  { "id": "dendamda", "romanization": "DENDAMDA", "glosses": ["culture"], "category": "history" },
-  { "id": "dharso", "romanization": "DHARSO", "glosses": ["tradition"], "category": "history", "derivedFrom": ["dhar"] },
-  { "id": "dendamno", "romanization": "DENDAMNO", "glosses": ["custom"], "category": "history" },
-  { "id": "khezni", "romanization": "KHEZNI", "glosses": ["heritage", "legacy"], "category": "history", "derivedFrom": ["khez", "ni"], "notes": "Merged: source lists KHEZNI for both heritage and legacy." },
-  { "id": "dharakni", "romanization": "DHARAKNI", "glosses": ["ancestor"], "category": "history", "derivedFrom": ["dhar"] },
-  { "id": "dendno", "romanization": "DENDNO", "glosses": ["origin"], "category": "history" },
-  { "id": "okitakht", "romanization": "OKITAKHT", "glosses": ["timeline"], "category": "history", "derivedFrom": ["okitaha", "akht"] },
-  { "id": "okiremdhar", "romanization": "OKIREMDHAR", "glosses": ["chronicle"], "category": "history", "derivedFrom": ["okirempo", "dhar"] },
-  { "id": "okirempaz", "romanization": "OKIREMPAZ", "glosses": ["epoch"], "category": "history", "derivedFrom": ["okirempo"] },
-  { "id": "okirempazni", "romanization": "OKIREMPAZNI", "glosses": ["period"], "category": "history", "derivedFrom": ["okirempaz", "ni"] },
-  { "id": "aldemni", "romanization": "ALDEMNI", "glosses": ["age"], "category": "history", "derivedFrom": ["aldem", "ni"] },
-  { "id": "zha-aldemni", "romanization": "ZHA ALDEMNI", "glosses": ["century"], "category": "history", "derivedFrom": ["aldemni"], "notes": "ZHA = 144 (gross); a Gaian century is base-12." },
-  { "id": "zet-aldemni", "romanization": "ZET ALDEMNI", "glosses": ["millennium"], "category": "history", "derivedFrom": ["aldemni"] },
-  { "id": "jaze", "romanization": "JAZE", "glosses": ["year"], "category": "history", "notes": "Alternate term: YUUN. Pattern: JI JAZE = decade, ZHA JAZE = 144 years." },
-  { "id": "ji-jaze", "romanization": "JI JAZE", "glosses": ["decade"], "category": "history", "derivedFrom": ["jaze"] },
-  { "id": "slenah", "romanization": "SLENAH", "glosses": ["ruins"], "category": "history" },
-  { "id": "mnah", "romanization": "MNAH", "glosses": ["monument"], "category": "history" },
-  { "id": "ahalkan", "romanization": "AHALKAN", "glosses": ["relic"], "category": "history", "notes": "Near-twin of HAHALKAN (artifact)." },
-  { "id": "okiremzar", "romanization": "OKIREMZAR", "glosses": ["historical figure"], "category": "history", "derivedFrom": ["okirempo"] },
-  { "id": "tendakna", "romanization": "TENDAKNA", "glosses": ["founder"], "category": "history" },
-  { "id": "tausdendamna", "romanization": "TAUSDENDAMNA", "glosses": ["empire"], "category": "history", "derivedFrom": ["taus", "dendamna"] },
-  { "id": "dendamnaald", "romanization": "DENDAMNAALD", "glosses": ["kingdom"], "category": "history", "derivedFrom": ["dendamna"] },
-  { "id": "tendamna", "romanization": "TENDAMNA", "glosses": ["dynasty"], "category": "history", "derivedFrom": ["dendamna"] },
-  { "id": "vikn", "romanization": "VIKN", "glosses": ["war"], "category": "history", "notes": "Alternate term: HAADHEN (base)." },
-  { "id": "olo", "romanization": "OLO", "glosses": ["peace"], "category": "history" },
-  { "id": "nakhurem", "romanization": "NAKHUREM", "glosses": ["revolution"], "category": "history" },
-  { "id": "slenokirempo", "romanization": "SLENOKIREMPO", "glosses": ["archivist"], "category": "history", "derivedFrom": ["slenokirem", "okirempo"] },
-  { "id": "rakra", "romanization": "RAKRA", "glosses": ["canine"], "category": "animals" },
-  { "id": "feta", "romanization": "FETA", "glosses": ["feline"], "category": "animals" },
-  { "id": "roruk", "romanization": "RORUK", "glosses": ["dog"], "category": "animals", "derivedFrom": ["rakra"] },
-  { "id": "felshu", "romanization": "FELSHU", "glosses": ["cat"], "category": "animals", "derivedFrom": ["feta"] },
-  { "id": "lodra", "romanization": "LODRA", "glosses": ["mammal"], "category": "animals", "notes": "Alternate term: LODANU." },
-  { "id": "vrzoan", "romanization": "VRZOAN", "glosses": ["vertebrate"], "category": "animals" },
-  { "id": "vranaz", "romanization": "VRANAZ", "glosses": ["invertebrate"], "category": "animals", "derivedFrom": ["vrzoan"] },
-  { "id": "pdkdan", "romanization": "PDKDAN", "glosses": ["four-legged animal"], "category": "animals", "derivedFrom": ["pd"] },
-  { "id": "itzldan", "romanization": "ITZLDAN", "glosses": ["two-legged animal"], "category": "animals", "derivedFrom": ["itz"] },
-  { "id": "azog", "romanization": "AZOG", "glosses": ["ox"], "category": "animals" },
-  { "id": "azornu", "romanization": "AZORNU", "glosses": ["cow"], "category": "animals", "derivedFrom": ["azog"] },
-  { "id": "shep", "romanization": "SHEP", "glosses": ["sheep"], "category": "animals" },
-  { "id": "kotar", "romanization": "KOTAR", "glosses": ["goat"], "category": "animals" },
-  { "id": "khikar", "romanization": "KHIKAR", "glosses": ["chicken"], "category": "animals", "notes": "Canon fix: source had CHIKAR; C replaced with KH per author ruling (June 2026)." },
-  { "id": "khazun", "romanization": "KHAZUN", "glosses": ["bird"], "category": "animals" },
-  { "id": "susho", "romanization": "SUSHO", "glosses": ["fish"], "category": "animals" },
-  { "id": "reptal", "romanization": "REPTAL", "glosses": ["reptile"], "category": "animals" },
-  { "id": "amphip", "romanization": "AMPHIP", "glosses": ["amphibian"], "category": "animals" },
-  { "id": "sekan", "romanization": "SEKAN", "glosses": ["insect"], "category": "animals" },
-  { "id": "arakhn", "romanization": "ARAKHN", "glosses": ["arachnid"], "category": "animals" },
-  { "id": "lodanu", "romanization": "LODANU", "glosses": ["mammal"], "category": "animals", "notes": "Alternate term: LODRA." },
-  { "id": "roden", "romanization": "RODEN", "glosses": ["rodent"], "category": "animals" },
-  { "id": "khrazar", "romanization": "KHRAZAR", "glosses": ["predator"], "category": "animals" },
-  { "id": "prayan", "romanization": "PRAYAN", "glosses": ["prey"], "category": "animals", "regions": ["Kharmat", "Haadfahuta"], "notes": "Contains regional letter Y." },
-  { "id": "tohtan", "romanization": "TOHTAN", "glosses": ["herbivore"], "category": "animals" },
-  { "id": "rokar", "romanization": "ROKAR", "glosses": ["carnivore"], "category": "animals" },
-  { "id": "vriptan", "romanization": "VRIPTAN", "glosses": ["omnivore"], "category": "animals" },
-  { "id": "zahzun", "romanization": "ZAHZUN", "glosses": ["wild animal"], "category": "animals", "derivedFrom": ["khazun"] },
-  { "id": "zatun", "romanization": "ZATUN", "glosses": ["domesticated animal"], "category": "animals" },
-  { "id": "ufizahzun", "romanization": "UFIZAHZUN", "glosses": ["endangered species"], "category": "animals", "derivedFrom": ["zahzun"] },
-  { "id": "laga", "romanization": "LAGA", "glosses": ["dragon"], "category": "animals", "notes": "Alternate term: HEREPT." },
-  { "id": "kaiyua", "romanization": "KAIYUA", "glosses": ["breakfast"], "category": "cooking", "regions": ["Kharmat", "Haadfahuta"], "derivedFrom": ["kai"], "notes": "Contains regional letter Y." },
-  { "id": "okana", "romanization": "OKANA", "glosses": ["lunch"], "category": "cooking", "derivedFrom": ["okan"] },
-  { "id": "nikyua", "romanization": "NIKYUA", "glosses": ["dinner"], "category": "cooking", "regions": ["Kharmat", "Haadfahuta"], "derivedFrom": ["niki"], "notes": "Contains regional letter Y." },
-  { "id": "nadan", "romanization": "NADAN", "glosses": ["meal"], "category": "cooking", "derivedFrom": ["naden"] },
-  { "id": "zinari", "romanization": "ZINARI", "glosses": ["snack"], "category": "cooking" },
-  { "id": "namnadenz", "romanization": "NAMNADENZ", "glosses": ["plant consumables"], "category": "cooking", "derivedFrom": ["namn", "naden"] },
-  { "id": "fialzi", "romanization": "FIALZI", "glosses": ["oil"], "category": "cooking", "derivedFrom": ["fi"] },
-  { "id": "hutza", "romanization": "HUTZA", "glosses": ["sugar"], "category": "cooking" },
-  { "id": "hutaitzu", "romanization": "HUTAITZU", "glosses": ["salt"], "category": "cooking" },
-  { "id": "elzdet", "romanization": "ELZDET", "glosses": ["spice"], "category": "cooking" },
-  { "id": "ermeldan", "romanization": "ERMELDAN", "glosses": ["seasoning"], "category": "cooking" },
-  { "id": "lauten", "romanization": "LAUTEN", "glosses": ["living things"], "category": "cooking", "derivedFrom": ["laua"] },
-  { "id": "fuh-laden", "romanization": "FUH LADEN", "glosses": ["fish", "sea animals"], "category": "cooking", "derivedFrom": ["fuha"] },
-  { "id": "kedran", "romanization": "KEDRAN", "glosses": ["beef"], "category": "cooking" },
-  { "id": "khikir", "romanization": "KHIKIR", "glosses": ["chicken", "chicken meat"], "category": "cooking", "derivedFrom": ["khikar"], "notes": "Canon fix: source had CHIKIR; C replaced with KH per author ruling (June 2026)." },
-  { "id": "taush-lauten", "romanization": "TAUSH LAUTEN", "glosses": ["misc livestock"], "category": "cooking", "derivedFrom": ["lauten"] },
-  { "id": "narsild", "romanization": "NARSILD", "glosses": ["restaurant"], "category": "cooking" },
-  { "id": "umkil", "romanization": "UMKIL", "glosses": ["bitter"], "category": "cooking" },
-  { "id": "kuukra", "romanization": "KUUKRA", "glosses": ["sweet"], "category": "cooking" },
-  { "id": "zuhri", "romanization": "ZUHRI", "glosses": ["sour"], "category": "cooking" },
-  { "id": "khazdan", "romanization": "KHAZDAN", "glosses": ["plain"], "category": "cooking" },
-  { "id": "tozden", "romanization": "TOZDEN", "glosses": ["flavor"], "category": "cooking", "derivedFrom": ["den"] },
-  { "id": "zrok", "romanization": "ZROK", "glosses": ["to cook"], "category": "cooking" },
-  { "id": "kurik", "romanization": "KURIK", "glosses": ["to fry"], "category": "cooking" },
-  { "id": "futur", "romanization": "FUTUR", "glosses": ["to boil"], "category": "cooking" },
-  { "id": "paki", "romanization": "PAKI", "glosses": ["to bake"], "category": "cooking" },
-  { "id": "agal", "romanization": "AGAL", "glosses": ["to warm", "to heat up"], "category": "cooking" },
-  { "id": "illiz", "romanization": "ILLIZ", "glosses": ["to freeze", "to cool down"], "category": "cooking" },
-  { "id": "riks", "romanization": "RIKS", "glosses": ["to stir"], "category": "cooking" },
-  { "id": "huztan", "romanization": "HUZTAN", "glosses": ["to mix", "mixture"], "category": "cooking" },
-  { "id": "sulkar", "romanization": "SULKAR", "glosses": ["to grind", "to mash"], "category": "cooking" },
-  { "id": "zilz", "romanization": "ZILZ", "glosses": ["to mince"], "category": "cooking" },
-  { "id": "lamni", "romanization": "LAMNI", "glosses": ["egg"], "category": "cooking", "derivedFrom": ["lamiral"] },
-  { "id": "lazop-vi-dagah", "romanization": "LAZOP VI DAGAH", "glosses": ["read the room"], "category": "social", "tags": ["phrase", "idiom"] },
-  { "id": "sagaz", "romanization": "SAGAZ", "glosses": ["situation"], "category": "social" },
-  { "id": "viksul", "romanization": "VIKSUL", "glosses": ["context"], "category": "social" },
-  { "id": "lulan", "romanization": "LULAN", "glosses": ["conversation"], "category": "social" },
-  { "id": "zuko", "romanization": "ZUKO", "glosses": ["dialogue"], "category": "social" },
-  { "id": "denlaz", "romanization": "DENLAZ", "glosses": ["vocabulary"], "category": "social", "derivedFrom": ["den"] },
-  { "id": "varko", "romanization": "VARKO", "glosses": ["verb"], "category": "social" },
-  { "id": "nuz", "romanization": "NUZ", "glosses": ["noun"], "category": "social" },
-  { "id": "adnuz", "romanization": "ADNUZ", "glosses": ["adjective"], "category": "social", "derivedFrom": ["nuz"] },
-  { "id": "advuz", "romanization": "ADVUZ", "glosses": ["adverb"], "category": "social", "derivedFrom": ["nuz"] },
-  { "id": "kraant", "romanization": "KRAANT", "glosses": ["grammar"], "category": "social" },
-  { "id": "zelfanen", "romanization": "ZELFANEN", "glosses": ["shunned"], "category": "social" },
-  { "id": "kraie", "romanization": "KRAIE", "glosses": ["accepted"], "category": "social" },
-  { "id": "fofa", "romanization": "FOFA", "glosses": ["tickle"], "category": "social" },
-  { "id": "zunt", "romanization": "ZUNT", "glosses": ["sting"], "category": "social" },
-  { "id": "pakil", "romanization": "PAKIL", "glosses": ["tap"], "category": "social" },
-  { "id": "nu", "romanization": "NU?", "glosses": ["hm?", "what?"], "category": "social", "tags": ["phrase"] },
-  { "id": "mo", "romanization": "MO", "glosses": ["yeah"], "category": "social", "tags": ["phrase"] },
-  { "id": "kroa", "romanization": "KROA", "glosses": ["sentence"], "category": "social" },
-  { "id": "subkron", "romanization": "SUBKRON", "glosses": ["subject"], "category": "social", "regions": ["Kharmat", "Haadfahuta"], "derivedFrom": ["kroa"], "notes": "Contains regional letter B." },
-  { "id": "ohkron", "romanization": "OHKRON", "glosses": ["object"], "category": "social", "derivedFrom": ["kroa"] },
-  { "id": "idimn", "romanization": "IDIMN", "glosses": ["idiom", "figure of speech"], "category": "social" },
-  { "id": "vukwuz", "romanization": "VUKWUZ", "glosses": ["witty"], "category": "social" },
-  { "id": "dadenlo", "romanization": "DADENLO", "glosses": ["chatterbox", "loudmouth"], "category": "social", "notes": "Alternate term: KWAZAR." },
-  { "id": "zakroj", "romanization": "ZAKROJ", "glosses": ["hermit", "wallflower"], "category": "social", "notes": "Alternate term: VAULFLUD." },
-  { "id": "klal-zen", "romanization": "KLAL ZEN", "glosses": ["to fit in", "to blend in"], "category": "social", "tags": ["idiom"], "notes": "Alternate form: BLADN ZEN (regional B)." },
-  { "id": "kzun-zhun", "romanization": "KZUN ZHUN", "glosses": ["to stick out"], "category": "social", "tags": ["idiom"] },
-  { "id": "zhuniduk", "romanization": "ZHUNIDUK", "glosses": ["stick in the mud"], "category": "social", "tags": ["idiom"] },
-  { "id": "larvlul", "romanization": "LARVLUL", "glosses": ["life of the party"], "category": "social", "tags": ["idiom"] },
-  { "id": "zhen", "romanization": "ZHEN", "glosses": ["shy"], "category": "social" },
-  { "id": "opnin", "romanization": "OPNIN", "glosses": ["outgoing"], "category": "social" }
+  {
+    "id": "planz",
+    "romanization": "PLANZ",
+    "glosses": [
+      "sales"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "ufa",
+    "romanization": "UFA",
+    "glosses": [
+      "market",
+      "store"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "ufpas",
+    "romanization": "UFPAS",
+    "glosses": [
+      "stock"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "ufa"
+    ]
+  },
+  {
+    "id": "uwao",
+    "romanization": "UWAO",
+    "glosses": [
+      "exchange",
+      "trade"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "haadentaht",
+    "romanization": "HAADENTAHT",
+    "glosses": [
+      "economy"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "haad",
+      "taht"
+    ],
+    "notes": "Alternate term: THOSAZ."
+  },
+  {
+    "id": "lalupo",
+    "romanization": "LALUPO",
+    "glosses": [
+      "con man"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "lalu"
+    ]
+  },
+  {
+    "id": "lalupuwa",
+    "romanization": "LALUPUWA",
+    "glosses": [
+      "ripoff"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "lalu",
+      "puwa"
+    ]
+  },
+  {
+    "id": "puwa",
+    "romanization": "PUWA",
+    "glosses": [
+      "deal"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "targ",
+    "romanization": "TARG",
+    "glosses": [
+      "agreement"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "heztaht",
+    "romanization": "HEZTAHT",
+    "glosses": [
+      "bank"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "hez",
+      "taht"
+    ],
+    "notes": "Alternate term: ZATHKUDAF."
+  },
+  {
+    "id": "tavkss",
+    "romanization": "TAVKSS",
+    "glosses": [
+      "bankrupt"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "jakpo",
+    "romanization": "JAKPO",
+    "glosses": [
+      "thief"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "jak"
+    ]
+  },
+  {
+    "id": "zonpo",
+    "romanization": "ZONPO",
+    "glosses": [
+      "giver"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zon"
+    ]
+  },
+  {
+    "id": "hkah",
+    "romanization": "HKAH",
+    "glosses": [
+      "buy"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "leih",
+    "romanization": "LEIH",
+    "glosses": [
+      "sell"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "taht",
+    "romanization": "TAHT",
+    "glosses": [
+      "money"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "tavau",
+    "romanization": "TAVAU",
+    "glosses": [
+      "rich"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "taht",
+      "vau"
+    ]
+  },
+  {
+    "id": "tkasa",
+    "romanization": "TKASA",
+    "glosses": [
+      "poor"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "taht",
+      "sakasa"
+    ]
+  },
+  {
+    "id": "dukaden",
+    "romanization": "DUKADEN",
+    "glosses": [
+      "market"
+    ],
+    "category": "economics",
+    "notes": "Alternate term: UFA."
+  },
+  {
+    "id": "zathkuda",
+    "romanization": "ZATHKUDA",
+    "glosses": [
+      "currency"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathku"
+    ]
+  },
+  {
+    "id": "zathku",
+    "romanization": "ZATHKU",
+    "glosses": [
+      "coin"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "zathkudaf",
+    "romanization": "ZATHKUDAF",
+    "glosses": [
+      "bank"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathkuda"
+    ]
+  },
+  {
+    "id": "thosa",
+    "romanization": "THOSA",
+    "glosses": [
+      "trade"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "thosaha",
+    "romanization": "THOSAHA",
+    "glosses": [
+      "trader"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosa"
+    ]
+  },
+  {
+    "id": "zathzos",
+    "romanization": "ZATHZOS",
+    "glosses": [
+      "wealth"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "thosar",
+    "romanization": "THOSAR",
+    "glosses": [
+      "exchange"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosa"
+    ]
+  },
+  {
+    "id": "thosarha",
+    "romanization": "THOSARHA",
+    "glosses": [
+      "broker"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosar"
+    ]
+  },
+  {
+    "id": "zathko",
+    "romanization": "ZATHKO",
+    "glosses": [
+      "investment"
+    ],
+    "category": "economics",
+    "notes": "Also a Subterras name meaning 'the investor, child of wealth'."
+  },
+  {
+    "id": "zathkoz",
+    "romanization": "ZATHKOZ",
+    "glosses": [
+      "investor"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathko"
+    ]
+  },
+  {
+    "id": "gakthosa",
+    "romanization": "GAKTHOSA",
+    "glosses": [
+      "import"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosa"
+    ]
+  },
+  {
+    "id": "hothosa",
+    "romanization": "HOTHOSA",
+    "glosses": [
+      "export"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosa"
+    ]
+  },
+  {
+    "id": "hothosaha",
+    "romanization": "HOTHOSAHA",
+    "glosses": [
+      "exporter"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "hothosa"
+    ]
+  },
+  {
+    "id": "gakthosaha",
+    "romanization": "GAKTHOSAHA",
+    "glosses": [
+      "importer"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "gakthosa"
+    ]
+  },
+  {
+    "id": "zathzol",
+    "romanization": "ZATHZOL",
+    "glosses": [
+      "tax"
+    ],
+    "category": "economics"
+  },
+  {
+    "id": "zathzolha",
+    "romanization": "ZATHZOLHA",
+    "glosses": [
+      "taxpayer"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathzol"
+    ]
+  },
+  {
+    "id": "zathzolnem",
+    "romanization": "ZATHZOLNEM",
+    "glosses": [
+      "taxation"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathzol"
+    ]
+  },
+  {
+    "id": "zathzolhaz",
+    "romanization": "ZATHZOLHAZ",
+    "glosses": [
+      "taxation system"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathzol"
+    ]
+  },
+  {
+    "id": "gakthosar",
+    "romanization": "GAKTHOSAR",
+    "glosses": [
+      "customs"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "gakthosa"
+    ]
+  },
+  {
+    "id": "gakthosarha",
+    "romanization": "GAKTHOSARHA",
+    "glosses": [
+      "customs officer"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "gakthosar"
+    ]
+  },
+  {
+    "id": "thosaz",
+    "romanization": "THOSAZ",
+    "glosses": [
+      "economy"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosa"
+    ]
+  },
+  {
+    "id": "thosazha",
+    "romanization": "THOSAZHA",
+    "glosses": [
+      "economist"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "thosaz"
+    ]
+  },
+  {
+    "id": "zathkudes",
+    "romanization": "ZATHKUDES",
+    "glosses": [
+      "investment fund"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathkuda"
+    ]
+  },
+  {
+    "id": "zathkudesz",
+    "romanization": "ZATHKUDESZ",
+    "glosses": [
+      "fund manager"
+    ],
+    "category": "economics",
+    "derivedFrom": [
+      "zathkudes"
+    ]
+  },
+  {
+    "id": "taralu",
+    "romanization": "TARALU",
+    "glosses": [
+      "fertilize"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "haga",
+    "romanization": "HAGA",
+    "glosses": [
+      "sex"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "mature"
+    ]
+  },
+  {
+    "id": "loral",
+    "romanization": "LORAL",
+    "glosses": [
+      "penis"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "loloo",
+    "romanization": "LOLOO",
+    "glosses": [
+      "dick"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang",
+      "mature"
+    ]
+  },
+  {
+    "id": "naral",
+    "romanization": "NARAL",
+    "glosses": [
+      "vagina"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "nanara",
+    "romanization": "NANARA",
+    "glosses": [
+      "puss"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang",
+      "mature"
+    ]
+  },
+  {
+    "id": "talural",
+    "romanization": "TALURAL",
+    "glosses": [
+      "ovaries"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "jok",
+    "romanization": "JOK",
+    "glosses": [
+      "urethra"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "guu",
+    "romanization": "GUU",
+    "glosses": [
+      "sperm"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "hagu",
+    "romanization": "HAGU",
+    "glosses": [
+      "vaginal fluid"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "lamiral",
+    "romanization": "LAMIRAL",
+    "glosses": [
+      "eggs",
+      "ova"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "id": "esui",
+    "romanization": "ESUI",
+    "glosses": [
+      "baby",
+      "newborn"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "panpan",
+    "romanization": "PANPAN",
+    "glosses": [
+      "aroused",
+      "excited"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "mature"
+    ]
+  },
+  {
+    "id": "amama",
+    "romanization": "AMAMA",
+    "glosses": [
+      "flirting",
+      "flirt"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "laleld",
+    "romanization": "LALELD",
+    "glosses": [
+      "blush"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "la",
+      "eld"
+    ]
+  },
+  {
+    "id": "wan-cute",
+    "romanization": "WAN",
+    "glosses": [
+      "cute"
+    ],
+    "category": "reproduction",
+    "notes": "Homograph: WAN is also the regional letter name (wan)."
+  },
+  {
+    "id": "pika",
+    "romanization": "PIKA",
+    "glosses": [
+      "hot",
+      "sexy"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "mature"
+    ]
+  },
+  {
+    "id": "gognj",
+    "romanization": "GOGNJ",
+    "glosses": [
+      "handsome"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "iitz",
+    "romanization": "IITZ",
+    "glosses": [
+      "cool"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "lela",
+    "romanization": "LELA",
+    "glosses": [
+      "horny"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "mature"
+    ]
+  },
+  {
+    "id": "nath",
+    "romanization": "NATH",
+    "glosses": [
+      "virgin"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "annath",
+    "romanization": "ANNATH",
+    "glosses": [
+      "non-virgin"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "nath"
+    ]
+  },
+  {
+    "id": "annapan",
+    "romanization": "ANNAPAN",
+    "glosses": [
+      "slut"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang",
+      "mature"
+    ],
+    "derivedFrom": [
+      "panpan"
+    ]
+  },
+  {
+    "id": "jahhnoka",
+    "romanization": "JAHHNOKA",
+    "glosses": [
+      "beta male"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang"
+    ],
+    "derivedFrom": [
+      "jah",
+      "noka"
+    ]
+  },
+  {
+    "id": "avjah",
+    "romanization": "AVJAH",
+    "glosses": [
+      "alpha male"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang"
+    ],
+    "derivedFrom": [
+      "jah"
+    ]
+  },
+  {
+    "id": "mik",
+    "romanization": "MIK",
+    "glosses": [
+      "simp"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang"
+    ]
+  },
+  {
+    "id": "guo",
+    "romanization": "GUO",
+    "glosses": [
+      "chad"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang"
+    ]
+  },
+  {
+    "id": "japa",
+    "romanization": "JAPA",
+    "glosses": [
+      "normal girl"
+    ],
+    "category": "reproduction",
+    "notes": "Special terminology."
+  },
+  {
+    "id": "hapa",
+    "romanization": "HAPA",
+    "glosses": [
+      "normal guy"
+    ],
+    "category": "reproduction",
+    "notes": "Special terminology."
+  },
+  {
+    "id": "momaha",
+    "romanization": "MOMAHA",
+    "glosses": [
+      "nympho"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "slang",
+      "mature"
+    ],
+    "derivedFrom": [
+      "moma"
+    ]
+  },
+  {
+    "id": "helta",
+    "romanization": "HELTA",
+    "glosses": [
+      "tease"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "taramn",
+    "romanization": "TARAMN",
+    "glosses": [
+      "to pleasure"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "mature"
+    ]
+  },
+  {
+    "id": "espariit",
+    "romanization": "ESPARIIT",
+    "glosses": [
+      "to be born"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "mukamna",
+    "romanization": "MUKAMNA",
+    "glosses": [
+      "pregnant",
+      "to be pregnant"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "muka",
+      "mna"
+    ]
+  },
+  {
+    "id": "mnapu",
+    "romanization": "MNAPU",
+    "glosses": [
+      "to be in labor"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "mna",
+      "pun"
+    ]
+  },
+  {
+    "id": "falala",
+    "romanization": "FALALA",
+    "glosses": [
+      "climax"
+    ],
+    "category": "reproduction",
+    "tags": [
+      "mature"
+    ]
+  },
+  {
+    "id": "gaar",
+    "romanization": "GAAR",
+    "glosses": [
+      "reproduction"
+    ],
+    "category": "reproduction"
+  },
+  {
+    "id": "gaarha",
+    "romanization": "GAARHA",
+    "glosses": [
+      "reproducer"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "gaarzo",
+    "romanization": "GAARZO",
+    "glosses": [
+      "reproduction system"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "uldaar",
+    "romanization": "ULDAAR",
+    "glosses": [
+      "fertility"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "uldaarha",
+    "romanization": "ULDAARHA",
+    "glosses": [
+      "fertile individual"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "uldaar"
+    ]
+  },
+  {
+    "id": "uldaarzo",
+    "romanization": "ULDAARZO",
+    "glosses": [
+      "fertility cycle"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "uldaar"
+    ]
+  },
+  {
+    "id": "gaarzi",
+    "romanization": "GAARZI",
+    "glosses": [
+      "offspring"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "gaarzija",
+    "romanization": "GAARZIJA",
+    "glosses": [
+      "child"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarzi"
+    ]
+  },
+  {
+    "id": "gaarzimn",
+    "romanization": "GAARZIMN",
+    "glosses": [
+      "family"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarzi",
+      "mn"
+    ],
+    "notes": "Alternate term: HAKAH."
+  },
+  {
+    "id": "gaarzimnha",
+    "romanization": "GAARZIMNHA",
+    "glosses": [
+      "family member"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarzimn"
+    ]
+  },
+  {
+    "id": "gaarzimnz",
+    "romanization": "GAARZIMNZ",
+    "glosses": [
+      "progeny"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarzimn"
+    ]
+  },
+  {
+    "id": "gaarzimnza",
+    "romanization": "GAARZIMNZA",
+    "glosses": [
+      "descendant"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarzimnz"
+    ]
+  },
+  {
+    "id": "gaarfik",
+    "romanization": "GAARFIK",
+    "glosses": [
+      "pregnancy"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "gaarfikha",
+    "romanization": "GAARFIKHA",
+    "glosses": [
+      "pregnant individual"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarfik"
+    ]
+  },
+  {
+    "id": "gaarfikzo",
+    "romanization": "GAARFIKZO",
+    "glosses": [
+      "gestation period"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarfik"
+    ]
+  },
+  {
+    "id": "gaarfikza",
+    "romanization": "GAARFIKZA",
+    "glosses": [
+      "fetus"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarfik"
+    ]
+  },
+  {
+    "id": "gaarhaad",
+    "romanization": "GAARHAAD",
+    "glosses": [
+      "maternity"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar",
+      "haad"
+    ]
+  },
+  {
+    "id": "gaarhaadha",
+    "romanization": "GAARHAADHA",
+    "glosses": [
+      "mother"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarhaad"
+    ],
+    "notes": "Alternate term: HAHMN."
+  },
+  {
+    "id": "gaarhaadzi",
+    "romanization": "GAARHAADZI",
+    "glosses": [
+      "maternal lineage"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarhaad"
+    ]
+  },
+  {
+    "id": "gaarhaadzija",
+    "romanization": "GAARHAADZIJA",
+    "glosses": [
+      "sister"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarhaadzi"
+    ],
+    "notes": "Alternate term: HAHAMN."
+  },
+  {
+    "id": "gaarhaadzo",
+    "romanization": "GAARHAADZO",
+    "glosses": [
+      "maternity system"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarhaad"
+    ]
+  },
+  {
+    "id": "gaarhaadzan",
+    "romanization": "GAARHAADZAN",
+    "glosses": [
+      "maternal love"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarhaad"
+    ]
+  },
+  {
+    "id": "gaarlok",
+    "romanization": "GAARLOK",
+    "glosses": [
+      "paternity"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "gaarlokha",
+    "romanization": "GAARLOKHA",
+    "glosses": [
+      "father"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarlok"
+    ],
+    "notes": "Alternate term: JAHMN."
+  },
+  {
+    "id": "gaarlokzi",
+    "romanization": "GAARLOKZI",
+    "glosses": [
+      "paternal lineage"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarlok"
+    ]
+  },
+  {
+    "id": "gaarlokzija",
+    "romanization": "GAARLOKZIJA",
+    "glosses": [
+      "brother"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarlokzi"
+    ],
+    "notes": "Alternate term: JAJAMN."
+  },
+  {
+    "id": "gaarlokzo",
+    "romanization": "GAARLOKZO",
+    "glosses": [
+      "paternity system"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarlok"
+    ]
+  },
+  {
+    "id": "gaarlokzan",
+    "romanization": "GAARLOKZAN",
+    "glosses": [
+      "paternal love"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarlok"
+    ]
+  },
+  {
+    "id": "gaarler",
+    "romanization": "GAARLER",
+    "glosses": [
+      "childbirth"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaar"
+    ]
+  },
+  {
+    "id": "gaarlerha",
+    "romanization": "GAARLERHA",
+    "glosses": [
+      "childbearer"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarler"
+    ]
+  },
+  {
+    "id": "gaarlerzo",
+    "romanization": "GAARLERZO",
+    "glosses": [
+      "birthing process"
+    ],
+    "category": "reproduction",
+    "derivedFrom": [
+      "gaarler"
+    ]
+  },
+  {
+    "id": "hahgaln",
+    "romanization": "HAHGALN",
+    "glosses": [
+      "flat"
+    ],
+    "category": "physics",
+    "notes": "Derives from GALN (dimension) — restore ref when math category lands."
+  },
+  {
+    "id": "anhahgaln",
+    "romanization": "ANHAHGALN",
+    "glosses": [
+      "incline"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "hahgaln"
+    ]
+  },
+  {
+    "id": "zselt",
+    "romanization": "ZSELT",
+    "glosses": [
+      "smooth"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "ougi",
+    "romanization": "OUGI",
+    "glosses": [
+      "rough"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "anzelt",
+    "romanization": "ANZELT",
+    "glosses": [
+      "bumpy"
+    ],
+    "category": "physics",
+    "notes": "Negation of ZSELT (written ANZELT in source — single S)."
+  },
+  {
+    "id": "taha",
+    "romanization": "TAHA",
+    "glosses": [
+      "plane"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "fi-nextto",
+    "romanization": "FI",
+    "glosses": [
+      "next to"
+    ],
+    "category": "physics",
+    "notes": "Homograph: see fi (liquid)."
+  },
+  {
+    "id": "zhuspa",
+    "romanization": "ZHUSPA",
+    "glosses": [
+      "in front"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "zhifipa",
+    "romanization": "ZHIFIPA",
+    "glosses": [
+      "behind"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "surta",
+    "romanization": "SURTA",
+    "glosses": [
+      "horizontal"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "zurta",
+    "romanization": "ZURTA",
+    "glosses": [
+      "vertical"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "suzukan",
+    "romanization": "SUZUKAN",
+    "glosses": [
+      "diagonal"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "surta",
+      "zurta"
+    ]
+  },
+  {
+    "id": "ia",
+    "romanization": "IA",
+    "glosses": [
+      "energy"
+    ],
+    "category": "physics",
+    "notes": "Suffix form, e.g. MAGIA = magic energy."
+  },
+  {
+    "id": "leita",
+    "romanization": "LEITA",
+    "glosses": [
+      "distance"
+    ],
+    "category": "physics"
+  },
+  {
+    "id": "fasko",
+    "romanization": "FASKO",
+    "glosses": [
+      "physics"
+    ],
+    "category": "physics",
+    "notes": "Alternate term: DELNUS (older)."
+  },
+  {
+    "id": "faskoh",
+    "romanization": "FASKOH",
+    "glosses": [
+      "physicist"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskoza",
+    "romanization": "FASKOZA",
+    "glosses": [
+      "physics system"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskomn",
+    "romanization": "FASKOMN",
+    "glosses": [
+      "energy"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskomnha",
+    "romanization": "FASKOMNHA",
+    "glosses": [
+      "energetic individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskomn"
+    ]
+  },
+  {
+    "id": "faskomnza",
+    "romanization": "FASKOMNZA",
+    "glosses": [
+      "power"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskomn"
+    ]
+  },
+  {
+    "id": "faskorok",
+    "romanization": "FASKOROK",
+    "glosses": [
+      "force"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskorokha",
+    "romanization": "FASKOROKHA",
+    "glosses": [
+      "forceful individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskorok"
+    ]
+  },
+  {
+    "id": "faskorokza",
+    "romanization": "FASKOROKZA",
+    "glosses": [
+      "strength"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskorok"
+    ]
+  },
+  {
+    "id": "faskorokzija",
+    "romanization": "FASKOROKZIJA",
+    "glosses": [
+      "pressure"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskorok"
+    ]
+  },
+  {
+    "id": "faskazan",
+    "romanization": "FASKAZAN",
+    "glosses": [
+      "momentum"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskazanha",
+    "romanization": "FASKAZANHA",
+    "glosses": [
+      "momentum carrier"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskazan"
+    ]
+  },
+  {
+    "id": "faskam",
+    "romanization": "FASKAM",
+    "glosses": [
+      "motion"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskamha",
+    "romanization": "FASKAMHA",
+    "glosses": [
+      "moving individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskam"
+    ]
+  },
+  {
+    "id": "faskamza",
+    "romanization": "FASKAMZA",
+    "glosses": [
+      "velocity"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskam"
+    ]
+  },
+  {
+    "id": "faskamzija",
+    "romanization": "FASKAMZIJA",
+    "glosses": [
+      "speed"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskam"
+    ]
+  },
+  {
+    "id": "faskapad",
+    "romanization": "FASKAPAD",
+    "glosses": [
+      "acceleration"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskapadha",
+    "romanization": "FASKAPADHA",
+    "glosses": [
+      "accelerating individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskapad"
+    ]
+  },
+  {
+    "id": "faskapadza",
+    "romanization": "FASKAPADZA",
+    "glosses": [
+      "acceleration rate"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskapad"
+    ]
+  },
+  {
+    "id": "faskapadzija",
+    "romanization": "FASKAPADZIJA",
+    "glosses": [
+      "deceleration"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskapad"
+    ]
+  },
+  {
+    "id": "faskah",
+    "romanization": "FASKAH",
+    "glosses": [
+      "action"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskaha",
+    "romanization": "FASKAHA",
+    "glosses": [
+      "active individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskah"
+    ]
+  },
+  {
+    "id": "faskaza",
+    "romanization": "FASKAZA",
+    "glosses": [
+      "work"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskazi",
+    "romanization": "FASKAZI",
+    "glosses": [
+      "energy transformation"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskazija",
+    "romanization": "FASKAZIJA",
+    "glosses": [
+      "conversion"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskazi"
+    ]
+  },
+  {
+    "id": "faskan",
+    "romanization": "FASKAN",
+    "glosses": [
+      "matter"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskanha",
+    "romanization": "FASKANHA",
+    "glosses": [
+      "material individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskan"
+    ]
+  },
+  {
+    "id": "faskanza",
+    "romanization": "FASKANZA",
+    "glosses": [
+      "substance"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskan"
+    ]
+  },
+  {
+    "id": "faskad",
+    "romanization": "FASKAD",
+    "glosses": [
+      "density"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskadha",
+    "romanization": "FASKADHA",
+    "glosses": [
+      "dense individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskad"
+    ]
+  },
+  {
+    "id": "faskadza",
+    "romanization": "FASKADZA",
+    "glosses": [
+      "concentration"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskad"
+    ]
+  },
+  {
+    "id": "faskarok",
+    "romanization": "FASKAROK",
+    "glosses": [
+      "friction"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskarokha",
+    "romanization": "FASKAROKHA",
+    "glosses": [
+      "frictional individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskarok"
+    ]
+  },
+  {
+    "id": "faskarokza",
+    "romanization": "FASKAROKZA",
+    "glosses": [
+      "resistance"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskarok"
+    ]
+  },
+  {
+    "id": "faskarokzija",
+    "romanization": "FASKAROKZIJA",
+    "glosses": [
+      "drag"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskarok"
+    ]
+  },
+  {
+    "id": "faskazeh",
+    "romanization": "FASKAZEH",
+    "glosses": [
+      "heat"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskazehha",
+    "romanization": "FASKAZEHHA",
+    "glosses": [
+      "hot individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskazeh"
+    ]
+  },
+  {
+    "id": "faskazehza",
+    "romanization": "FASKAZEHZA",
+    "glosses": [
+      "temperature"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskazeh"
+    ]
+  },
+  {
+    "id": "faskazehzija",
+    "romanization": "FASKAZEHZIJA",
+    "glosses": [
+      "thermal energy"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskazeh"
+    ]
+  },
+  {
+    "id": "faskuk",
+    "romanization": "FASKUK",
+    "glosses": [
+      "light"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskukha",
+    "romanization": "FASKUKHA",
+    "glosses": [
+      "illuminated individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskuk"
+    ]
+  },
+  {
+    "id": "faskukza",
+    "romanization": "FASKUKZA",
+    "glosses": [
+      "radiance"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskuk"
+    ]
+  },
+  {
+    "id": "faskukzija",
+    "romanization": "FASKUKZIJA",
+    "glosses": [
+      "brightness"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskuk"
+    ]
+  },
+  {
+    "id": "faskask",
+    "romanization": "FASKASK",
+    "glosses": [
+      "sound"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskaskha",
+    "romanization": "FASKASKHA",
+    "glosses": [
+      "sonorous individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskask"
+    ]
+  },
+  {
+    "id": "faskaskza",
+    "romanization": "FASKASKZA",
+    "glosses": [
+      "volume"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskask"
+    ]
+  },
+  {
+    "id": "faskaskzija",
+    "romanization": "FASKASKZIJA",
+    "glosses": [
+      "pitch"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskask"
+    ]
+  },
+  {
+    "id": "faskahka",
+    "romanization": "FASKAHKA",
+    "glosses": [
+      "wave"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "fasko"
+    ]
+  },
+  {
+    "id": "faskahkaha",
+    "romanization": "FASKAHKAHA",
+    "glosses": [
+      "wavy individual"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskahka"
+    ]
+  },
+  {
+    "id": "faskahkaza",
+    "romanization": "FASKAHKAZA",
+    "glosses": [
+      "frequency"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "faskahka"
+    ]
+  },
+  {
+    "id": "anushekak",
+    "romanization": "ANUSHEKAK",
+    "glosses": [
+      "reflection"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "u-shekak"
+    ]
+  },
+  {
+    "id": "hanushek",
+    "romanization": "HANUSHEK",
+    "glosses": [
+      "mirror"
+    ],
+    "category": "physics",
+    "derivedFrom": [
+      "u-she"
+    ]
+  },
+  {
+    "id": "rafta",
+    "romanization": "RAFTA",
+    "glosses": [
+      "metal"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "solz",
+    "romanization": "SOLZ",
+    "glosses": [
+      "tool"
+    ],
+    "category": "mechanical",
+    "notes": "Alternate term: ROKO (base)."
+  },
+  {
+    "id": "ganluz",
+    "romanization": "GANLUZ",
+    "glosses": [
+      "connect"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "anluz",
+    "romanization": "ANLUZ",
+    "glosses": [
+      "disconnect"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "ganluz"
+    ]
+  },
+  {
+    "id": "irga",
+    "romanization": "IRGA",
+    "glosses": [
+      "build"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "krata",
+    "romanization": "KRATA",
+    "glosses": [
+      "destroy"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "raun",
+    "romanization": "RAUN",
+    "glosses": [
+      "fix"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "lusna",
+    "romanization": "LUSNA",
+    "glosses": [
+      "break"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "nalz",
+    "romanization": "NALZ",
+    "glosses": [
+      "invent"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "klaiz",
+    "romanization": "KLAIZ",
+    "glosses": [
+      "discover"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "vakalz",
+    "romanization": "VAKALZ",
+    "glosses": [
+      "combine",
+      "fuse"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "olil",
+    "romanization": "OLIL",
+    "glosses": [
+      "machine"
+    ],
+    "category": "mechanical"
+  },
+  {
+    "id": "trenlil",
+    "romanization": "TRENLIL",
+    "glosses": [
+      "engine"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "narlil",
+    "romanization": "NARLIL",
+    "glosses": [
+      "gear"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "klil",
+    "romanization": "KLIL",
+    "glosses": [
+      "wheel"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ],
+    "notes": "Alternate term: DENKA (base)."
+  },
+  {
+    "id": "paklil",
+    "romanization": "PAKLIL",
+    "glosses": [
+      "axle"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "klil"
+    ]
+  },
+  {
+    "id": "grilil",
+    "romanization": "GRILIL",
+    "glosses": [
+      "pulley"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "zilil",
+    "romanization": "ZILIL",
+    "glosses": [
+      "screw"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "kulil",
+    "romanization": "KULIL",
+    "glosses": [
+      "bolt"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "vaklil",
+    "romanization": "VAKLIL",
+    "glosses": [
+      "nut"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "malil",
+    "romanization": "MALIL",
+    "glosses": [
+      "lever"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "palil",
+    "romanization": "PALIL",
+    "glosses": [
+      "piston"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "umlil",
+    "romanization": "UMLIL",
+    "glosses": [
+      "spring",
+      "coil"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "kralil",
+    "romanization": "KRALIL",
+    "glosses": [
+      "chain"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "zuklil",
+    "romanization": "ZUKLIL",
+    "glosses": [
+      "hydraulic"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "fazlil",
+    "romanization": "FAZLIL",
+    "glosses": [
+      "pneumatic"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "suhlil",
+    "romanization": "SUHLIL",
+    "glosses": [
+      "circuit"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "haklil",
+    "romanization": "HAKLIL",
+    "glosses": [
+      "fuse"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "zavlil",
+    "romanization": "ZAVLIL",
+    "glosses": [
+      "weld"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "voklil",
+    "romanization": "VOKLIL",
+    "glosses": [
+      "drill"
+    ],
+    "category": "mechanical",
+    "derivedFrom": [
+      "olil"
+    ]
+  },
+  {
+    "id": "tara",
+    "romanization": "TARA",
+    "glosses": [
+      "addition",
+      "to add"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "arat",
+    "romanization": "ARAT",
+    "glosses": [
+      "subtraction",
+      "to subtract"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "fojah",
+    "romanization": "FOJAH",
+    "glosses": [
+      "multiplication",
+      "to multiply"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "hajfo",
+    "romanization": "HAJFO",
+    "glosses": [
+      "division",
+      "to divide"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "atatakhres",
+    "romanization": "ATATAKHRES",
+    "glosses": [
+      "exponents"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "atata",
+      "khres"
+    ]
+  },
+  {
+    "id": "u-shelazdan",
+    "romanization": "U SHELAZDAN",
+    "glosses": [
+      "parenthesis"
+    ],
+    "category": "math",
+    "notes": "Alternate romanization: U SHEGENLA."
+  },
+  {
+    "id": "xelkhre",
+    "romanization": "XELKHRE",
+    "glosses": [
+      "fraction"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khres"
+    ]
+  },
+  {
+    "id": "hazkhres",
+    "romanization": "HAZKHRES",
+    "glosses": [
+      "decimal"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khres"
+    ],
+    "notes": "Alternate romanization: PENKHRES."
+  },
+  {
+    "id": "khrdenlazgan",
+    "romanization": "KHRDENLAZGAN",
+    "glosses": [
+      "graph"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "nalaztedan",
+    "romanization": "NALAZTEDAN",
+    "glosses": [
+      "grid"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "na",
+      "tedan"
+    ]
+  },
+  {
+    "id": "khrdendagarn",
+    "romanization": "KHRDENDAGARN",
+    "glosses": [
+      "table"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "laokhan",
+    "romanization": "LAOKHAN",
+    "glosses": [
+      "chart"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "taxok",
+    "romanization": "TAXOK",
+    "glosses": [
+      "polynomial"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "xok"
+    ]
+  },
+  {
+    "id": "jvkvd",
+    "romanization": "JVKVD",
+    "glosses": [
+      "algebra"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "narl",
+    "romanization": "NARL",
+    "glosses": [
+      "linear"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "na"
+    ]
+  },
+  {
+    "id": "na",
+    "romanization": "NA",
+    "glosses": [
+      "line"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "lukt",
+    "romanization": "LUKT",
+    "glosses": [
+      "parallel"
+    ],
+    "category": "math",
+    "notes": "Canon fix: source had LUCT; C replaced with K per author ruling (June 2026)."
+  },
+  {
+    "id": "axis",
+    "romanization": "AXIS",
+    "glosses": [
+      "perpendicular"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "ansur",
+    "romanization": "ANSUR",
+    "glosses": [
+      "curve"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "surta"
+    ]
+  },
+  {
+    "id": "zhelansur",
+    "romanization": "ZHELANSUR",
+    "glosses": [
+      "wave"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "ansur"
+    ]
+  },
+  {
+    "id": "itzansur",
+    "romanization": "ITZANSUR",
+    "glosses": [
+      "parabola"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "ansur"
+    ]
+  },
+  {
+    "id": "pdansur",
+    "romanization": "PDANSUR",
+    "glosses": [
+      "hyperbola"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "ansur"
+    ]
+  },
+  {
+    "id": "itzkan",
+    "romanization": "ITZKAN",
+    "glosses": [
+      "quadratic"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "lilkan",
+    "romanization": "LILKAN",
+    "glosses": [
+      "cubic"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "ankhrekan",
+    "romanization": "ANKHREKAN",
+    "glosses": [
+      "transcendental"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khres"
+    ]
+  },
+  {
+    "id": "galn",
+    "romanization": "GALN",
+    "glosses": [
+      "dimension"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "uus-galn",
+    "romanization": "UUS GALN",
+    "glosses": [
+      "1d",
+      "one-dimensional"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "galn"
+    ]
+  },
+  {
+    "id": "itz-galn",
+    "romanization": "ITZ GALN",
+    "glosses": [
+      "2d",
+      "two-dimensional"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "galn"
+    ]
+  },
+  {
+    "id": "lil-galn",
+    "romanization": "LIL GALN",
+    "glosses": [
+      "3d",
+      "three-dimensional"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "galn"
+    ]
+  },
+  {
+    "id": "pd-galn",
+    "romanization": "PD GALN",
+    "glosses": [
+      "4d",
+      "four-dimensional"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "galn"
+    ]
+  },
+  {
+    "id": "tenga",
+    "romanization": "TENGA",
+    "glosses": [
+      "perspective"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "ten"
+    ]
+  },
+  {
+    "id": "hajitz",
+    "romanization": "HAJITZ",
+    "glosses": [
+      "even"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "hajfo"
+    ]
+  },
+  {
+    "id": "anhajitz",
+    "romanization": "ANHAJITZ",
+    "glosses": [
+      "odd"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "hajitz"
+    ]
+  },
+  {
+    "id": "anakies",
+    "romanization": "ANAKIES",
+    "glosses": [
+      "variable",
+      "unknown"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "akies"
+    ]
+  },
+  {
+    "id": "eldriikan",
+    "romanization": "ELDRIIKAN",
+    "glosses": [
+      "conversion",
+      "change"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "eldril"
+    ]
+  },
+  {
+    "id": "okhre",
+    "romanization": "OKHRE",
+    "glosses": [
+      "equation"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khres"
+    ]
+  },
+  {
+    "id": "xok",
+    "romanization": "XOK",
+    "glosses": [
+      "expression"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "omah",
+    "romanization": "OMAH",
+    "glosses": [
+      "equality",
+      "balance"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "oh",
+      "mah"
+    ],
+    "notes": "Literally OH (yin) + MAH (yang) — balance as the union of opposites."
+  },
+  {
+    "id": "anomah",
+    "romanization": "ANOMAH",
+    "glosses": [
+      "inequality"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "omah"
+    ]
+  },
+  {
+    "id": "khrefa",
+    "romanization": "KHREFA",
+    "glosses": [
+      "place value"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khres",
+      "famn"
+    ]
+  },
+  {
+    "id": "fukhrok",
+    "romanization": "FUKHROK",
+    "glosses": [
+      "count",
+      "to count"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "fukhre"
+    ]
+  },
+  {
+    "id": "nakhkhan",
+    "romanization": "NAKHKHAN",
+    "glosses": [
+      "mathematics"
+    ],
+    "category": "math",
+    "notes": "Alternate term: VKZKKS (base)."
+  },
+  {
+    "id": "nakhkhanha",
+    "romanization": "NAKHKHANHA",
+    "glosses": [
+      "mathematician"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "nakhkhan"
+    ]
+  },
+  {
+    "id": "gal",
+    "romanization": "GAL",
+    "glosses": [
+      "number"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "galid",
+    "romanization": "GALID",
+    "glosses": [
+      "digit"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "gal"
+    ]
+  },
+  {
+    "id": "tarao",
+    "romanization": "TARAO",
+    "glosses": [
+      "arithmetic"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "tara"
+    ]
+  },
+  {
+    "id": "khrdenlazganohr",
+    "romanization": "KHRDENLAZGANOHR",
+    "glosses": [
+      "geometry"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khrdenlazgan"
+    ]
+  },
+  {
+    "id": "khrdenlazganohkhre",
+    "romanization": "KHRDENLAZGANOHKHRE",
+    "glosses": [
+      "trigonometry"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khrdenlazgan"
+    ]
+  },
+  {
+    "id": "khrdenlazganohkh",
+    "romanization": "KHRDENLAZGANOHKH",
+    "glosses": [
+      "calculus"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khrdenlazgan"
+    ]
+  },
+  {
+    "id": "zamaitha",
+    "romanization": "ZAMAITHA",
+    "glosses": [
+      "statistic"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "zamaithah",
+    "romanization": "ZAMAITHAH",
+    "glosses": [
+      "probability"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "zamaitha"
+    ]
+  },
+  {
+    "id": "xoklo",
+    "romanization": "XOKLO",
+    "glosses": [
+      "function"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "xok"
+    ]
+  },
+  {
+    "id": "nazkies",
+    "romanization": "NAZKIES",
+    "glosses": [
+      "constant"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "akies"
+    ]
+  },
+  {
+    "id": "khrdenlazganha",
+    "romanization": "KHRDENLAZGANHA",
+    "glosses": [
+      "plot"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khrdenlazgan"
+    ]
+  },
+  {
+    "id": "khrdenlazganza",
+    "romanization": "KHRDENLAZGANZA",
+    "glosses": [
+      "axis"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khrdenlazgan"
+    ]
+  },
+  {
+    "id": "khrdenlazganlo",
+    "romanization": "KHRDENLAZGANLO",
+    "glosses": [
+      "coordinate"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "khrdenlazgan"
+    ]
+  },
+  {
+    "id": "atatakh",
+    "romanization": "ATATAKH",
+    "glosses": [
+      "exponential"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "atata"
+    ]
+  },
+  {
+    "id": "nek",
+    "romanization": "NEK",
+    "glosses": [
+      "root"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "itzkanek",
+    "romanization": "ITZKANEK",
+    "glosses": [
+      "square"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "itzkan",
+      "nek"
+    ]
+  },
+  {
+    "id": "lilkanek",
+    "romanization": "LILKANEK",
+    "glosses": [
+      "cube"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "lilkan",
+      "nek"
+    ]
+  },
+  {
+    "id": "tasurna",
+    "romanization": "TASURNA",
+    "glosses": [
+      "triangle"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "na"
+    ],
+    "notes": "Alternate term: LILHU (base)."
+  },
+  {
+    "id": "lilgalndara",
+    "romanization": "LILGALNDARA",
+    "glosses": [
+      "sphere"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "lil-galn",
+      "dara"
+    ]
+  },
+  {
+    "id": "itzgalndara",
+    "romanization": "ITZGALNDARA",
+    "glosses": [
+      "cylinder"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "itz-galn",
+      "dara"
+    ]
+  },
+  {
+    "id": "nargalndara",
+    "romanization": "NARGALNDARA",
+    "glosses": [
+      "pyramid"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "galn",
+      "dara"
+    ]
+  },
+  {
+    "id": "luur",
+    "romanization": "LUUR",
+    "glosses": [
+      "volume"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "luurzisha",
+    "romanization": "LUURZISHA",
+    "glosses": [
+      "surface area"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "luur"
+    ]
+  },
+  {
+    "id": "maith",
+    "romanization": "MAITH",
+    "glosses": [
+      "perimeter"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "rokhan",
+    "romanization": "ROKHAN",
+    "glosses": [
+      "ratio"
+    ],
+    "category": "math"
+  },
+  {
+    "id": "rokhanah",
+    "romanization": "ROKHANAH",
+    "glosses": [
+      "proportion"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "rokhan"
+    ]
+  },
+  {
+    "id": "penkhresrokhan",
+    "romanization": "PENKHRESROKHAN",
+    "glosses": [
+      "percentage"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "rokhan"
+    ]
+  },
+  {
+    "id": "fojza",
+    "romanization": "FOJZA",
+    "glosses": [
+      "mean",
+      "average"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "fojah"
+    ]
+  },
+  {
+    "id": "fojzaha",
+    "romanization": "FOJZAHA",
+    "glosses": [
+      "median"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "fojza"
+    ]
+  },
+  {
+    "id": "fojzhan",
+    "romanization": "FOJZHAN",
+    "glosses": [
+      "mode"
+    ],
+    "category": "math",
+    "derivedFrom": [
+      "fojza"
+    ]
+  },
+  {
+    "id": "umni",
+    "romanization": "UMNI",
+    "glosses": [
+      "outer space",
+      "astrology"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "umn"
+    ],
+    "notes": "Alternate romanization: NULZ."
+  },
+  {
+    "id": "umnilaad",
+    "romanization": "UMNILAAD",
+    "glosses": [
+      "galaxy"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "umni",
+      "laad"
+    ]
+  },
+  {
+    "id": "anfimn-xui",
+    "romanization": "ANFIMN XUI",
+    "glosses": [
+      "universe"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "fimn",
+      "xui"
+    ],
+    "notes": "Literally 'limitless outward'."
+  },
+  {
+    "id": "laad",
+    "romanization": "LAAD",
+    "glosses": [
+      "stars",
+      "star"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "laadengarn",
+    "romanization": "LAADENGARN",
+    "glosses": [
+      "constellations",
+      "constellation"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "laad"
+    ]
+  },
+  {
+    "id": "zehin",
+    "romanization": "ZEHIN",
+    "glosses": [
+      "eclipse"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "lazhul",
+    "romanization": "LAZHUL",
+    "glosses": [
+      "sun"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "la",
+      "huld"
+    ],
+    "notes": "Alternate names: KAIA, FAHUTA."
+  },
+  {
+    "id": "itzhul",
+    "romanization": "ITZHUL",
+    "glosses": [
+      "moon"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "huld"
+    ],
+    "notes": "Alternate name: NIAH."
+  },
+  {
+    "id": "tausden",
+    "romanization": "TAUSDEN",
+    "glosses": [
+      "planet"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "taus",
+      "den"
+    ],
+    "notes": "TAUS alone can also mean planet."
+  },
+  {
+    "id": "daranlt",
+    "romanization": "DARANLT",
+    "glosses": [
+      "orbit"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "dara",
+      "nlt"
+    ]
+  },
+  {
+    "id": "darapun",
+    "romanization": "DARAPUN",
+    "glosses": [
+      "revolution",
+      "revolve"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "dara",
+      "pun"
+    ]
+  },
+  {
+    "id": "un",
+    "romanization": "UN",
+    "glosses": [
+      "north"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "in",
+    "romanization": "IN",
+    "glosses": [
+      "south"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "lakt",
+    "romanization": "LAKT",
+    "glosses": [
+      "east"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "no",
+    "romanization": "NO",
+    "glosses": [
+      "west"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "kai",
+    "romanization": "KAI",
+    "glosses": [
+      "day"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "wika",
+    "romanization": "WIKA",
+    "glosses": [
+      "week"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "lotos",
+    "romanization": "LOTOS",
+    "glosses": [
+      "month"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "yuun",
+    "romanization": "YUUN",
+    "glosses": [
+      "year"
+    ],
+    "category": "astrology",
+    "regions": [
+      "Kharmat",
+      "Haadfahuta"
+    ],
+    "notes": "Contains regional letter Y. Alternate term: JAZE. Pattern: UZE YUUN = 12 years."
+  },
+  {
+    "id": "niki",
+    "romanization": "NIKI",
+    "glosses": [
+      "night"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "okan",
+    "romanization": "OKAN",
+    "glosses": [
+      "middle"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "okai",
+    "romanization": "OKAI",
+    "glosses": [
+      "midday"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "okan",
+      "kai"
+    ]
+  },
+  {
+    "id": "oniki",
+    "romanization": "ONIKI",
+    "glosses": [
+      "midnight"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "okan",
+      "niki"
+    ]
+  },
+  {
+    "id": "lozinia",
+    "romanization": "LOZINIA",
+    "glosses": [
+      "direction"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "ikita",
+    "romanization": "IKITA",
+    "glosses": [
+      "period",
+      "time slot",
+      "duration"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "ikit"
+    ]
+  },
+  {
+    "id": "du",
+    "romanization": "DU",
+    "glosses": [
+      "second"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "duna",
+    "romanization": "DUNA",
+    "glosses": [
+      "millisecond"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "du"
+    ]
+  },
+  {
+    "id": "naor",
+    "romanization": "NAOR",
+    "glosses": [
+      "minute"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "kikna",
+    "romanization": "KIKNA",
+    "glosses": [
+      "hour"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "kaiiok",
+    "romanization": "KAIIOK",
+    "glosses": [
+      "morning"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "kai"
+    ]
+  },
+  {
+    "id": "naoriiok",
+    "romanization": "NAORIIOK",
+    "glosses": [
+      "afternoon"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "naor"
+    ]
+  },
+  {
+    "id": "niahiok",
+    "romanization": "NIAHIOK",
+    "glosses": [
+      "evening"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "itzhul"
+    ],
+    "notes": "Built on NIAH (moon)."
+  },
+  {
+    "id": "kaiimar",
+    "romanization": "KAIIMAR",
+    "glosses": [
+      "dawn"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "kai"
+    ]
+  },
+  {
+    "id": "niimar",
+    "romanization": "NIIMAR",
+    "glosses": [
+      "dusk"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "niki"
+    ]
+  },
+  {
+    "id": "ummar",
+    "romanization": "UMMAR",
+    "glosses": [
+      "twilight"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "zaprak",
+    "romanization": "ZAPRAK",
+    "glosses": [
+      "spring"
+    ],
+    "category": "astrology",
+    "notes": "Alternate term: MHER (base)."
+  },
+  {
+    "id": "khri-prak",
+    "romanization": "KHRI PRAK",
+    "glosses": [
+      "summer"
+    ],
+    "category": "astrology",
+    "notes": "Alternate term: IHR (base)."
+  },
+  {
+    "id": "vik-prak",
+    "romanization": "VIK PRAK",
+    "glosses": [
+      "autumn",
+      "fall"
+    ],
+    "category": "astrology",
+    "notes": "Alternate term: JERTZ (base)."
+  },
+  {
+    "id": "el-prak",
+    "romanization": "EL PRAK",
+    "glosses": [
+      "winter"
+    ],
+    "category": "astrology",
+    "notes": "Alternate term: UVOLLT (base)."
+  },
+  {
+    "id": "ulzo",
+    "romanization": "ULZO",
+    "glosses": [
+      "equinox"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "lashuk",
+    "romanization": "LASHUK",
+    "glosses": [
+      "solstice"
+    ],
+    "category": "astrology"
+  },
+  {
+    "id": "nulzzi",
+    "romanization": "NULZZI",
+    "glosses": [
+      "astronomy"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "umni"
+    ]
+  },
+  {
+    "id": "okitaha",
+    "romanization": "OKITAHA",
+    "glosses": [
+      "chronology"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "ikit"
+    ]
+  },
+  {
+    "id": "wikaith",
+    "romanization": "WIKAITH",
+    "glosses": [
+      "calendar"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "wika"
+    ]
+  },
+  {
+    "id": "okitahzul",
+    "romanization": "OKITAHZUL",
+    "glosses": [
+      "clock"
+    ],
+    "category": "astrology",
+    "derivedFrom": [
+      "okitaha"
+    ]
+  },
+  {
+    "id": "khez",
+    "romanization": "KHEZ",
+    "glosses": [
+      "letter",
+      "glyph"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "sua",
+    "romanization": "SUA",
+    "glosses": [
+      "word"
+    ],
+    "category": "history",
+    "notes": "Alternate term: AH. As in GDNSUA, the language name."
+  },
+  {
+    "id": "dendakhez",
+    "romanization": "DENDAKHEZ",
+    "glosses": [
+      "alphabet"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "khez"
+    ]
+  },
+  {
+    "id": "dhar",
+    "romanization": "DHAR",
+    "glosses": [
+      "book"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "hah-paper",
+    "romanization": "HAH",
+    "glosses": [
+      "paper"
+    ],
+    "category": "history",
+    "notes": "Homograph: see hah (woman, female)."
+  },
+  {
+    "id": "dharlenakht",
+    "romanization": "DHARLENAKHT",
+    "glosses": [
+      "legend"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "dhar",
+      "len",
+      "akht"
+    ]
+  },
+  {
+    "id": "akht",
+    "romanization": "AKHT",
+    "glosses": [
+      "event"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "len",
+    "romanization": "LEN",
+    "glosses": [
+      "scar",
+      "brand"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "okirempo",
+    "romanization": "OKIREMPO",
+    "glosses": [
+      "historian"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "slenokirem",
+    "romanization": "SLENOKIREM",
+    "glosses": [
+      "archive"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "hahalkan",
+    "romanization": "HAHALKAN",
+    "glosses": [
+      "artifact"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "aldem",
+    "romanization": "ALDEM",
+    "glosses": [
+      "ancient"
+    ],
+    "category": "history",
+    "notes": "Alternate term: OLDE (base)."
+  },
+  {
+    "id": "aldemlaad",
+    "romanization": "ALDEMLAAD",
+    "glosses": [
+      "medieval"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "aldem",
+      "laad"
+    ]
+  },
+  {
+    "id": "imntdem",
+    "romanization": "IMNTDEM",
+    "glosses": [
+      "modern"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "taaldem",
+    "romanization": "TAALDEM",
+    "glosses": [
+      "prehistoric"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "aldem"
+    ]
+  },
+  {
+    "id": "ahahalkan",
+    "romanization": "AHAHALKAN",
+    "glosses": [
+      "archaeology"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "hahalkan"
+    ]
+  },
+  {
+    "id": "okiremadar",
+    "romanization": "OKIREMADAR",
+    "glosses": [
+      "historical site"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "okirempo"
+    ]
+  },
+  {
+    "id": "ahalkanakht",
+    "romanization": "AHALKANAKHT",
+    "glosses": [
+      "discovery"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "ahalkan",
+      "akht"
+    ]
+  },
+  {
+    "id": "dendamna",
+    "romanization": "DENDAMNA",
+    "glosses": [
+      "civilization"
+    ],
+    "category": "history",
+    "notes": "Alternate term: HANREIS (base)."
+  },
+  {
+    "id": "dendamda",
+    "romanization": "DENDAMDA",
+    "glosses": [
+      "culture"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "dharso",
+    "romanization": "DHARSO",
+    "glosses": [
+      "tradition"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "dhar"
+    ]
+  },
+  {
+    "id": "dendamno",
+    "romanization": "DENDAMNO",
+    "glosses": [
+      "custom"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "khezni",
+    "romanization": "KHEZNI",
+    "glosses": [
+      "heritage",
+      "legacy"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "khez",
+      "ni"
+    ],
+    "notes": "Merged: source lists KHEZNI for both heritage and legacy."
+  },
+  {
+    "id": "dharakni",
+    "romanization": "DHARAKNI",
+    "glosses": [
+      "ancestor"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "dhar"
+    ]
+  },
+  {
+    "id": "dendno",
+    "romanization": "DENDNO",
+    "glosses": [
+      "origin"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "okitakht",
+    "romanization": "OKITAKHT",
+    "glosses": [
+      "timeline"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "okitaha",
+      "akht"
+    ]
+  },
+  {
+    "id": "okiremdhar",
+    "romanization": "OKIREMDHAR",
+    "glosses": [
+      "chronicle"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "okirempo",
+      "dhar"
+    ]
+  },
+  {
+    "id": "okirempaz",
+    "romanization": "OKIREMPAZ",
+    "glosses": [
+      "epoch"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "okirempo"
+    ]
+  },
+  {
+    "id": "okirempazni",
+    "romanization": "OKIREMPAZNI",
+    "glosses": [
+      "period"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "okirempaz",
+      "ni"
+    ]
+  },
+  {
+    "id": "aldemni",
+    "romanization": "ALDEMNI",
+    "glosses": [
+      "age"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "aldem",
+      "ni"
+    ]
+  },
+  {
+    "id": "zha-aldemni",
+    "romanization": "ZHA ALDEMNI",
+    "glosses": [
+      "century"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "aldemni"
+    ],
+    "notes": "ZHA = 144 (gross); a Gaian century is base-12."
+  },
+  {
+    "id": "zet-aldemni",
+    "romanization": "ZET ALDEMNI",
+    "glosses": [
+      "millennium"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "aldemni"
+    ]
+  },
+  {
+    "id": "jaze",
+    "romanization": "JAZE",
+    "glosses": [
+      "year"
+    ],
+    "category": "history",
+    "notes": "Alternate term: YUUN. Pattern: JI JAZE = decade, ZHA JAZE = 144 years."
+  },
+  {
+    "id": "ji-jaze",
+    "romanization": "JI JAZE",
+    "glosses": [
+      "decade"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "jaze"
+    ]
+  },
+  {
+    "id": "slenah",
+    "romanization": "SLENAH",
+    "glosses": [
+      "ruins"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "mnah",
+    "romanization": "MNAH",
+    "glosses": [
+      "monument"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "ahalkan",
+    "romanization": "AHALKAN",
+    "glosses": [
+      "relic"
+    ],
+    "category": "history",
+    "notes": "Near-twin of HAHALKAN (artifact)."
+  },
+  {
+    "id": "okiremzar",
+    "romanization": "OKIREMZAR",
+    "glosses": [
+      "historical figure"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "okirempo"
+    ]
+  },
+  {
+    "id": "tendakna",
+    "romanization": "TENDAKNA",
+    "glosses": [
+      "founder"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "tausdendamna",
+    "romanization": "TAUSDENDAMNA",
+    "glosses": [
+      "empire"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "taus",
+      "dendamna"
+    ]
+  },
+  {
+    "id": "dendamnaald",
+    "romanization": "DENDAMNAALD",
+    "glosses": [
+      "kingdom"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "dendamna"
+    ]
+  },
+  {
+    "id": "tendamna",
+    "romanization": "TENDAMNA",
+    "glosses": [
+      "dynasty"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "dendamna"
+    ]
+  },
+  {
+    "id": "vikn",
+    "romanization": "VIKN",
+    "glosses": [
+      "war"
+    ],
+    "category": "history",
+    "notes": "Alternate term: HAADHEN (base)."
+  },
+  {
+    "id": "olo",
+    "romanization": "OLO",
+    "glosses": [
+      "peace"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "nakhurem",
+    "romanization": "NAKHUREM",
+    "glosses": [
+      "revolution"
+    ],
+    "category": "history"
+  },
+  {
+    "id": "slenokirempo",
+    "romanization": "SLENOKIREMPO",
+    "glosses": [
+      "archivist"
+    ],
+    "category": "history",
+    "derivedFrom": [
+      "slenokirem",
+      "okirempo"
+    ]
+  },
+  {
+    "id": "rakra",
+    "romanization": "RAKRA",
+    "glosses": [
+      "canine"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "feta",
+    "romanization": "FETA",
+    "glosses": [
+      "feline"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "roruk",
+    "romanization": "RORUK",
+    "glosses": [
+      "dog"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "rakra"
+    ]
+  },
+  {
+    "id": "felshu",
+    "romanization": "FELSHU",
+    "glosses": [
+      "cat"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "feta"
+    ]
+  },
+  {
+    "id": "lodra",
+    "romanization": "LODRA",
+    "glosses": [
+      "mammal"
+    ],
+    "category": "animals",
+    "notes": "Alternate term: LODANU."
+  },
+  {
+    "id": "vrzoan",
+    "romanization": "VRZOAN",
+    "glosses": [
+      "vertebrate"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "vranaz",
+    "romanization": "VRANAZ",
+    "glosses": [
+      "invertebrate"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "vrzoan"
+    ]
+  },
+  {
+    "id": "pdkdan",
+    "romanization": "PDKDAN",
+    "glosses": [
+      "four-legged animal"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "pd"
+    ]
+  },
+  {
+    "id": "itzldan",
+    "romanization": "ITZLDAN",
+    "glosses": [
+      "two-legged animal"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "itz"
+    ]
+  },
+  {
+    "id": "azog",
+    "romanization": "AZOG",
+    "glosses": [
+      "ox"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "azornu",
+    "romanization": "AZORNU",
+    "glosses": [
+      "cow"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "azog"
+    ]
+  },
+  {
+    "id": "shep",
+    "romanization": "SHEP",
+    "glosses": [
+      "sheep"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "kotar",
+    "romanization": "KOTAR",
+    "glosses": [
+      "goat"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "khikar",
+    "romanization": "KHIKAR",
+    "glosses": [
+      "chicken"
+    ],
+    "category": "animals",
+    "notes": "Canon fix: source had CHIKAR; C replaced with KH per author ruling (June 2026)."
+  },
+  {
+    "id": "khazun",
+    "romanization": "KHAZUN",
+    "glosses": [
+      "bird"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "susho",
+    "romanization": "SUSHO",
+    "glosses": [
+      "fish"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "reptal",
+    "romanization": "REPTAL",
+    "glosses": [
+      "reptile"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "amphip",
+    "romanization": "AMPHIP",
+    "glosses": [
+      "amphibian"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "sekan",
+    "romanization": "SEKAN",
+    "glosses": [
+      "insect"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "arakhn",
+    "romanization": "ARAKHN",
+    "glosses": [
+      "arachnid"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "lodanu",
+    "romanization": "LODANU",
+    "glosses": [
+      "mammal"
+    ],
+    "category": "animals",
+    "notes": "Alternate term: LODRA."
+  },
+  {
+    "id": "roden",
+    "romanization": "RODEN",
+    "glosses": [
+      "rodent"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "khrazar",
+    "romanization": "KHRAZAR",
+    "glosses": [
+      "predator"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "prayan",
+    "romanization": "PRAYAN",
+    "glosses": [
+      "prey"
+    ],
+    "category": "animals",
+    "regions": [
+      "Kharmat",
+      "Haadfahuta"
+    ],
+    "notes": "Contains regional letter Y."
+  },
+  {
+    "id": "tohtan",
+    "romanization": "TOHTAN",
+    "glosses": [
+      "herbivore"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "rokar",
+    "romanization": "ROKAR",
+    "glosses": [
+      "carnivore"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "vriptan",
+    "romanization": "VRIPTAN",
+    "glosses": [
+      "omnivore"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "zahzun",
+    "romanization": "ZAHZUN",
+    "glosses": [
+      "wild animal"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "khazun"
+    ]
+  },
+  {
+    "id": "zatun",
+    "romanization": "ZATUN",
+    "glosses": [
+      "domesticated animal"
+    ],
+    "category": "animals"
+  },
+  {
+    "id": "ufizahzun",
+    "romanization": "UFIZAHZUN",
+    "glosses": [
+      "endangered species"
+    ],
+    "category": "animals",
+    "derivedFrom": [
+      "zahzun"
+    ]
+  },
+  {
+    "id": "laga",
+    "romanization": "LAGA",
+    "glosses": [
+      "dragon"
+    ],
+    "category": "animals",
+    "notes": "Alternate term: HEREPT."
+  },
+  {
+    "id": "kaiyua",
+    "romanization": "KAIYUA",
+    "glosses": [
+      "breakfast"
+    ],
+    "category": "cooking",
+    "regions": [
+      "Kharmat",
+      "Haadfahuta"
+    ],
+    "derivedFrom": [
+      "kai"
+    ],
+    "notes": "Contains regional letter Y."
+  },
+  {
+    "id": "okana",
+    "romanization": "OKANA",
+    "glosses": [
+      "lunch"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "okan"
+    ]
+  },
+  {
+    "id": "nikyua",
+    "romanization": "NIKYUA",
+    "glosses": [
+      "dinner"
+    ],
+    "category": "cooking",
+    "regions": [
+      "Kharmat",
+      "Haadfahuta"
+    ],
+    "derivedFrom": [
+      "niki"
+    ],
+    "notes": "Contains regional letter Y."
+  },
+  {
+    "id": "nadan",
+    "romanization": "NADAN",
+    "glosses": [
+      "meal"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "naden"
+    ]
+  },
+  {
+    "id": "zinari",
+    "romanization": "ZINARI",
+    "glosses": [
+      "snack"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "namnadenz",
+    "romanization": "NAMNADENZ",
+    "glosses": [
+      "plant consumables"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "namn",
+      "naden"
+    ]
+  },
+  {
+    "id": "fialzi",
+    "romanization": "FIALZI",
+    "glosses": [
+      "oil"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "fi"
+    ]
+  },
+  {
+    "id": "hutza",
+    "romanization": "HUTZA",
+    "glosses": [
+      "sugar"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "hutaitzu",
+    "romanization": "HUTAITZU",
+    "glosses": [
+      "salt"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "elzdet",
+    "romanization": "ELZDET",
+    "glosses": [
+      "spice"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "ermeldan",
+    "romanization": "ERMELDAN",
+    "glosses": [
+      "seasoning"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "lauten",
+    "romanization": "LAUTEN",
+    "glosses": [
+      "living things"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "laua"
+    ]
+  },
+  {
+    "id": "fuh-laden",
+    "romanization": "FUH LADEN",
+    "glosses": [
+      "fish",
+      "sea animals"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "fuha"
+    ]
+  },
+  {
+    "id": "kedran",
+    "romanization": "KEDRAN",
+    "glosses": [
+      "beef"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "khikir",
+    "romanization": "KHIKIR",
+    "glosses": [
+      "chicken",
+      "chicken meat"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "khikar"
+    ],
+    "notes": "Canon fix: source had CHIKIR; C replaced with KH per author ruling (June 2026)."
+  },
+  {
+    "id": "taush-lauten",
+    "romanization": "TAUSH LAUTEN",
+    "glosses": [
+      "misc livestock"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "lauten"
+    ]
+  },
+  {
+    "id": "narsild",
+    "romanization": "NARSILD",
+    "glosses": [
+      "restaurant"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "umkil",
+    "romanization": "UMKIL",
+    "glosses": [
+      "bitter"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "kuukra",
+    "romanization": "KUUKRA",
+    "glosses": [
+      "sweet"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "zuhri",
+    "romanization": "ZUHRI",
+    "glosses": [
+      "sour"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "khazdan",
+    "romanization": "KHAZDAN",
+    "glosses": [
+      "plain"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "tozden",
+    "romanization": "TOZDEN",
+    "glosses": [
+      "flavor"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "den"
+    ]
+  },
+  {
+    "id": "zrok",
+    "romanization": "ZROK",
+    "glosses": [
+      "to cook"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "kurik",
+    "romanization": "KURIK",
+    "glosses": [
+      "to fry"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "futur",
+    "romanization": "FUTUR",
+    "glosses": [
+      "to boil"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "paki",
+    "romanization": "PAKI",
+    "glosses": [
+      "to bake"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "agal",
+    "romanization": "AGAL",
+    "glosses": [
+      "to warm",
+      "to heat up"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "illiz",
+    "romanization": "ILLIZ",
+    "glosses": [
+      "to freeze",
+      "to cool down"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "riks",
+    "romanization": "RIKS",
+    "glosses": [
+      "to stir"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "huztan",
+    "romanization": "HUZTAN",
+    "glosses": [
+      "to mix",
+      "mixture"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "sulkar",
+    "romanization": "SULKAR",
+    "glosses": [
+      "to grind",
+      "to mash"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "zilz",
+    "romanization": "ZILZ",
+    "glosses": [
+      "to mince"
+    ],
+    "category": "cooking"
+  },
+  {
+    "id": "lamni",
+    "romanization": "LAMNI",
+    "glosses": [
+      "egg"
+    ],
+    "category": "cooking",
+    "derivedFrom": [
+      "lamiral"
+    ]
+  },
+  {
+    "id": "lazop-vi-dagah",
+    "romanization": "LAZOP VI DAGAH",
+    "glosses": [
+      "read the room"
+    ],
+    "category": "social",
+    "tags": [
+      "phrase",
+      "idiom"
+    ]
+  },
+  {
+    "id": "sagaz",
+    "romanization": "SAGAZ",
+    "glosses": [
+      "situation"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "viksul",
+    "romanization": "VIKSUL",
+    "glosses": [
+      "context"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "lulan",
+    "romanization": "LULAN",
+    "glosses": [
+      "conversation"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "zuko",
+    "romanization": "ZUKO",
+    "glosses": [
+      "dialogue"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "denlaz",
+    "romanization": "DENLAZ",
+    "glosses": [
+      "vocabulary"
+    ],
+    "category": "social",
+    "derivedFrom": [
+      "den"
+    ]
+  },
+  {
+    "id": "varko",
+    "romanization": "VARKO",
+    "glosses": [
+      "verb"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "nuz",
+    "romanization": "NUZ",
+    "glosses": [
+      "noun"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "adnuz",
+    "romanization": "ADNUZ",
+    "glosses": [
+      "adjective"
+    ],
+    "category": "social",
+    "derivedFrom": [
+      "nuz"
+    ]
+  },
+  {
+    "id": "advuz",
+    "romanization": "ADVUZ",
+    "glosses": [
+      "adverb"
+    ],
+    "category": "social",
+    "derivedFrom": [
+      "nuz"
+    ]
+  },
+  {
+    "id": "kraant",
+    "romanization": "KRAANT",
+    "glosses": [
+      "grammar"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "zelfanen",
+    "romanization": "ZELFANEN",
+    "glosses": [
+      "shunned"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "kraie",
+    "romanization": "KRAIE",
+    "glosses": [
+      "accepted"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "fofa",
+    "romanization": "FOFA",
+    "glosses": [
+      "tickle"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "zunt",
+    "romanization": "ZUNT",
+    "glosses": [
+      "sting"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "pakil",
+    "romanization": "PAKIL",
+    "glosses": [
+      "tap"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "nu",
+    "romanization": "NU?",
+    "glosses": [
+      "hm?",
+      "what?"
+    ],
+    "category": "social",
+    "tags": [
+      "phrase"
+    ]
+  },
+  {
+    "id": "mo",
+    "romanization": "MO",
+    "glosses": [
+      "yeah"
+    ],
+    "category": "social",
+    "tags": [
+      "phrase"
+    ]
+  },
+  {
+    "id": "kroa",
+    "romanization": "KROA",
+    "glosses": [
+      "sentence"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "subkron",
+    "romanization": "SUBKRON",
+    "glosses": [
+      "subject"
+    ],
+    "category": "social",
+    "regions": [
+      "Kharmat",
+      "Haadfahuta"
+    ],
+    "derivedFrom": [
+      "kroa"
+    ],
+    "notes": "Contains regional letter B."
+  },
+  {
+    "id": "ohkron",
+    "romanization": "OHKRON",
+    "glosses": [
+      "object"
+    ],
+    "category": "social",
+    "derivedFrom": [
+      "kroa"
+    ]
+  },
+  {
+    "id": "idimn",
+    "romanization": "IDIMN",
+    "glosses": [
+      "idiom",
+      "figure of speech"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "vukwuz",
+    "romanization": "VUKWUZ",
+    "glosses": [
+      "witty"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "dadenlo",
+    "romanization": "DADENLO",
+    "glosses": [
+      "chatterbox",
+      "loudmouth"
+    ],
+    "category": "social",
+    "notes": "Alternate term: KWAZAR."
+  },
+  {
+    "id": "zakroj",
+    "romanization": "ZAKROJ",
+    "glosses": [
+      "hermit",
+      "wallflower"
+    ],
+    "category": "social",
+    "notes": "Alternate term: VAULFLUD."
+  },
+  {
+    "id": "klal-zen",
+    "romanization": "KLAL ZEN",
+    "glosses": [
+      "to fit in",
+      "to blend in"
+    ],
+    "category": "social",
+    "tags": [
+      "idiom"
+    ],
+    "notes": "Alternate form: BLADN ZEN (regional B)."
+  },
+  {
+    "id": "kzun-zhun",
+    "romanization": "KZUN ZHUN",
+    "glosses": [
+      "to stick out"
+    ],
+    "category": "social",
+    "tags": [
+      "idiom"
+    ]
+  },
+  {
+    "id": "zhuniduk",
+    "romanization": "ZHUNIDUK",
+    "glosses": [
+      "stick in the mud"
+    ],
+    "category": "social",
+    "tags": [
+      "idiom"
+    ]
+  },
+  {
+    "id": "larvlul",
+    "romanization": "LARVLUL",
+    "glosses": [
+      "life of the party"
+    ],
+    "category": "social",
+    "tags": [
+      "idiom"
+    ]
+  },
+  {
+    "id": "zhen",
+    "romanization": "ZHEN",
+    "glosses": [
+      "shy"
+    ],
+    "category": "social"
+  },
+  {
+    "id": "opnin",
+    "romanization": "OPNIN",
+    "glosses": [
+      "outgoing"
+    ],
+    "category": "social"
+  }
 ]

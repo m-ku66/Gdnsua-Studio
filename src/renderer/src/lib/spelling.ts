@@ -10,10 +10,14 @@
 import { wordById } from '../data'
 import type { Word } from '../data/types'
 import { ROOT_THEMES } from './logographGen'
+import { promotedRoots } from './relations'
 import { tokenizeRomanization, type TokenizeOptions } from './tokenize'
 
-/** Roots eligible to appear inside spellings (Campaign I, grows with ROOT_THEMES) */
-export const LOGO_ROOTS = Object.keys(ROOT_THEMES)
+/** Roots eligible to appear inside spellings: Campaign I + promoted (Campaign II) */
+export const activeRoots = (): string[] => [
+  ...Object.keys(ROOT_THEMES),
+  ...promotedRoots().filter((r) => !(r in ROOT_THEMES))
+]
 
 export type SpellToken =
   | { type: 'letter'; id: string }
@@ -41,10 +45,13 @@ interface RootMatch {
  */
 export function spellWord(word: Word, opts: TokenizeOptions = {}): SpellToken[] {
   const rom = word.romanization.toUpperCase()
-  const roots = LOGO_ROOTS.filter((r) => r !== word.id && derivesFrom(word.id, r))
-    .map((r) => ({ id: r, rom: (wordById.get(r)?.romanization ?? '').toUpperCase() }))
-    .filter((r) => r.rom.length > 0)
-    .sort((a, b) => b.rom.length - a.rom.length)
+  const roots = word.syllabicOnly
+    ? []
+    : activeRoots()
+        .filter((r) => r !== word.id && derivesFrom(word.id, r))
+        .map((r) => ({ id: r, rom: (wordById.get(r)?.romanization ?? '').toUpperCase() }))
+        .filter((r) => r.rom.length > 0)
+        .sort((a, b) => b.rom.length - a.rom.length)
 
   const matches: RootMatch[] = []
   for (const root of roots) {

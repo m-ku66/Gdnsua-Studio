@@ -1,22 +1,201 @@
 [
-  { "id": "nhakt", "romanization": "NHAKT", "glosses": ["zero", "0"], "category": "number" },
-  { "id": "uus", "romanization": "UUS", "glosses": ["one", "1"], "category": "number", "notes": "Archaic variant: US." },
-  { "id": "itz", "romanization": "ITZ", "glosses": ["two", "2"], "category": "number" },
-  { "id": "lil", "romanization": "LIL", "glosses": ["three", "3"], "category": "number" },
-  { "id": "pd", "romanization": "PD", "glosses": ["four", "4"], "category": "number" },
-  { "id": "kaz", "romanization": "KAZ", "glosses": ["five", "5"], "category": "number" },
-  { "id": "taz", "romanization": "TAZ", "glosses": ["six", "6"], "category": "number" },
-  { "id": "win", "romanization": "WIN", "glosses": ["seven", "7"], "category": "number", "notes": "Pronounced 'hwin' — written /ʍ/IN in older sources." },
-  { "id": "xoh", "romanization": "XOH", "glosses": ["eight", "8"], "category": "number", "notes": "Archaic variant: OOH." },
-  { "id": "ioh", "romanization": "IOH", "glosses": ["nine", "9"], "category": "number" },
-  { "id": "eh-num", "romanization": "EH", "glosses": ["ten", "10"], "category": "number", "notes": "Archaic variant: EDZ. Homograph: see eh (this)." },
-  { "id": "raj", "romanization": "RAJ", "glosses": ["eleven", "11"], "category": "number" },
-  { "id": "uze", "romanization": "UZE", "glosses": ["twelve", "12", "a dozen"], "category": "number", "notes": "Alternate form: ZE. Compounds: UZE UUS = 13, UZE ITZ = 14, etc." },
-  { "id": "ize", "romanization": "IZE", "glosses": ["twenty-four", "24", "two dozen"], "category": "number", "derivedFrom": ["uze"] },
-  { "id": "lize", "romanization": "LIZE", "glosses": ["thirty-six", "36", "three dozen"], "category": "number", "derivedFrom": ["uze"] },
-  { "id": "ha-144", "romanization": "HA", "glosses": ["one hundred forty-four", "144", "a gross"], "category": "number", "notes": "Also written ZHA in compounds (ZHA JAZE = 144 years). Homograph: see ha (structure, strength)." },
-  { "id": "han", "romanization": "HAN", "glosses": ["one thousand seven hundred twenty-eight", "1728"], "category": "number" },
-  { "id": "hanil", "romanization": "HANIL", "glosses": ["twenty thousand seven hundred thirty-six", "20736"], "category": "number", "derivedFrom": ["han"] },
-  { "id": "hazfil", "romanization": "HAZFIL", "glosses": ["two hundred forty-eight thousand eight hundred thirty-two", "248832"], "category": "number" },
-  { "id": "hz", "romanization": "HZ", "glosses": ["two million nine hundred eighty-five thousand nine hundred eighty-four", "2985984"], "category": "number" }
+  {
+    "id": "nhakt",
+    "romanization": "NHAKT",
+    "glosses": [
+      "zero",
+      "0"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "uus",
+    "romanization": "UUS",
+    "glosses": [
+      "one",
+      "1"
+    ],
+    "category": "number",
+    "notes": "Archaic variant: US."
+  },
+  {
+    "id": "itz",
+    "romanization": "ITZ",
+    "glosses": [
+      "two",
+      "2"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "lil",
+    "romanization": "LIL",
+    "glosses": [
+      "three",
+      "3"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "pd",
+    "romanization": "PD",
+    "glosses": [
+      "four",
+      "4"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "kaz",
+    "romanization": "KAZ",
+    "glosses": [
+      "five",
+      "5"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "taz",
+    "romanization": "TAZ",
+    "glosses": [
+      "six",
+      "6"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "win",
+    "romanization": "WIN",
+    "glosses": [
+      "seven",
+      "7"
+    ],
+    "category": "number",
+    "notes": "Pronounced 'hwin' — written /ʍ/IN in older sources."
+  },
+  {
+    "id": "xoh",
+    "romanization": "XOH",
+    "glosses": [
+      "eight",
+      "8"
+    ],
+    "category": "number",
+    "notes": "Archaic variant: OOH."
+  },
+  {
+    "id": "ioh",
+    "romanization": "IOH",
+    "glosses": [
+      "nine",
+      "9"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "eh-num",
+    "romanization": "EH",
+    "glosses": [
+      "ten",
+      "10"
+    ],
+    "category": "number",
+    "notes": "Archaic variant: EDZ. Homograph: see eh (this)."
+  },
+  {
+    "id": "raj",
+    "romanization": "RAJ",
+    "glosses": [
+      "eleven",
+      "11"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "uze",
+    "romanization": "UZE",
+    "glosses": [
+      "twelve",
+      "12",
+      "a dozen"
+    ],
+    "category": "number",
+    "notes": "Alternate form: ZE. Compounds: UZE UUS = 13, UZE ITZ = 14, etc."
+  },
+  {
+    "id": "ize",
+    "romanization": "IZE",
+    "glosses": [
+      "twenty-four",
+      "24",
+      "two dozen"
+    ],
+    "category": "number",
+    "derivedFrom": [
+      "uze"
+    ]
+  },
+  {
+    "id": "lize",
+    "romanization": "LIZE",
+    "glosses": [
+      "thirty-six",
+      "36",
+      "three dozen"
+    ],
+    "category": "number",
+    "derivedFrom": [
+      "uze"
+    ]
+  },
+  {
+    "id": "ha-144",
+    "romanization": "HA",
+    "glosses": [
+      "one hundred forty-four",
+      "144",
+      "a gross"
+    ],
+    "category": "number",
+    "notes": "Also written ZHA in compounds (ZHA JAZE = 144 years). Homograph: see ha (structure, strength)."
+  },
+  {
+    "id": "han",
+    "romanization": "HAN",
+    "glosses": [
+      "one thousand seven hundred twenty-eight",
+      "1728"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "hanil",
+    "romanization": "HANIL",
+    "glosses": [
+      "twenty thousand seven hundred thirty-six",
+      "20736"
+    ],
+    "category": "number",
+    "derivedFrom": [
+      "han"
+    ]
+  },
+  {
+    "id": "hazfil",
+    "romanization": "HAZFIL",
+    "glosses": [
+      "two hundred forty-eight thousand eight hundred thirty-two",
+      "248832"
+    ],
+    "category": "number"
+  },
+  {
+    "id": "hz",
+    "romanization": "HZ",
+    "glosses": [
+      "two million nine hundred eighty-five thousand nine hundred eighty-four",
+      "2985984"
+    ],
+    "category": "number"
+  }
 ]

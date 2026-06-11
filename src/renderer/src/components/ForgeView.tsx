@@ -34,6 +34,8 @@ import {
 } from '../lib/logographSource'
 import { Diamond, SectionLabel } from './ui/primitives'
 import { Panel } from './ui/Panel'
+import { MixedScriptRegistry, PromotedRootBar, RootPromoter } from './CampaignTwo'
+import { promotedRoots, useRelationsStore } from '../lib/relations'
 
 const U = 58 // editor nudge step (half-grid for fine kiss alignment)
 const PILOT_ROOTS = CAMPAIGN_ROOTS
@@ -522,6 +524,8 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
 }
 
 export function ForgeView(): React.JSX.Element {
+  useRelationsStore((s) => s.version)
+  const promoted = promotedRoots()
   return (
     <div className="fade-up flex h-full flex-col gap-5 overflow-y-auto p-6">
       <div>
@@ -543,6 +547,22 @@ export function ForgeView(): React.JSX.Element {
             <RootForge key={id} rootId={id} />
           ))}
         </div>
+      </div>
+      <div>
+        <SectionLabel>Campaign II — Chosen Roots</SectionLabel>
+        <div className="flex flex-col gap-3">
+          <RootPromoter />
+          {promoted.map((id) => (
+            <div key={id} className="flex flex-col gap-2">
+              <PromotedRootBar rootId={id} />
+              <RootForge rootId={id} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <SectionLabel>The Loom — relationships &amp; spellings</SectionLabel>
+        <MixedScriptRegistry />
       </div>
     </div>
   )

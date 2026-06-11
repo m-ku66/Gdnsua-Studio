@@ -1,8 +1,30 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
-import { writeFile, mkdir, unlink } from 'fs/promises'
+import { writeFile, mkdir, unlink, readFile } from 'fs/promises'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+
+// Relations overrides: promoted roots + edited word relationships (dev only)
+const relationsPath = (): string =>
+  join(app.getAppPath(), 'src/renderer/src/data/relations.local.json')
+
+ipcMain.handle('load-relations', async (): Promise<unknown> => {
+  try {
+    return JSON.parse(await readFile(relationsPath(), 'utf-8'))
+  } catch {
+    return null
+  }
+})
+
+ipcMain.handle('save-relations', async (_e, data: unknown): Promise<boolean> => {
+  if (!is.dev) return false
+  try {
+    await writeFile(relationsPath(), JSON.stringify(data, null, 2), 'utf-8')
+    return true
+  } catch {
+    return false
+  }
+})
 
 // Save an approved logograph draft into the glyph drop zone (dev only)
 ipcMain.handle('save-logograph', async (_e, id: string, svg: string): Promise<boolean> => {

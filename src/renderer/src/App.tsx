@@ -5,6 +5,7 @@ import { ResultsList } from './components/ResultsList'
 import { SearchBar } from './components/SearchBar'
 import { WordDetail } from './components/WordDetail'
 import { wordById } from './data'
+import { initRelations } from './lib/relations'
 import { searchWords } from './lib/search'
 import { useAppStore } from './store/useAppStore'
 
@@ -49,6 +50,9 @@ function DictionaryView(): React.JSX.Element {
 
 function App(): React.JSX.Element {
   const section = useAppStore((s) => s.section)
+  useEffect(() => {
+    void initRelations() // apply persisted relationship overrides once
+  }, [])
   return <AppShell>{section === 'tools' ? <ForgeView /> : <DictionaryView />}</AppShell>
 }
 
