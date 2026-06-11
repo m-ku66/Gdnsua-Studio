@@ -34,7 +34,7 @@ import {
 } from '../lib/logographSource'
 import { Diamond, SectionLabel } from './ui/primitives'
 import { Panel } from './ui/Panel'
-import { MixedScriptRegistry, PromotedRootBar, RootPromoter } from './CampaignTwo'
+import { MixedScriptRegistry, PromotedRootBar, RootPromoter, FilterInput, wordMatches } from './CampaignTwo'
 import { promotedRoots, useRelationsStore } from '../lib/relations'
 
 const U = 58 // editor nudge step (half-grid for fine kiss alignment)
@@ -563,6 +563,14 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
 export function ForgeView(): React.JSX.Element {
   useRelationsStore((s) => s.version)
   const promoted = promotedRoots()
+  const [filterOne, setFilterOne] = useState('')
+  const [filterTwo, setFilterTwo] = useState('')
+  const byFilter = (q: string) => (id: string) => {
+    const w = wordById.get(id)
+    return w ? wordMatches(w, q) : false
+  }
+  const visibleOne = PILOT_ROOTS.filter(byFilter(filterOne))
+  const visibleTwo = promoted.filter(byFilter(filterTwo))
   return (
     <div className="fade-up flex h-full flex-col gap-5 overflow-y-auto p-6">
       <div>
@@ -583,7 +591,13 @@ export function ForgeView(): React.JSX.Element {
         </p>
       </div>
       <div>
-        <SectionLabel>Campaign I — The Elements</SectionLabel>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <SectionLabel>
+            Campaign I — The Elements
+            {filterOne ? ` — ${visibleOne.length} of ${PILOT_ROOTS.length}` : ''}
+          </SectionLabel>
+          <FilterInput value={filterOne} onChange={setFilterOne} placeholder="Filter elements by word or meaning…" />
+        </div>
         <p className="text-dim mb-2 max-w-2xl text-[10px] leading-relaxed">
           The eleven core concepts: earth, water, fire, wind, ice, lightning, sky, flora, fauna,
           dark, light. Each panel has two tabs — <span className="text-ink">Forge</span> rolls
@@ -592,13 +606,26 @@ export function ForgeView(): React.JSX.Element {
           Once carved, the panel collapses to a compact card with Edit / Uncarve.
         </p>
         <div className="flex flex-col gap-3">
-          {PILOT_ROOTS.map((id) => (
+          {visibleOne.length === 0 && (
+            <div className="text-dim py-2 text-[10px] tracking-[0.12em] uppercase">
+              No elements match “{filterOne}”
+            </div>
+          )}
+          {visibleOne.map((id) => (
             <RootForge key={id} rootId={id} />
           ))}
         </div>
       </div>
       <div>
-        <SectionLabel>Campaign II — Chosen Roots</SectionLabel>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <SectionLabel>
+            Campaign II — Chosen Roots
+            {filterTwo ? ` — ${visibleTwo.length} of ${promoted.length}` : ''}
+          </SectionLabel>
+          {promoted.length > 0 && (
+            <FilterInput value={filterTwo} onChange={setFilterTwo} placeholder="Filter promoted roots…" />
+          )}
+        </div>
         <p className="text-dim mb-2 max-w-2xl text-[10px] leading-relaxed">
           Promote any word into a root: it gains a configurator here, joins the spelling system,
           and every word that derives from it (and contains its letters) re-spells with its
@@ -608,7 +635,12 @@ export function ForgeView(): React.JSX.Element {
         </p>
         <div className="flex flex-col gap-3">
           <RootPromoter />
-          {promoted.map((id) => (
+          {filterTwo && visibleTwo.length === 0 && promoted.length > 0 && (
+            <div className="text-dim py-2 text-[10px] tracking-[0.12em] uppercase">
+              No promoted roots match “{filterTwo}”
+            </div>
+          )}
+          {visibleTwo.map((id) => (
             <div key={id} className="flex flex-col gap-2">
               <PromotedRootBar rootId={id} />
               <RootForge rootId={id} />

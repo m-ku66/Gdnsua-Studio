@@ -41,6 +41,48 @@ function resolveWordInput(input: string): Word | null {
   return words.find((w) => w.romanization.toUpperCase() === s.toUpperCase()) ?? null
 }
 
+/** Case-insensitive filter match on romanization, id, or any gloss */
+export function wordMatches(w: Word, q: string): boolean {
+  const s = q.trim().toUpperCase()
+  if (!s) return true
+  return (
+    w.romanization.toUpperCase().includes(s) ||
+    w.id.toUpperCase().includes(s) ||
+    w.glosses.some((g) => g.toUpperCase().includes(s))
+  )
+}
+
+/** Small filter box with a clear button — used by every Forge section */
+export function FilterInput({
+  value,
+  onChange,
+  placeholder
+}: {
+  value: string
+  onChange: (v: string) => void
+  placeholder: string
+}): React.JSX.Element {
+  return (
+    <span className="flex items-center gap-1">
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="border-rule bg-vellum placeholder:text-dim w-56 border px-2 py-1 text-[10px] outline-none focus:border-ink"
+      />
+      {value && (
+        <button
+          className="border-rule hover:bg-ink hover:text-sand cursor-pointer border px-1.5 py-1 text-[9px]"
+          onClick={() => onChange('')}
+          title="Clear filter"
+        >
+          ×
+        </button>
+      )}
+    </span>
+  )
+}
+
 /** Words that would gain this candidate's logograph in their spelling */
 function familyOf(rootId: string): Word[] {
   const root = wordById.get(rootId)
@@ -189,6 +231,7 @@ function RelationRow({
 export function MixedScriptRegistry(): React.JSX.Element {
   useRelationsStore((s) => s.version)
   const [open, setOpen] = useState<string | null>(null)
+  const [filter, setFilter] = useState('')
 
   const rows = useMemo(() => {
     return words
@@ -200,16 +243,37 @@ export function MixedScriptRegistry(): React.JSX.Element {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [useRelationsStore.getState().version])
 
+  const visible = rows.filter(
+    ({ word, tokens }) =>
+      wordMatches(word, filter) ||
+      tokens.some(
+        (t) =>
+          t.type === 'logo' &&
+          t.rootRomanization.toUpperCase().includes(filter.trim().toUpperCase())
+      )
+  )
+
   return (
     <Panel className="px-5 py-4">
-      <SectionLabel>Mixed-script registry — {rows.length} words</SectionLabel>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <SectionLabel>
+          Mixed-script registry — {filter ? `${visible.length} of ${rows.length}` : rows.length}{' '}
+          words
+        </SectionLabel>
+        <FilterInput value={filter} onChange={setFilter} placeholder="Filter by word, meaning, or root…" />
+      </div>
       <div className="text-dim mt-1 text-[9px] leading-relaxed">
         Columns: word · its mixed spelling (<span className="text-seal">⟨ROOT⟩ = logograph</span>,
         plain caps = letters; <span className="line-through">struck through</span> = you forced
         letters-only, shown so you can undo it) · meaning · controls.
       </div>
       <div className="mt-2 flex max-h-96 flex-col gap-1 overflow-y-auto pr-1">
-        {rows.map(({ word, tokens }) => (
+        {visible.length === 0 && (
+          <div className="text-dim py-3 text-center text-[10px] tracking-[0.12em] uppercase">
+            No words match “{filter}”
+          </div>
+        )}
+        {visible.map(({ word, tokens }) => (
           <div key={word.id} className="border-rule border-b pb-1 last:border-b-0">
             <div className="flex flex-wrap items-center gap-2 py-1">
               <span className="font-display w-32 shrink-0 text-[13px] font-semibold">

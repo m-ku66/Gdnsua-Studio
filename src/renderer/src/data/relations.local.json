@@ -1,5 +1,49 @@
 {
-  "roots": [],
+  "roots": [
+    "dara",
+    "kat",
+    "ten",
+    "fimn",
+    "hah",
+    "galn",
+    "gaar",
+    "mn",
+    "thosa",
+    "haad",
+    "zizi",
+    "khrdenlazgan",
+    "gaarlok",
+    "aldem",
+    "krel",
+    "fasko",
+    "jah",
+    "lau",
+    "gaarhaad",
+    "ni",
+    "shr",
+    "na",
+    "dhar",
+    "den",
+    "gaarzi",
+    "vad",
+    "avni",
+    "kir",
+    "hu",
+    "hen",
+    "kui",
+    "zathku",
+    "kai",
+    "niki",
+    "vel",
+    "namn",
+    "lk",
+    "ikit",
+    "espariit",
+    "umn",
+    "enz",
+    "gaarfik",
+    "faskorok"
+  ],
   "words": {
     "amnava": {
       "syllabicOnly": false
@@ -25,6 +69,10 @@
       "derivedFrom": [
         "la"
       ]
+    },
+    "vkskrel": {
+      "syllabicOnly": false,
+      "derivedFrom": []
     }
   }
 }
