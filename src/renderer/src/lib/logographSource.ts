@@ -9,7 +9,7 @@
 // ─────────────────────────────────────────────
 import { create } from 'zustand'
 import { wordById } from '../data'
-import { getLogographGlyph } from './glyphRegistry'
+import { getLogographGlyph, logographGlyphs } from './glyphRegistry'
 
 const W = 1164
 const H = 1160
@@ -38,6 +38,17 @@ export function setRuntimeLogograph(id: string, svg: string): void {
 export function removeRuntimeLogograph(id: string): void {
   runtime.set(id, null)
   useGlyphStore.getState().bump()
+}
+
+/** Every currently-carved logograph: runtime approvals over files, tombstones excluded */
+export function allCarvedLogographs(): { id: string; svg: string }[] {
+  const out = new Map<string, string>()
+  for (const [id, svg] of logographGlyphs) out.set(id, svg)
+  for (const [id, svg] of runtime) {
+    if (svg === null) out.delete(id)
+    else out.set(id, svg)
+  }
+  return [...out.entries()].map(([id, svg]) => ({ id, svg }))
 }
 
 interface Slot {

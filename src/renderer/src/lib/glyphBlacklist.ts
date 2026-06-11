@@ -1,13 +1,17 @@
 // ─────────────────────────────────────────────
-// Letter blacklist — logographs must never match a carved
-// letter. Shapes are rasterized to a coarse 12x12 occupancy
-// signature and compared by intersection-over-union.
+// Glyph blacklists.
+// 1) Letters: logographs must never RESEMBLE a carved letter
+//    (strict, IoU ≥ 0.86 on a coarse 12x12 occupancy signature).
+// 2) Logographs: no two logographs may be (near-)IDENTICAL
+//    (loose, IoU ≥ 0.98 — similar is fine, duplicates are not).
 // ─────────────────────────────────────────────
 import { letterGlyphs } from './glyphRegistry'
+import { allCarvedLogographs } from './logographSource'
 import type { Bar } from './logographGen'
 
 const N = 12
 const THRESH = 0.86
+const DUP_THRESH = 0.98
 
 function attr(tag: string, name: string): string | null {
   const m = tag.match(new RegExp(name + '="([^"]+)"'))
@@ -101,4 +105,23 @@ export function letterMatch(bars: Bar[], threshold = THRESH): string | null {
     }
   }
   return best
+}
+
+/**
+ * Returns the id of an existing logograph this shape (near-)duplicates,
+ * or null. Looser than the letter check by design: logographs may look
+ * similar, they just can't be EXACTLY the same. excludeId lets a root
+ * re-carve its own shape. Not cached — the carved set changes at runtime.
+ */
+export function logographMatch(bars: Bar[], excludeId: string): string | null {
+  if (bars.length === 0) return null
+  const sig = signature(bars, 1160, 1164)
+  for (const { id, svg } of allCarvedLogographs()) {
+    if (id === excludeId) continue
+    const rects = parseRects(svg)
+    if (!rects.length) continue
+    const vb = (svg.match(/viewBox="([^"]+)"/)?.[1] ?? '0 0 1160 1164').split(/\s+/).map(Number)
+    if (iou(sig, signature(rects, vb[2] || 1160, vb[3] || 1164)) >= DUP_THRESH) return id
+  }
+  return null
 }

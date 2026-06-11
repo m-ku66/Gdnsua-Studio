@@ -8,7 +8,7 @@
 // Multiple strokes may share a lane if their intervals
 // don't overlap. Crossings are segmented to kisses.
 // ─────────────────────────────────────────────
-import { letterMatch } from './glyphBlacklist'
+import { letterMatch, logographMatch } from './glyphBlacklist'
 
 export interface Bar {
   x: number
@@ -423,8 +423,8 @@ export function generateBars(rootId: string, seed: number, params: GenParams): B
 
 /**
  * A row of editable candidates. Each draft is checked against the
- * letter blacklist — matches are rerolled with a perturbed seed so a
- * logograph can never be confused with a carved letter.
+ * letter blacklist (no look-alikes) AND the carved logograph set
+ * (no exact duplicates) — offenders reroll with a perturbed seed.
  */
 export function generateDrafts(
   rootId: string,
@@ -433,10 +433,12 @@ export function generateDrafts(
   count = 4
 ): Draft[] {
   const result: Draft[] = []
+  const offends = (bars: Bar[]): boolean =>
+    letterMatch(bars) !== null || logographMatch(bars, rootId) !== null
   for (let i = 0; i < count; i++) {
     let draft = generateDraft(rootId, baseSeed * 31 + i, params)
     let attempt = 0
-    while (letterMatch(draft.bars) !== null && attempt < 8) {
+    while (offends(draft.bars) && attempt < 8) {
       attempt++
       draft = generateDraft(rootId, baseSeed * 31 + i + attempt * 7919, params)
     }

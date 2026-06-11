@@ -25,7 +25,7 @@ import {
   type Side,
   type Tier
 } from '../lib/logographGen'
-import { letterMatch, parseRects } from '../lib/glyphBlacklist'
+import { letterMatch, logographMatch, parseRects } from '../lib/glyphBlacklist'
 import {
   removeRuntimeLogograph,
   resolveLogograph,
@@ -179,11 +179,13 @@ function DraftEditor({
 
 // ── Compose: manual stroke placement on the glyph_base lattice ──
 function ComposeEditor({
+  rootId,
   placements,
   onChange,
   onCarve,
   drafts
 }: {
+  rootId: string
   placements: Placement[]
   onChange: (p: Placement[]) => void
   onCarve: () => void
@@ -196,6 +198,10 @@ function ComposeEditor({
 
   const segments = useMemo(() => placementsToSegments(placements), [placements])
   const match = useMemo(() => letterMatch(segments.map((s) => s.bar)), [segments])
+  const dup = useMemo(
+    () => logographMatch(segments.map((s) => s.bar), rootId),
+    [segments, rootId]
+  )
 
   const plRect = (pl: Placement): Bar =>
     pl.horiz
@@ -341,10 +347,16 @@ function ComposeEditor({
             ⚠ Too close to letter “{match}” — carving is locked until it differs
           </div>
         )}
+        {!match && dup && (
+          <div className="text-seal text-[9px] tracking-[0.08em] uppercase">
+            ⚠ Identical to “{wordById.get(dup)?.romanization ?? dup}”&apos;s logograph — change at
+            least one stroke
+          </div>
+        )}
         <div className="mt-auto flex gap-2">
           <button
             onClick={onCarve}
-            disabled={placements.length === 0 || match !== null}
+            disabled={placements.length === 0 || match !== null || dup !== null}
             className="border-ink bg-ink text-sand cursor-pointer border px-4 py-1.5 text-[9px] tracking-[0.14em] uppercase transition-opacity hover:opacity-75 disabled:cursor-default disabled:opacity-40"
           >
             ◆ Carve
@@ -356,7 +368,7 @@ function ComposeEditor({
 }
 
 function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
-  useGlyphStore((s) => s.version)
+  const glyphVersion = useGlyphStore((s) => s.version)
   const word = wordById.get(rootId)
   const [tab, setTab] = useState<'forge' | 'compose'>('forge')
   const [seed, setSeed] = useState(1)
@@ -364,7 +376,11 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
   const [editing, setEditing] = useState<Bar[] | null>(null)
   const [composition, setComposition] = useState<Placement[]>([])
   const [warn, setWarn] = useState<string | null>(null)
-  const drafts = useMemo(() => generateDrafts(rootId, seed, params, 4), [rootId, seed, params])
+  const drafts = useMemo(
+    () => generateDrafts(rootId, seed, params, 4),
+    // glyphVersion: reroll drafts that would duplicate a newly carved logograph
+    [rootId, seed, params, glyphVersion]
+  )
   if (!word) return null
 
   const current = resolveLogograph(rootId)
@@ -375,6 +391,12 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
     const hit = letterMatch(bars)
     if (hit) {
       setWarn(`Refused — this shape matches the letter “${hit}”. Adjust it and try again.`)
+      return false
+    }
+    const dup = logographMatch(bars, rootId)
+    if (dup) {
+      const dupRom = wordById.get(dup)?.romanization ?? dup
+      setWarn(`Refused — identical to the logograph already carved for “${dupRom}”. Change at least one stroke.`)
       return false
     }
     setWarn(null)
@@ -514,8 +536,8 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
             for · <span className="text-ink/70">Cross</span> is how often strokes cross each other
             · <span className="text-ink/70">Blocks</span> adds single-cell accents ·{' '}
             <span className="text-ink/70">Side</span> biases strokes toward one edge ·{' '}
-            <span className="text-ink/70">Reroll</span> draws four fresh drafts. Drafts matching a
-            letter reroll themselves automatically.
+            <span className="text-ink/70">Reroll</span> draws four fresh drafts. Drafts that match
+            a letter or duplicate an existing logograph reroll themselves automatically.
           </div>
           {editing && (
             <DraftEditor bars={editing} onChange={setEditing} onCarve={carveDraft} onCancel={() => { setEditing(null); setWarn(null) }} />
@@ -524,6 +546,7 @@ function RootForge({ rootId }: { rootId: string }): React.JSX.Element | null {
       )}
       {tab === 'compose' && (
         <ComposeEditor
+          rootId={rootId}
           placements={composition}
           onChange={setComposition}
           onCarve={carveComposition}
@@ -553,9 +576,10 @@ export function ForgeView(): React.JSX.Element {
           promote any dictionary word into a new root. <span className="text-ink">The Loom</span>{' '}
           shows every word whose spelling now embeds a root logograph, and lets you edit the
           relationships that drive those spellings. Carved glyphs save to the drop zone, persist
-          across restarts, and re-spell every derived word instantly. One law rules all of it:
-          no logograph may resemble an existing letter — generated drafts reroll themselves, and
-          the carve button refuses look-alikes.
+          across restarts, and re-spell every derived word instantly. Two laws rule all of it:
+          no logograph may resemble an existing letter, and no two logographs may be identical —
+          generated drafts reroll themselves, and the carve button refuses offenders. Similar
+          logographs are fine; exact twins are not.
         </p>
       </div>
       <div>
