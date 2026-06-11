@@ -5,6 +5,7 @@ declare global {
     electron: ElectronAPI
     api: {
       saveLogograph: (id: string, svg: string) => Promise<boolean>
+      deleteLogograph: (id: string) => Promise<boolean>
     }
   }
 }

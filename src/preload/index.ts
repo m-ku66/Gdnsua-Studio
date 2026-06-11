@@ -4,7 +4,8 @@ import { electronAPI } from '@electron-toolkit/preload'
 // Custom APIs for renderer
 const api = {
   saveLogograph: (id: string, svg: string): Promise<boolean> =>
-    ipcRenderer.invoke('save-logograph', id, svg)
+    ipcRenderer.invoke('save-logograph', id, svg),
+  deleteLogograph: (id: string): Promise<boolean> => ipcRenderer.invoke('delete-logograph', id)
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

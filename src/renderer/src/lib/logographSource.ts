@@ -15,8 +15,9 @@ const W = 1164
 const H = 1160
 const GAP = 80
 
-// Runtime approvals (Forge) — render immediately, persisted via IPC
-const runtime = new Map<string, string>()
+// Runtime approvals (Forge) — render immediately, persisted via IPC.
+// A null entry is a tombstone: explicitly uncarved this session.
+const runtime = new Map<string, string | null>()
 
 interface GlyphStoreState {
   version: number
@@ -30,6 +31,12 @@ export const useGlyphStore = create<GlyphStoreState>((set) => ({
 
 export function setRuntimeLogograph(id: string, svg: string): void {
   runtime.set(id, svg)
+  useGlyphStore.getState().bump()
+}
+
+/** Uncarve: tombstone the id so neither runtime nor file resolves */
+export function removeRuntimeLogograph(id: string): void {
+  runtime.set(id, null)
   useGlyphStore.getState().bump()
 }
 
@@ -82,11 +89,14 @@ export interface ResolvedLogograph {
  * parts that are themselves composed (depth-limited).
  */
 export function resolveLogograph(id: string, depth = 0): ResolvedLogograph | null {
-  const rt = runtime.get(id)
-  if (rt) return { svg: rt, source: 'carved' }
-
-  const file = getLogographGlyph(id)
-  if (file) return { svg: file, source: 'carved' }
+  if (runtime.has(id)) {
+    const rt = runtime.get(id)
+    if (rt) return { svg: rt, source: 'carved' }
+    // tombstone: skip the file, fall through to composition
+  } else {
+    const file = getLogographGlyph(id)
+    if (file) return { svg: file, source: 'carved' }
+  }
 
   if (depth >= 3) return null
   const word = wordById.get(id)
