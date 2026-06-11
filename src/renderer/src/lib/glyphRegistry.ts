@@ -47,7 +47,15 @@ function buildMap(
 const letterNameToId = new Map(letters.map((l) => [l.letterName.toLowerCase(), l.id]))
 
 export const letterGlyphs = buildMap(letterFiles, (n) => letterNameToId.get(n) ?? n)
-export const modifierGlyphs = buildMap(modifierFiles)
+
+// Modifier files may use natural names; resolve to disambiguated word ids
+const MODIFIER_ALIASES: Record<string, string> = {
+  hah: 'hah-plea',
+  i: 'i-mod',
+  ka: 'ka-mod',
+  zweetz: 'zhwitz'
+}
+export const modifierGlyphs = buildMap(modifierFiles, (n) => MODIFIER_ALIASES[n] ?? n)
 export const logographGlyphs = buildMap(logographFiles)
 
 export const getLetterGlyph = (id: string): string | null => letterGlyphs.get(id) ?? null
